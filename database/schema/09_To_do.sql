@@ -1,0 +1,8 @@
+DROP TABLE IF EXISTS to_do 
+
+CREATE TABLE to_do (
+  id SERIAL PRIMARY KEY NOT NULL,
+  wedding_id FOREIGN KEY REFERENCES weddings (id) NOT NULL
+  title VARCHAR(100) NOT NULL
+  notes VARCHAR(500)
+);
