@@ -2,10 +2,10 @@ DROP TABLE IF EXISTS businesses
 
 CREATE TABLE businesses (
   id SERIAL PRIMARY KEY NOT NULL,
-  type VARCHAR(200) NOT NULL
+  profession VARCHAR(200) NOT NULL
   image_url VARCHAR(200) NOT NULL
   website_url VARCHAR(200) NOT NULL
-  company_name VARCHAR(200) NOT NULL
+  name VARCHAR(200) NOT NULL
   description VARCHAR(1000) NOT NULL
   county VARCHAR(200) NOT NULL
   province VARCHAR(200) NOT NULL
