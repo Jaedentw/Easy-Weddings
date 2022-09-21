@@ -1,6 +1,6 @@
 import React from 'react'
 //import BusinessList from "./BusinessList";
-import BusinessListItem from "./BusinessListItem.js";
+import BusinessList from "./BusinessList.js";
 //import getAllBusinesses from "../helpers/selectors.js"
 
 export default function Application(props) {
@@ -9,9 +9,8 @@ export default function Application(props) {
 
   return (
     <main>
-      <BusinessListItem
-        name="Business"
-        profession="Profession"
+      <BusinessList
+        
       />
     </main>
   )
