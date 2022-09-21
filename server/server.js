@@ -1,17 +1,31 @@
-const express = require("express");
+// ----------------------- REQUIREMENTS
+const express = require('express');
+const morgan = require('morgan');
+const helmet = require('helmet');
+const cookieSession = require('cookie-session');
+
+const { db } = require('./db');
+const routes = require('./routes');
+
+// ----------------------- SETUP AND MIDDLEWARES
+db.connect();
 const app = express();
-const database = require('./database.js');
 
+app.use(helmet()); // includes security headers (owasp)
+app.use(morgan('dev')); // middleware that logs all the requests
+app.use(express.json()); // allow requests to include json body
+app.use(
+  cookieSession({
+    name: 'session',
+    keys: ['myRandomSuperSecretKey', 'anotherRandomString'],
 
-app.get("/api", (req, res) => {
-  res.json({"Users": ["user1", "user3", "user2"]})
-})
+    // Cookie Options
+    // maxAge: 24 * 60 * 60 * 1000 // 24 hours
+    maxAge: 10 * 60 * 1000 // 10 min
+  })
+);
 
+// ----------------------- ROUTES / ENDPOINTS
+app.use('/', routes);
 
-
-app.get("/api/businesses", (req, res) => {
-  const data = database.getAllBusinesses()
-  .then(console.log(data))
-})
-
-app.listen(5000, () => {console.log("server started on port 5000")})
+module.exports = app;
