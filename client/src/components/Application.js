@@ -16,14 +16,15 @@ export default function Application(props) {
         />
         <div class="text">
           <div class="upper-text">
-            <p>Name</p>
-            <p>Profession</p>
+            <h1>Kosta's Flowers</h1>
+            <p>Florist</p>
           </div>
-          <p>Description</p>
+          <p>We have every flower you can think of and more!</p>
         </div>
       </div>
       <div class="lower-business">
-        <i class="fa-solid fa-plus fa-lg"></i>
+        <i class="fa-solid fa-plus fa-lg fa-sharp"></i>
+        <i class="fa-solid fa-heart fa-lg"></i>
       </div>
     </section>
   )

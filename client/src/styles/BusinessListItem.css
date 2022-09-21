@@ -2,10 +2,9 @@
   display: flex;
   border: 4px black solid;
   flex-direction: column;
-  background-color: rosybrown;
+  background-color: rgb(190, 188, 188);
   margin: 5px;
   width: auto;
-  border-radius: 4px;
 }
 
 .upper-business {
@@ -21,7 +20,6 @@
   width: 100%;
   justify-content: right;
 }
-
 .lower-business i {
   display: flex;
   margin: 8px 15px;
@@ -34,6 +32,7 @@
   border: 4px black solid;
   margin: 10px;
   object-fit: cover;
+  margin-right: 0px;
 }
 
 .text {
@@ -46,16 +45,23 @@
   border: 4px black solid;
   height: 175px;
 }
+.text p {
+  margin: 5px
+}
 
 .upper-text {
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   width: 100%;
   align-content: flex-start;
+  border-bottom: 3px gray solid
 }
-
+.upper-text h1 {
+  margin: 1px;
+  margin-left: 5px;
+}
 .upper-text p {
-  display: flex;
-  width: 50%;
-  margin: 1px
+  margin: 1px;
+  margin-bottom: 5px;
+  margin-left: 5px;
 }
