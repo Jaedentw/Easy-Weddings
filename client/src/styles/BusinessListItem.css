@@ -2,7 +2,7 @@
   display: flex;
   border: 4px black solid;
   flex-direction: column;
-  background-color: grey;
+  background-color: rosybrown;
   margin: 5px;
   width: auto;
   border-radius: 4px;
@@ -17,15 +17,14 @@
 .lower-business {
   display: flex;
   flex-direction: row;
-  height: 30px;
+  height: 25px;
   width: 100%;
   justify-content: right;
-  align-items: center;
 }
 
 .lower-business i {
   display: flex;
-  margin: 15px;
+  margin: 8px 15px;
 }
 
 .business-image {
@@ -34,6 +33,7 @@
   height: 185px;
   border: 4px black solid;
   margin: 10px;
+  object-fit: cover;
 }
 
 .text {

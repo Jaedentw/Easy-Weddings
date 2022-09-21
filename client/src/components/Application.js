@@ -23,7 +23,7 @@ export default function Application(props) {
         </div>
       </div>
       <div class="lower-business">
-        <i class="fa-solid fa-plus"></i>
+        <i class="fa-solid fa-plus fa-lg"></i>
       </div>
     </section>
   )
