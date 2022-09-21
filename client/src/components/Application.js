@@ -1,5 +1,5 @@
 import React from 'react'
-import "../styles/nav.css"
+import "../styles/BusinessListItem.css"
 
 
 export default function Application(props) {
@@ -7,15 +7,25 @@ export default function Application(props) {
   //const allBuinesses = getAllBusinesses()
 
   return (
-    <nav class="nav-container">
-      <div class="upper-nav">
-        <p class="title-font">Easy Weddings</p>
+    <section class="business-container">
+      <div class="upper-business">
+        <img
+          src="https://www.thespruce.com/thmb/mtS-MppBCuvkOPiZdhpfVx8r7RA=/941x0/filters:no_upscale():max_bytes(150000):strip_icc():format(webp)/pictures-of-red-flowers-4061761-hero-6a032be909a74ac3bf4009232c295845.jpg"
+          alt="Business"
+          class="business-image" 
+        />
+        <div class="text">
+          <div class="upper-text">
+            <p>Name</p>
+            <p>Profession</p>
+          </div>
+          <p>Description</p>
+        </div>
       </div>
-      <div class="nav-bar-container">
-        <p class="nav-bar-item">Item 1</p>
-        <p class="nav-bar-item">Item 2</p>
+      <div class="lower-business">
+        <i class="fa-solid fa-plus"></i>
       </div>
-    </nav>
+    </section>
   )
 
 }
