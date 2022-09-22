@@ -1,4 +1,4 @@
-const { BusinessesModel } = require('../models');
+const { CaterersModel } = require('../models');
 
 const create = (req, res) => {
   const { userId } = req.session;
@@ -10,54 +10,54 @@ const create = (req, res) => {
   if (!name || !color || !emoji) {
     return res
       .status(400)
-      .send({ message: 'Provide name, color and emoji to create a fruit' });
+      .send({ message: 'Please provide all details to create a Caterer service' });
   }
 
-  BusinessesModel.create(userId, name, color, emoji)
-    .then(fruit => {
-      res.status(201).send({ message: 'Created!', fruit });
+  CaterersModel.create(userId, name, color, emoji)
+    .then(caterer => {
+      res.status(201).send({ message: 'Created!', caterer });
     })
     .catch(error => {
       console.log(error.message);
       res
         .status(500)
-        .send({ message: 'Error creating fruit', error: error.message });
+        .send({ message: 'Error creating caterer', error: error.message });
     });
 };
 
 const getAll = (req, res) => {
-  BusinessesModel.getAll()
-    .then(businesses => {
-      if (businesses.length === 0) {
-        return res.status(200).send({ message: 'No businesses available!' });
+  CaterersModel.getAll()
+    .then(Caterers => {
+      if (Caterers.length === 0) {
+        return res.status(200).send({ message: 'No Caterers available!' });
       }
 
-      res.status(200).send({businesses});
+      res.status(200).send({Caterers});
     })
     .catch(error => {
       console.log(error.message);
       res
         .status(500)
-        .send({ message: 'Error reading businesses', error: error.message });
+        .send({ message: 'Error reading Caterers', error: error.message });
     });
 };
 
 const getById = (req, res) => {
   const { id } = req.params;
 
-  BusinessesModel.getById(id)
-    .then(fruit => {
-      if (!fruit) {
-        return res.status(404).send({ message: 'Fruit not found!' });
+  CaterersModel.getById(id)
+    .then(caterer => {
+      if (!caterer) {
+        return res.status(404).send({ message: 'caterer not found!' });
       }
 
-      res.status(200).send({ message: 'Here is your fruit!', fruit });
+      res.status(200).send({ message: 'Here is your caterer!', caterer });
     })
     .catch(error => {
       console.log(error.message);
       res
         .status(500)
-        .send({ message: 'Error reading fruit', error: error.message });
+        .send({ message: 'Error reading caterer', error: error.message });
     });
 };
 
@@ -71,24 +71,24 @@ const update = (req, res) => {
   if (!name || !color || !emoji) {
     return res
       .status(400)
-      .send({ message: 'Provide name, color and emoji to update a fruit' });
+      .send({ message: 'Provide name, color and emoji to update a caterer' });
   }
 
   const { id } = req.params;
 
-  BusinessesModel.update(name, color, emoji, id)
-    .then(fruit => {
-      if (!fruit) {
-        return res.status(404).send({ message: 'Fruit not found!' });
+  CaterersModel.update(name, color, emoji, id)
+    .then(caterer => {
+      if (!caterer) {
+        return res.status(404).send({ message: 'caterer not found!' });
       }
 
-      res.status(201).send({ message: 'Updated!', fruit });
+      res.status(201).send({ message: 'Updated!', caterer });
     })
     .catch(error => {
       console.log(error.message);
       res
         .status(500)
-        .send({ message: 'Error updating fruit', error: error.message });
+        .send({ message: 'Error updating caterer', error: error.message });
     });
 };
 
@@ -100,7 +100,7 @@ const remove = (req, res) => {
 
   const { id } = req.params;
 
-  BusinessesModel.remove(id)
+  CaterersModel.remove(id)
     .then(() => {
       res.status(204).send();
     })
@@ -108,7 +108,7 @@ const remove = (req, res) => {
       console.log(error.message);
       res
         .status(500)
-        .send({ message: 'Error deleting fruit', error: error.message });
+        .send({ message: 'Error deleting caterer', error: error.message });
     });
 };
 
