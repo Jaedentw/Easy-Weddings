@@ -1,6 +1,5 @@
 import React from 'react'
-import "../styles/BusinessListItem.scss"
-//import classNames from "classnames";
+import "../styles/BusinessListItem.css"
 
 export default function BusinessListItem(props) {
 

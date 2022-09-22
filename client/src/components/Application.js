@@ -1,14 +1,17 @@
 import React from 'react'
-import "../styles/BusinessListItem.css"
+import BusinessList from './BusinessList'
+import useApplicationData from "../hooks/useApplicationData"
 
 
 export default function Application(props) {
     
-  //const allBuinesses = getAllBusinesses()
+  const {state} = useApplicationData();
 
   return (
     <div>
-      
+      <BusinessList
+        businesses={state.businesses}
+      />
     </div>
   )
 
