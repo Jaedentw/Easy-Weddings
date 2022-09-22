@@ -16,13 +16,23 @@
 .lower-business {
   display: flex;
   flex-direction: row;
-  height: 25px;
+  height: 30px;
   width: 100%;
-  justify-content: right;
 }
 .lower-business i {
   display: flex;
-  margin: 8px 15px;
+  margin: 10px 15px;
+}
+.lower-business div {
+  display: flex;
+  justify-content: right;
+}
+.lower-business p {
+  display: flex;
+  margin: 0px;
+  height: 100%;
+  margin-left: 10px;
+  width: 100%;
 }
 
 .business-image {
