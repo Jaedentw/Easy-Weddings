@@ -11,6 +11,8 @@ export default function BusinessList(props) {
         key={b.key}
         name={b.name}
         profession={b.profession}
+        description={b.description}
+        city={b.city}
       />
     )
   })
@@ -18,8 +20,8 @@ export default function BusinessList(props) {
 
 
   return (
-    <ul>
+    <div>
       {mappedBuinesses}
-    </ul>
+    </div>
   )
 }

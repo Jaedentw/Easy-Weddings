@@ -1,0 +1,85 @@
+.business-container {
+  display: flex;
+  border: 4px black solid;
+  flex-direction: column;
+  background-color: rgb(190, 188, 188);
+  margin: 5px;
+  width: auto;
+}
+
+.upper-business {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+}
+
+.lower-business {
+  display: flex;
+  flex-direction: row;
+  height: 30px;
+  width: 100%;
+}
+.lower-business i {
+  display: flex;
+  margin: 10px 15px;
+}
+.lower-business div {
+  display: flex;
+  justify-content: right;
+}
+.lower-business p {
+  display: flex;
+  margin: 0px;
+  height: 100%;
+  margin-left: 10px;
+  width: 100%;
+}
+
+.business-image {
+  display: flex;
+  width: 185px;
+  height: 185px;
+  border: 4px black solid;
+  margin: 10px;
+  object-fit: cover;
+  margin-right: 0px;
+}
+
+.text {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  margin: 10px;
+  padding: 5px;
+  background-color: white;
+  border: 4px black solid;
+  height: 175px;
+}
+.text p {
+  margin: 5px
+}
+
+.upper-text {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  align-content: flex-start;
+  border-bottom: 3px gray solid
+}
+.upper-text h1 {
+  margin: 1px;
+  margin-left: 5px;
+}
+.upper-text p {
+  margin: 1px;
+  margin-bottom: 5px;
+  margin-left: 5px;
+}
+
+.fa-heart:hover {
+  color: rgb(232, 15, 15);
+}
+
+.fa-plus:hover {
+  color: green;
+}

@@ -1,18 +1,15 @@
 import React from 'react'
-//import BusinessList from "./BusinessList";
-import BusinessList from "./BusinessList.js";
-//import getAllBusinesses from "../helpers/selectors.js"
+import "../styles/BusinessListItem.css"
+
 
 export default function Application(props) {
     
   //const allBuinesses = getAllBusinesses()
 
   return (
-    <main>
-      <BusinessList
-        
-      />
-    </main>
+    <div>
+      
+    </div>
   )
 
 }
