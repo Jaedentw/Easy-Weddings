@@ -75,3 +75,11 @@
   margin-bottom: 5px;
   margin-left: 5px;
 }
+
+.fa-heart:hover {
+  color: rgb(232, 15, 15);
+}
+
+.fa-plus:hover {
+  color: green;
+}
