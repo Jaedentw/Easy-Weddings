@@ -3,12 +3,11 @@ import BusinessListItem from "./BusinessListItem"
 
 export default function BusinessList(props) {
 
-  console.log(props.businesses)
-
-  let mappedBuinesses = props.buinesses.map((b) => {
+  let mappedBuinesses = props.businesses.map((b) => {
     return (
       <BusinessListItem
         key={b.id}
+        image_url={b.image_url}
         name={b.name}
         profession={b.profession}
         description={b.description}
@@ -16,8 +15,6 @@ export default function BusinessList(props) {
       />
     )
   })
-
-
 
   return (
     <div>

@@ -22,22 +22,25 @@ export default function useApplicationData() {
       axios.get("/api/decorators"),
       axios.get("/api/vendors"),
       axios.get("/api/weddings"),
-      axios.get("/api/personnel"),
-      axios.get("/api/to-do")
+      axios.get("/api/personnels"),
+      axios.get("/api/to_dos")
     ]).then((all) => {
       setState(prev => ({
         ...prev,
-        businesses: all[0].data,
+        businesses: all[0].data.businesses,
         caterers: all[1].data,
         venues: all[2].data,
         decorators: all[3].data,
         vendors: all[4].data,
         weddings: all[5].data,
         personnel: all[6].data,
-        to_do: all[7].data
+        to_dos: all[7].data
       }))
     })
-  }, []);
+  }, [])
+
+
+
 
   return { state }
 }
