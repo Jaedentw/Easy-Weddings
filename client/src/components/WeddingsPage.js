@@ -4,6 +4,7 @@ export default function WeddingsPage(props) {
   
   return (
     <main>
+      
 
     </main>
   )
