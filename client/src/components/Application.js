@@ -1,10 +1,10 @@
 import React from 'react'
 import "../styles/VendorsPage.css"
-import VendorsPage from './VendorsPage'
+import BusinessList from './BusinessList'
 import WeddingsPage from './WeddingsPage'
 import AboutPage from './AboutPage'
 import useApplicationData from "../hooks/useApplicationData"
-import Nav from './partials/Nav';
+import Nav from './Nav';
 
 
 export default function Application(props) {
@@ -22,7 +22,11 @@ export default function Application(props) {
       return <WeddingsPage />
     }
     if(state.tab === "Vendors") {
-      return <VendorsPage />
+      return(
+      <BusinessList 
+        businesses={state.businesses}
+      />
+      )
     }
   }
 

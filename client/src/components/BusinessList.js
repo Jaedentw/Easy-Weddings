@@ -1,6 +1,6 @@
 import React from 'react'
-import BusinessListItem from "./BusinessListItem"
-import "../../styles/BusinessList.css"
+import BusinessListItem from "./partials/BusinessListItem"
+import "../styles/BusinessList.css"
 
 export default function BusinessList(props) {
 

@@ -1,6 +1,6 @@
 import React from 'react'
-import "../../styles/nav.css"
-import Tab from './Tab';
+import "../styles/nav.css"
+import Tab from './partials/Tab';
 
 export default function Nav(props) {
 
