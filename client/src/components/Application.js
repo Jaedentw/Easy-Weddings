@@ -7,11 +7,17 @@ import Nav from './partials/Nav';
 
 export default function Application(props) {
     
-  const {state} = useApplicationData();
+  const {
+    state,
+    setTab
+  } = useApplicationData();
 
   return (
     <main class="main">
-      <Nav/>
+      <Nav
+        selected={state.tab}
+        onClick={setTab}
+      />
       <img 
       class="application-image"
       src="https://thumbs.dreamstime.com/b/banner-background-many-fake-white-roses-top-view-soft-focus-219199318.jpg"
@@ -19,7 +25,6 @@ export default function Application(props) {
       <BusinessList
         businesses={state.businesses}
       />
-    
     </main>
   )
 

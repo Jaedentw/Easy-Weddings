@@ -4,6 +4,7 @@ import axios from 'axios';
 export default function useApplicationData() {
 
   let [state, setState] = useState({
+    tab: "About",
     businesses: [],
     caterers: [],
     venues: [],
@@ -39,8 +40,10 @@ export default function useApplicationData() {
     })
   }, [])
 
+  function setTab(tab) {
+    setState({...state, tab})
+  };
 
 
-
-  return { state }
+  return { state, setTab }
 }

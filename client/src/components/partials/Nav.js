@@ -1,7 +1,10 @@
 import React from 'react'
 import "../../styles/nav.css"
+import Tab from './Tab';
 
 export default function Nav(props) {
+
+
 
   return (
     <nav class="nav-container">
@@ -12,9 +15,21 @@ export default function Nav(props) {
         </div>
       </div>
       <div class="nav-bar-container">
-        <p class="nav-bar-item">About</p>
-        <p class="nav-bar-item">Weddings</p>
-        <p class="nav-bar-item">Vendors</p>
+        <Tab
+          name="About"
+          onClick={props.onClick}
+          selected={props.selected}
+        />
+        <Tab 
+          name="Weddings"
+          onClick={props.onClick}
+          selected={props.selected}
+        />
+        <Tab 
+          name="Vendors"
+          onClick={props.onClick}
+          selected={props.selected}
+        />
       </div>
     </nav>
   )

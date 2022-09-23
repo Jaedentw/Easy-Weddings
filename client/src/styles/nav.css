@@ -43,6 +43,12 @@
   border-bottom-left-radius: 10px;
 }
 
+.nav-bar-item-selected {
+  background-color: rgb(215, 58, 110);
+  border-bottom-right-radius: 10px;
+  border-bottom-left-radius: 10px;
+}
+
 .title-font {
   display: flex;
   font-family: 'Kaushan Script', cursive;
