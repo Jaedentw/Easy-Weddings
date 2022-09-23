@@ -1,5 +1,5 @@
 import React from 'react'
-import "../styles/Nav.css"
+import "../styles/nav.css"
 
 export default function Nav(props) {
 
@@ -7,10 +7,15 @@ export default function Nav(props) {
     <nav class="nav-container">
       <div class="upper-nav">
         <p class="title-font">Easy Weddings</p>
+        <div class="nav-log">
+          <strong>Signed in as: </strong><span>Jaeden</span>
+        </div>
       </div>
       <div class="nav-bar-container">
-        <p class="nav-bar-item">Item 1</p>
-        <p class="nav-bar-item">Item 2</p>
+        <p class="nav-bar-item">About</p>
+        <p class="nav-bar-item">Weddings</p>
+        <p class="nav-bar-item">Favorites</p>
+        <p class="nav-bar-item">Vendors</p>
       </div>
     </nav>
   )

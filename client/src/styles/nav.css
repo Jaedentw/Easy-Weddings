@@ -1,7 +1,7 @@
 .nav-container {
   display: flex;
   flex-direction: column;
-  background-color: palevioletred;
+  width: 100%;
 }
 
 .upper-nav {
@@ -9,24 +9,38 @@
   height: 80px;
   top: relative;
   flex-direction: row;
+  background-color: palevioletred;
+  border-bottom: 10px palevioletred solid;
 }
 
 .nav-bar-container {
   display: flex;
   flex-direction: row;
-  border-top: 3px black solid;
-  height: 40px;
   align-items: center;
+  border-top: 5px black solid;
+  margin-bottom: 5px;
 }
 
 .nav-bar-item {
   display: flex;
-  flex-direction: column;
+  border-left: 3px black solid;
   border-right: 3px black solid;
+  border-bottom: 3px black solid;
   width: 100px;
-  height: 30px;
   justify-content: center;
   align-items: center;
+  margin: 1px;
+  margin-top: 0px;
+  height: 30px;
+  background-color: palevioletred;
+  border-bottom-right-radius: 10px;
+  border-bottom-left-radius: 10px;
+}
+
+.nav-bar-item:hover {
+  background-color: rgb(215, 58, 110);
+  border-bottom-right-radius: 10px;
+  border-bottom-left-radius: 10px;
 }
 
 .title-font {
@@ -34,4 +48,15 @@
   font-family: 'Kaushan Script', cursive;
   font-size: 50px;
   margin: 0px;
+}
+
+.nav-log {
+  display: flex;
+  justify-content: right;
+  flex-grow: 1;
+  padding: 10px;
+}
+
+.nav-log strong {
+  margin-right: 5px;
 }

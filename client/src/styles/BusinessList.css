@@ -1,7 +1,8 @@
 .business-list-container {
   display: flex;
-  justify-content: center;
   flex-direction: column;
+  width: 75%;
+  margin: 0px;
 }
 
 .business-nav-container {

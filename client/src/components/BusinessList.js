@@ -22,12 +22,12 @@ export default function BusinessList(props) {
       <div class="business-nav-container">
         <div class="business-buttons">
           <button>Caterers</button>
+          <button>Decorator</button>
           <button>Venues</button>
           <button>Vendors</button>
-          <button>Decorators</button>
         </div>
         <div>
-          <input></input>
+        <i class="fa-solid fa-magnifying-glass"></i> <input placeholder="Search"></input>
         </div>
       </div>
       
