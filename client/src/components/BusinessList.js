@@ -1,5 +1,6 @@
 import React from 'react'
 import BusinessListItem from "./BusinessListItem"
+import "../styles/BusinessList.css"
 
 export default function BusinessList(props) {
 
@@ -17,7 +18,19 @@ export default function BusinessList(props) {
   })
 
   return (
-    <div>
+    <div class="business-list-container">
+      <div class="business-nav-container">
+        <div class="business-buttons">
+          <button>Caterers</button>
+          <button>Venues</button>
+          <button>Vendors</button>
+          <button>Decorators</button>
+        </div>
+        <div>
+          <input></input>
+        </div>
+      </div>
+      
       {mappedBuinesses}
     </div>
   )

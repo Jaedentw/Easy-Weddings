@@ -1,0 +1,32 @@
+.business-list-container {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.business-nav-container {
+  display: flex;
+  border: 4px black solid;
+  flex-direction: column;
+  align-items: center;
+  padding: 5px;
+}
+
+.business-buttons {
+  display: flex;
+  flex-direction: row;
+  justify-items: space-evenly;
+}
+
+.business-buttons button {
+  border: 3px black solid;
+  border-radius: 10px;
+  background-color: palevioletred;
+  margin: 5px;
+  margin-top: 0px;
+}
+
+.business-buttons button:hover {
+  background-color: rgb(215, 58, 110);
+}
+
