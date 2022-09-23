@@ -21,7 +21,7 @@ export default function BusinessListItem(props) {
       </div>
       <div class="lower-business">
 
-        <p>Located in: {props.city}</p>
+        <p> <strong class="location">Located in:</strong><div>{props.city}</div></p>
 
         <div class="upper-business">
           <i class="fa-solid fa-plus fa-lg fa-sharp"></i>
