@@ -4,8 +4,6 @@ import Tab from './Tab';
 
 export default function Nav(props) {
 
-
-
   return (
     <nav class="nav-container">
       <div class="upper-nav">

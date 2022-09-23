@@ -44,6 +44,5 @@ export default function useApplicationData() {
     setState({...state, tab})
   };
 
-
   return { state, setTab }
 }
