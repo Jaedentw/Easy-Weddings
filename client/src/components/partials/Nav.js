@@ -1,5 +1,5 @@
 import React from 'react'
-import "../styles/nav.css"
+import "../../styles/nav.css"
 
 export default function Nav(props) {
 
@@ -14,7 +14,6 @@ export default function Nav(props) {
       <div class="nav-bar-container">
         <p class="nav-bar-item">About</p>
         <p class="nav-bar-item">Weddings</p>
-        <p class="nav-bar-item">Favorites</p>
         <p class="nav-bar-item">Vendors</p>
       </div>
     </nav>

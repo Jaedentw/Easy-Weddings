@@ -111,4 +111,12 @@ CREATE TABLE to_do (
   title VARCHAR(100) NOT NULL,
   notes VARCHAR(500)
 );
+
+CREATE TABLE favorites (
+  id SERIAL PRIMARY KEY NOT NULL,
+  user_id INTEGER NOT NULL,
+  FOREIGN KEY(user_id) REFERENCES users (id) ON DELETE CASCADE,
+  business_id INTEGER NOT NULL,
+  FOREIGN KEY(business_id) REFERENCES businesses (id) ON DELETE CASCADE
+)
 `;

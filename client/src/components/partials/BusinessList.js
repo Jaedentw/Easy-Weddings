@@ -1,6 +1,6 @@
 import React from 'react'
 import BusinessListItem from "./BusinessListItem"
-import "../styles/BusinessList.css"
+import "../../styles/BusinessList.css"
 
 export default function BusinessList(props) {
 
@@ -21,13 +21,17 @@ export default function BusinessList(props) {
     <div class="business-list-container">
       <div class="business-nav-container">
         <div class="business-buttons">
+          <button>Favorites</button>
           <button>Caterers</button>
-          <button>Decorator</button>
+          <button>Decorators</button>
           <button>Venues</button>
           <button>Vendors</button>
         </div>
         <div>
-        <i class="fa-solid fa-magnifying-glass"></i> <input placeholder="Search"></input>
+        <i class="fa-solid fa-magnifying-glass"></i> <input 
+        class="business-search"
+        placeholder="Search"
+        ></input>
         </div>
       </div>
       

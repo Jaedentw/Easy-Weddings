@@ -2,12 +2,13 @@
   display: flex;
   flex-direction: column;
   width: 75%;
-  margin: 0px;
+  padding: 20px;
+  height: 100vh;
+  background-color: pink;
 }
 
 .business-nav-container {
   display: flex;
-  border: 4px black solid;
   flex-direction: column;
   align-items: center;
   padding: 5px;
@@ -29,5 +30,10 @@
 
 .business-buttons button:hover {
   background-color: rgb(215, 58, 110);
+}
+
+.business-search {
+  border: 3px black solid;
+  border-radius: 10px;
 }
 

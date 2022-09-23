@@ -2,6 +2,7 @@
   display: flex;
   flex-direction: column;
   width: 100%;
+  position: absolute;
 }
 
 .upper-nav {
@@ -10,14 +11,13 @@
   top: relative;
   flex-direction: row;
   background-color: palevioletred;
-  border-bottom: 10px palevioletred solid;
 }
 
 .nav-bar-container {
   display: flex;
   flex-direction: row;
   align-items: center;
-  border-top: 5px black solid;
+  border-top: 4px black solid;
   margin-bottom: 5px;
 }
 
