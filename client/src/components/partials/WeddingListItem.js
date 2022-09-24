@@ -1,6 +1,6 @@
 import React from "react";
 
-export default function AboutPage(props) {
+export default function WeddingListItem(props) {
   return (
     <div>
       

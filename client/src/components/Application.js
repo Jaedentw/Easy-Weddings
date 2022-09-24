@@ -1,10 +1,12 @@
 import React from 'react'
 import "../styles/VendorsPage.css"
 import BusinessList from './BusinessList'
-import WeddingsPage from './WeddingsPage'
+import WeddingsPage from './WeddingsList'
 import AboutPage from './AboutPage'
-import useApplicationData from "../hooks/useApplicationData"
 import Nav from './Nav';
+import useApplicationData from "../hooks/useApplicationData"
+//import {getUserWeddings} from "../helpers/selectors"
+
 
 
 export default function Application(props) {
@@ -13,13 +15,19 @@ export default function Application(props) {
     state,
     setTab
   } = useApplicationData();
+
+  //let userWeddings = getUserWeddings();
   
   function renderTag(state) {
     if(state.tag === "About") {
       return <AboutPage />
     }
     if(state.tab === "Weddings") {
-      return <WeddingsPage />
+      return (
+      <WeddingsPage
+        //weddings={userWeddings}
+      />
+      )
     }
     if(state.tab === "Vendors") {
       return(
