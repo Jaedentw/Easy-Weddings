@@ -8,6 +8,7 @@ DROP TABLE IF EXISTS venues CASCADE;
 DROP TABLE IF EXISTS weddings CASCADE;
 DROP TABLE IF EXISTS personnel CASCADE;
 DROP TABLE IF EXISTS to_do CASCADE;
+DROP TABLE IF EXISTS favorites CASCADE;
 
 
 CREATE TABLE users (
@@ -91,7 +92,8 @@ CREATE TABLE weddings (
   name VARCHAR(200) NOT NULL,
   date DATE,
   budget INTEGER,
-  guest_count INTEGER
+  guest_count INTEGER,
+  image_url VARCHAR(500)
 );
 
 
