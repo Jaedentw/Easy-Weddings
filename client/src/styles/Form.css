@@ -1,0 +1,46 @@
+.form-container {
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  padding: 5px;
+  border: 4px black solid;
+}
+
+.form span{
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  justify-content: space-between;
+}
+
+.form input{
+  margin: 5px;
+  width: 35%;
+}
+
+.form label{
+  margin: 5px;
+  display: flex;
+  flex-direction: row;
+  white-space: nowrap;
+  width: 15%;
+}
+
+input[name="address"] {
+  width: 89%;
+}
+input[name="business_name"] {
+  width: 89%;
+}
+
+
+.form-business {
+  display: flex;
+  justify-content: space-around;
+}

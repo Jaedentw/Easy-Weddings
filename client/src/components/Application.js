@@ -5,6 +5,7 @@ import WeddingListItem from './partials/WeddingListItem'
 import AboutPage from './AboutPage'
 import Nav from './Nav';
 import useApplicationData from "../hooks/useApplicationData"
+import BusinessEdit from './BusinessEdit'
 //import {getUserWeddings} from "../helpers/selectors"
 
 
@@ -18,18 +19,13 @@ export default function Application(props) {
 
   //let userWeddings = getUserWeddings();
   
-  function renderTag(state) {
+  function renderTab(state) {
     if(state.tab === "About") {
       return <AboutPage/>
     }
     if(state.tab === "Weddings") {
       return (
-      <WeddingListItem
-        name="a wedding"
-        date="09-26-2023"
-        image="https://www.weddingbee.com/wp-content/uploads/2018/07/love-377263.jpg"
-        //weddings={userWeddings}
-      />
+        <WeddingListItem/>
       )
     }
     if(state.tab === "Vendors") {
@@ -37,6 +33,13 @@ export default function Application(props) {
       <BusinessList 
         businesses={state.businesses}
       />
+      )
+    }
+    if(state.tab === "Your Listings") {
+      return (
+        <BusinessEdit
+          businesses={state.businesses}
+        />
       )
     }
   }
@@ -51,7 +54,7 @@ export default function Application(props) {
       class="application-image"
       src="https://thumbs.dreamstime.com/b/banner-background-many-fake-white-roses-top-view-soft-focus-219199318.jpg"
       alt="Flowers"/>
-      {renderTag(state)}
+      {renderTab(state)}
     </main>
   )
 

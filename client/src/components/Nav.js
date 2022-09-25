@@ -23,6 +23,11 @@ export default function Nav(props) {
           onClick={props.onClick}
           selected={props.selected}
         />
+        <Tab
+          name="Your Listings"
+          onClick={props.onClick}
+          selected={props.selected}
+        />
         <Tab 
           name="Vendors"
           onClick={props.onClick}
