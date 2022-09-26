@@ -8,6 +8,7 @@
     "@testing-library/react": "^13.4.0",
     "@testing-library/user-event": "^13.5.0",
     "axios": "^0.27.2",
+    "bootstrap": "^5.2.1",
     "classnames": "^2.3.2",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
@@ -37,5 +38,16 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devServer": {
+    "stats": "errors-only",
+    "https": true,
+    "key": "./path_to_pemfile.pem",
+    "cert": "./path_to_pemfile.pem",
+    "headers": {
+      "Access-Control-Allow-Origin": "*"
+    },
+    "port": 8080,
+    "host": "broker-gateway-webpack.firstbanco.dev"
   }
 }

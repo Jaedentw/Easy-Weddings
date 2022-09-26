@@ -20,15 +20,13 @@ export default function BusinessListItem(props) {
         </div>
       </div>
       <div class="lower-business">
-
         <p> <strong class="location">Located in:</strong><div>{props.city}</div></p>
-
         <div class="upper-business">
           <i class="fa-solid fa-plus fa-lg fa-sharp"></i>
           <i class="fa-solid fa-heart fa-lg"></i>
         </div>
-
       </div>
     </section>
   )
 }
+

@@ -20,15 +20,19 @@
   justify-items: space-evenly;
 }
 
-.business-buttons button {
+.business-btn {
   border: 3px black solid;
   border-radius: 10px;
   background-color: palevioletred;
   margin: 5px;
   margin-top: 0px;
+  padding: 2px;
 }
 
-.business-buttons button:hover {
+.business-btn:hover {
+  background-color: rgb(215, 58, 110);
+}
+.business-btn-selected {
   background-color: rgb(215, 58, 110);
 }
 

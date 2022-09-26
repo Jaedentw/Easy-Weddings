@@ -5,6 +5,7 @@ export default function useApplicationData() {
 
   let [state, setState] = useState({
     tab: "About",
+    filter: "Favorites",
     businesses: [],
     caterers: [],
     venues: [],
@@ -24,18 +25,20 @@ export default function useApplicationData() {
       axios.get("/api/vendors"),
       axios.get("/api/weddings"),
       axios.get("/api/personnels"),
-      axios.get("/api/to_dos")
+      axios.get("/api/to_dos"),
+      axios.get("/api/favorites")
     ]).then((all) => {
       setState(prev => ({
         ...prev,
         businesses: all[0].data.businesses,
-        caterers: all[1].data,
-        venues: all[2].data,
-        decorators: all[3].data,
-        vendors: all[4].data,
-        weddings: all[5].data,
-        personnel: all[6].data,
-        to_dos: all[7].data
+        caterers: all[1].data.caterers,
+        venues: all[2].data.venues,
+        decorators: all[3].data.decorators,
+        vendors: all[4].data.vendors,
+        weddings: all[5].data.weddings,
+        personnels: all[6].data.personnels,
+        to_dos: all[7].data.to_dos,
+        favorites: all[8].data.favorites
       }))
     })
   }, [])
@@ -44,5 +47,9 @@ export default function useApplicationData() {
     setState({...state, tab})
   };
 
-  return { state, setTab }
+  function setFilter(filter) {
+    setState({...state, filter})
+  }
+
+  return { state, setTab, setFilter }
 }

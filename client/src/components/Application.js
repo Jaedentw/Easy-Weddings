@@ -5,7 +5,7 @@ import WeddingListItem from './partials/WeddingListItem'
 import AboutPage from './AboutPage'
 import Nav from './Nav';
 import useApplicationData from "../hooks/useApplicationData"
-import BusinessEdit from './BusinessEdit'
+import UserSignUp from './UserSignUp'
 //import {getUserWeddings} from "../helpers/selectors"
 
 
@@ -14,10 +14,12 @@ export default function Application(props) {
     
   const {
     state,
-    setTab
+    setTab,
+    setFilter
   } = useApplicationData();
 
-  //let userWeddings = getUserWeddings();
+  //let userWeddings = getUserWeddings(state, user_id);
+  //let listings = getFilteredListings(state, user_id);
   
   function renderTab(state) {
     if(state.tab === "About") {
@@ -32,14 +34,14 @@ export default function Application(props) {
       return(
       <BusinessList 
         businesses={state.businesses}
+        selected={state.filter}
+        onClick={setFilter}
       />
       )
     }
     if(state.tab === "Your Listings") {
       return (
-        <BusinessEdit
-          businesses={state.businesses}
-        />
+        <UserSignUp/>
       )
     }
   }

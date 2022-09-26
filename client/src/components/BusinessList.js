@@ -1,6 +1,7 @@
 import React from 'react'
 import BusinessListItem from "./partials/BusinessListItem"
 import "../styles/BusinessList.css"
+import Filter from './partials/Filter'
 
 export default function BusinessList(props) {
 
@@ -21,11 +22,31 @@ export default function BusinessList(props) {
     <div class="business-list-container">
       <div class="business-nav-container">
         <div class="business-buttons">
-          <button>Favorites</button>
-          <button>Caterers</button>
-          <button>Decorators</button>
-          <button>Venues</button>
-          <button>Vendors</button>
+          <Filter
+            name="Favorites"
+            selected={props.selected}
+            onClick={props.onClick}
+          />
+          <Filter
+            name="Caterers"
+            selected={props.selected}
+            onClick={props.onClick}
+          />
+          <Filter
+            name="Decorators"
+            selected={props.selected}
+            onClick={props.onClick}
+          />
+          <Filter
+            name="Venues"
+            selected={props.selected}
+            onClick={props.onClick}
+          />
+          <Filter
+            name="Vendors"
+            selected={props.selected}
+            onClick={props.onClick}
+          />
         </div>
         <div>
         <i class="fa-solid fa-magnifying-glass"></i> <input 
