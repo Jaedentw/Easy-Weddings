@@ -21,4 +21,6 @@ router.put('/:id', UsersController.update);
 // DELETE - delete
 router.delete('/:id', UsersController.remove);
 
+router.get('/profile', UsersController.getProfile);
+
 module.exports = router;

@@ -2,7 +2,7 @@ module.exports = `
 
 
   INSERT INTO users (first_name,last_name,country,province,city,address,postal_code,email,phone,password) VALUES (
-    'Kosta','Vlahakis','Canada','Ontario','Toronto','75 Oakwood dr.','L4S 1P6','kostakv@outlook.com','6477778888','password');
+    'Kosta','Vlahakis','Canada','Ontario','Toronto','75 Oakwood dr.','L4S 1P6','kostakv@outlook.com','6477778888','$2a$10$U35lMD9rB38wy/itPaVKWekIlKgFxQN.ujMfNAkQ1fOYpkc19OWqC');
 
   INSERT INTO users (first_name,last_name,country,province,city,address,postal_code,email,phone,password) VALUES (
     'Andrew','Gort','Canada','Ontario','Toronto','652 Springs st','N2J 7N3','andrewgort@gmail.com','6474547878','password');
