@@ -20,6 +20,7 @@ export default function useApplicationData() {
     user: {}
   });
 
+
   useEffect(() => {
     setLoading(true);
     axios.get("/api/profile").then((response) => {
@@ -42,7 +43,8 @@ export default function useApplicationData() {
       axios.get("/api/decorators"),
       axios.get("/api/vendors"),
     ]).then((all) => {
-      setState(prev => ({
+      setState(prev => (
+        {
         ...prev,
         businesses: all[0].data.businesses,
         caterers: all[1].data.caterers,
@@ -64,7 +66,6 @@ export default function useApplicationData() {
         weddings: all[0].data.weddings,
         to_dos: all[1].data.to_dos,
         favorites: all[2].data.favorites
-
       }))
     })
   }

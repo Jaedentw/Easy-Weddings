@@ -2,10 +2,14 @@ import React from 'react'
 import BusinessListItem from "./partials/BusinessListItem"
 import "../styles/BusinessList.css"
 import Filter from './partials/Filter'
+import useVendorData from "../hooks/useVendorData"
 
 export default function BusinessList(props) {
 
-  let mappedBuinesses = props.businesses.map((b) => {
+
+  const {state, setFilter} = useVendorData(props.user);
+
+  let mappedBuinesses = state.businesses.map((b) => {
     return (
       <BusinessListItem
         key={b.id}
@@ -24,28 +28,28 @@ export default function BusinessList(props) {
         <div class="business-buttons">
           <Filter
             name="Favorites"
-            selected={props.selected}
-            onClick={props.onClick}
+            selected={state.filter}
+            onClick={setFilter}
           />
           <Filter
             name="Caterers"
-            selected={props.selected}
-            onClick={props.onClick}
+            selected={state.filter}
+            onClick={setFilter}
           />
           <Filter
             name="Decorators"
-            selected={props.selected}
-            onClick={props.onClick}
+            selected={state.filter}
+            onClick={setFilter}
           />
           <Filter
             name="Venues"
-            selected={props.selected}
-            onClick={props.onClick}
+            selected={state.filter}
+            onClick={setFilter}
           />
           <Filter
             name="Vendors"
-            selected={props.selected}
-            onClick={props.onClick}
+            selected={state.filter}
+            onClick={setFilter}
           />
         </div>
         <div>
@@ -55,8 +59,9 @@ export default function BusinessList(props) {
         ></input>
         </div>
       </div>
-      
-      {mappedBuinesses}
+      <div>
+        {mappedBuinesses}
+      </div>
     </div>
   )
 }

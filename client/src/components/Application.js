@@ -8,9 +8,8 @@ import useApplicationData from "../hooks/useApplicationData";
 import UserSignUp from './UserSignUp';
 import { Routes, Route } from 'react-router-dom';
 import Login from './Login';
+
 //import {getUserWeddings} from "../helpers/selectors"
-
-
 
 export default function Application(props) {
 
@@ -23,8 +22,6 @@ export default function Application(props) {
 
   //let userWeddings = getUserWeddings(state, user_id);
   //let listings = getFilteredListings(state, user_id);
-
-
 
 
   return (
