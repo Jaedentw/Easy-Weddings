@@ -5,6 +5,7 @@ import Filter from './partials/Filter'
 
 export default function BusinessList(props) {
 
+
   let mappedBuinesses = props.businesses.map((b) => {
     return (
       <BusinessListItem
@@ -55,8 +56,9 @@ export default function BusinessList(props) {
         ></input>
         </div>
       </div>
-      
-      {mappedBuinesses}
+      <div>
+        {mappedBuinesses}
+      </div>
     </div>
   )
 }

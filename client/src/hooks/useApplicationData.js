@@ -26,9 +26,10 @@ export default function useApplicationData() {
       axios.get("/api/weddings"),
       axios.get("/api/personnels"),
       axios.get("/api/to_dos"),
-      axios.get("/api/favorites")
+      //axios.get("/api/favorites")
     ]).then((all) => {
-      setState(prev => ({
+      setState(prev => (
+        {
         ...prev,
         businesses: all[0].data.businesses,
         caterers: all[1].data.caterers,
@@ -38,7 +39,7 @@ export default function useApplicationData() {
         weddings: all[5].data.weddings,
         personnels: all[6].data.personnels,
         to_dos: all[7].data.to_dos,
-        favorites: all[8].data.favorites
+        //favorites: all[8].data.favorites
       }))
     })
   }, [])

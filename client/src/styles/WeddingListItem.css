@@ -1,28 +1,27 @@
-.wedding-container {
-  display: flex;
-  border-radius: 10px;
-  flex-direction: column;
-}
-
 .wedding_image {
   display: flex;
   height: 300px;
   width: 300px;
   object-fit: cover;
   border-radius: 5px;
+  border: 4px black solid;
+}
+
+.wedding_image:hover {
+  box-shadow: 4px 4px grey;
 }
 
 .wedding_text {
-  display: flex;
   position: relative;
-  align-items: center;
-  bottom: 25%;
+  display: flex;
+  bottom: 20%;
   background: rgb(255, 255, 255, 0.7);
   flex-direction: column;
 }
 
 .wedding_text p{
-  display: flex;
   font-weight: bold;
-  margin: 0px
+  margin: 0px;
+  width: 300px;
+  text-align: center;
 }

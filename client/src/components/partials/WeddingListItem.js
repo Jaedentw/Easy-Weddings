@@ -11,8 +11,6 @@ export default function WeddingListItem(props) {
         <p>{props.name}</p>
         <p>{props.date}</p>
       </div>
-
-
     </div>
   )
 }
