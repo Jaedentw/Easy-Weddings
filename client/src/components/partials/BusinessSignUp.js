@@ -1,5 +1,5 @@
 import {useState} from "react";
-import "../styles/Form.css"
+import "../../styles/Form.css"
 
 export default function BusinessSignUp(props) {
 
@@ -29,24 +29,6 @@ export default function BusinessSignUp(props) {
             data-testid="first-name-input"
           />
 
-        </span>
-        <span>
-        <label>Website URL:</label>
-          <input
-            name="website_url"
-            type="text"
-            placeholder="Website URL"
-            value={inputs.last_name || ""}
-            onChange={handleChange}
-          />
-          <label>Image URL:</label>
-          <input
-            name="image_url"
-            type="text"
-            placeholder="Thumbnail URL"
-            value={inputs.last_name || ""}
-            onChange={handleChange}
-          />
         </span>
         <span>
         <label>Email:</label>

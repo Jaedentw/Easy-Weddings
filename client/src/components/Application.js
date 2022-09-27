@@ -27,7 +27,11 @@ export default function Application(props) {
     }
     if(state.tab === "Weddings") {
       return (
-        <WeddingListItem/>
+        <WeddingListItem
+          image_url="https://www.theknot.com/tk-media/images/de8cb1ed-539f-499f-af5a-0de5d1df0de8~rs_768.h"
+          name="wedding"
+          date="09-27-2023"
+        />
       )
     }
     if(state.tab === "Vendors") {

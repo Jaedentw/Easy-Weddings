@@ -19,7 +19,7 @@ function findThingsByBusinessId(state, key, business_id) {
 }
 
 
-//ACTUAL HELPERS
+//ACTUAL EXPORTED HELPERS
 export function getUserWeddings(state, user_id) {
 
   findThingsByUserId(state, "weddings", user_id)

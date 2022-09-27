@@ -3,3 +3,26 @@
   border-radius: 10px;
   flex-direction: column;
 }
+
+.wedding_image {
+  display: flex;
+  height: 300px;
+  width: 300px;
+  object-fit: cover;
+  border-radius: 5px;
+}
+
+.wedding_text {
+  display: flex;
+  position: relative;
+  align-items: center;
+  bottom: 25%;
+  background: rgb(255, 255, 255, 0.7);
+  flex-direction: column;
+}
+
+.wedding_text p{
+  display: flex;
+  font-weight: bold;
+  margin: 0px
+}
