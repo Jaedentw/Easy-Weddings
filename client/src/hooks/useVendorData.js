@@ -1,9 +1,10 @@
 import { useEffect, useState } from "react"
 import axios from 'axios';
 
-export default function useVendorData() {
+export default function useVendorData(user) {
 
   let [state, setState] = useState({
+    user: user,
     filter: "Favorites",
     businesses: [],
     caterers: [],
@@ -36,7 +37,7 @@ export default function useVendorData() {
 
 
   function setFilter(filter) {
-    setState({...state, filter})
+    setState(prev =>({...prev, filter}))
   }
 
   return { state, setFilter }

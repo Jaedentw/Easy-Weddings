@@ -6,7 +6,7 @@ export default function WeddingListItem(props) {
 
   return (
     <div class="wedding_container"
-    onClick={() => props.onClick(props.key)}
+    onClick={() => props.onClick(props)}
     >
       <img alt="wedding" class="wedding_image" src={props.image_url}/>
       <div class="wedding_text">

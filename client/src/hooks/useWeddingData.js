@@ -1,14 +1,21 @@
 import { useEffect, useState } from "react"
 import axios from 'axios';
 
-export default function useWeddingData() {
+export default function useWeddingData(user) {
 
   let [state, setState] = useState({
-    wedding: "",
+    user: user,
+    wedding_id: '',
     weddings: [],
     to_dos: [],
     personnels: []
   });
+
+  function setWedding(wedding_id) {
+    setState(prev =>({...prev, wedding_id: wedding_id}))
+  };
+
+  console.log(state.user, state.wedding_id);
 
   useEffect(() => {
     Promise.all([
@@ -26,10 +33,9 @@ export default function useWeddingData() {
     })
   }, [])
 
-  function setWedding(wedding) {
-    setState({...state, wedding})
-  };
 
 
-  return { state, setWedding}
+
+
+  return {state, setWedding}
 }

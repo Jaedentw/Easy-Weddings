@@ -7,7 +7,7 @@ import useVendorData from "../hooks/useVendorData"
 export default function BusinessList(props) {
 
 
-  const {state, setFilter} = useVendorData()
+  const {state, setFilter} = useVendorData(props.user);
 
   let mappedBuinesses = state.businesses.map((b) => {
     return (

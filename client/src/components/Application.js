@@ -23,7 +23,9 @@ export default function Application(props) {
     }
     if(state.tab === "Weddings") {
       return (
-        <WeddingList/>
+        <WeddingList
+          user={state.users[0]}
+        />
       )
     }
     if(state.tab === "Vendors") {

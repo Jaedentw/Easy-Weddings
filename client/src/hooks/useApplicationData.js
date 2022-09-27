@@ -4,25 +4,31 @@ import axios from 'axios';
 export default function useApplicationData() {
 
   let [state, setState] = useState({
-    tab: "About"
+    tab: "About",
+    users: [],
+    user: {}
   });
+
 
   useEffect(() => {
     Promise.all([
-      axios.get("/api/users"),
+      axios.get("/api/users")
     ]).then((all) => {
       setState(prev => (
         {
         ...prev,
-        users: all[0].data.users,
+          users: all[0].data.users
       }))
     })
   }, [])
 
   function setTab(tab) {
-    setState({...state, tab})
+    setState(prev =>({...prev, tab}))
   };
 
+  function setUser(user) {
+    setState(prev =>({...prev, user}))
+  };
 
-  return { state, setTab}
+  return { state, setTab, setUser}
 }
