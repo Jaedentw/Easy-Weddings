@@ -1,6 +1,7 @@
-import React from 'react'
-import "../styles/nav.css"
+import React from 'react';
+import "../styles/nav.css";
 import Tab from './partials/Tab';
+import { Link } from "react-router-dom";
 
 export default function Nav(props) {
 
@@ -8,17 +9,25 @@ export default function Nav(props) {
     <nav class="nav-container">
       <div class="upper-nav">
         <p class="title-font">Easy Weddings</p>
+
+
+
         <div class="nav-log">
           <strong>Signed in as: </strong><span>Jaeden</span>
         </div>
       </div>
+
+
       <div class="nav-bar-container">
+
+        <Link to="/">
+          <Tab
+            name="About"
+            onClick={props.onClick}
+            selected={props.selected}
+          />
+        </Link>
         <Tab
-          name="About"
-          onClick={props.onClick}
-          selected={props.selected}
-        />
-        <Tab 
           name="Weddings"
           onClick={props.onClick}
           selected={props.selected}
@@ -28,12 +37,37 @@ export default function Nav(props) {
           onClick={props.onClick}
           selected={props.selected}
         />
-        <Tab 
-          name="Vendors"
-          onClick={props.onClick}
-          selected={props.selected}
-        />
+        <Link to="/browse">
+          <Tab
+            name="Vendors"
+            onClick={props.onClick}
+            selected={props.selected}
+          />
+        </Link>
+        <Link to="/register">
+
+          <Tab
+            name="Register"
+            onClick={props.onClick}
+            selected={props.selected}
+
+          />
+        </Link>
+
+
+        <Link to="/login">
+
+          <Tab
+            name="login"
+            onClick={props.onClick}
+            selected={props.selected}
+
+          />
+        </Link>
+
+
+
       </div>
     </nav>
-  )
+  );
 }

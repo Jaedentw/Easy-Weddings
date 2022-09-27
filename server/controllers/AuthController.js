@@ -35,7 +35,7 @@ const login = (req, res) => {
       if (!user) {
         return res.status(401).send({ message: 'Invalid credentials!' });
       }
-
+      console.log(hashedPassword = bcrypt.hashSync(password, 10))
       const passwordsMatch = bcrypt.compareSync(password, user.password);
       if (!passwordsMatch) {
         return res.status(401).send({ message: 'Invalid credentials!' });

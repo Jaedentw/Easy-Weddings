@@ -32,7 +32,7 @@ const getAll = (req, res) => {
         return res.status(200).send({ message: 'No users available!' });
       }
 
-      res.status(200).send({users});
+      res.status(200).send({ users });
     })
     .catch(error => {
       console.log(error.message);
@@ -112,4 +112,17 @@ const remove = (req, res) => {
     });
 };
 
-module.exports = { create, getAll, getById, update, remove };
+const getProfile = (req, res) => {
+  const { userId } = req.session;
+  if (!userId) {
+    return res.status(401).send({ message: 'User is not logged in' });
+  }
+  else {
+    UsersModel.getById(userId)
+      .then((user) => {
+        res.send({user})
+      });
+  }
+};
+
+module.exports = { create, getAll, getById, update, remove, getProfile };

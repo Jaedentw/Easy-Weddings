@@ -1,10 +1,13 @@
-import { useEffect, useState } from "react"
+import { useEffect, useState } from "react";
 import axios from 'axios';
 
 export default function useApplicationData() {
 
+
+
   let [state, setState] = useState({
     tab: "About",
+    loading: false,
     filter: "Favorites",
     businesses: [],
     caterers: [],
@@ -13,8 +16,23 @@ export default function useApplicationData() {
     vendors: [],
     weddings: [],
     personnel: [],
-    to_do: []
+    to_do: [],
+    user: {}
   });
+
+  useEffect(() => {
+    setLoading(true);
+    axios.get("/api/profile").then((response) => {
+      setUser(response.data.user);
+    }
+
+    ).catch(() => {
+      console.log('Not authenticated!');
+    })
+      .finally(() => {
+        setLoading(false);
+      });
+  }, []);
 
   useEffect(() => {
     Promise.all([
@@ -23,10 +41,6 @@ export default function useApplicationData() {
       axios.get("/api/venues"),
       axios.get("/api/decorators"),
       axios.get("/api/vendors"),
-      axios.get("/api/weddings"),
-      axios.get("/api/personnels"),
-      axios.get("/api/to_dos"),
-      axios.get("/api/favorites")
     ]).then((all) => {
       setState(prev => ({
         ...prev,
@@ -35,21 +49,42 @@ export default function useApplicationData() {
         venues: all[2].data.venues,
         decorators: all[3].data.decorators,
         vendors: all[4].data.vendors,
-        weddings: all[5].data.weddings,
-        personnels: all[6].data.personnels,
-        to_dos: all[7].data.to_dos,
-        favorites: all[8].data.favorites
+      }));
+    });
+  }, [state.user]);
+
+  function getUserData(){
+    Promise.all([
+      axios.get("/api/weddings"),
+      axios.get("/api/to_dos"),
+      axios.get("/api/favorites")
+    ]).then((all)=>{
+      setState(prev =>({
+        ...prev,
+        weddings: all[0].data.weddings,
+        to_dos: all[1].data.to_dos,
+        favorites: all[2].data.favorites
+
       }))
     })
-  }, [])
+  }
 
   function setTab(tab) {
-    setState({...state, tab})
+    setState({ ...state, tab });
   };
 
   function setFilter(filter) {
-    setState({...state, filter})
+    setState({ ...state, filter });
   }
 
-  return { state, setTab, setFilter }
+  function setUser(user) {
+    setState(prev => ({ ...prev, user }));
+    getUserData()
+  }
+
+  function setLoading(loading) {
+    setState(prev => ({ ...prev, loading }));
+  }
+
+  return { state, setTab, setFilter,setUser };
 }
