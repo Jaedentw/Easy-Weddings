@@ -17,6 +17,15 @@ function findThingsByBusinessId(state, key, business_id) {
   }
   return results
 }
+function findThingsByWeddingId(state, key, wedding_id) {
+  let results =[];
+  for (let ele of state[key]) {
+    if(ele.business_id === wedding_id) {
+      results.push(ele)
+    }
+  }
+  return results
+}
 
 
 //ACTUAL EXPORTED HELPERS
@@ -68,4 +77,8 @@ export function getBusinessListings(state, business_id) {
   //     }
   //   }
   //   return favorites
+}
+
+export function getWedding(state) {
+  findThingsByWeddingId(state, "weddings", state.wedding);
 }

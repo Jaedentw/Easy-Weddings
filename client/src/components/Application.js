@@ -15,11 +15,7 @@ export default function Application(props) {
   const {
     state,
     setTab,
-    setFilter
   } = useApplicationData();
-
-  //let userWeddings = getUserWeddings(state, user_id);
-  //let listings = getFilteredListings(state, user_id
   
   function renderTab(state) {
     if(state.tab === "About") {
@@ -27,18 +23,12 @@ export default function Application(props) {
     }
     if(state.tab === "Weddings") {
       return (
-        <WeddingList
-          weddings={state.weddings}
-        />
+        <WeddingList/>
       )
     }
     if(state.tab === "Vendors") {
       return(
-      <BusinessList 
-        businesses={state.businesses}
-        selected={state.filter}
-        onClick={setFilter}
-      />
+      <BusinessList/>
       )
     }
     if(state.tab === "Your Listings") {
