@@ -9,13 +9,13 @@ export default function useApplicationData() {
     loading: false,
     filter: "Favorites",
     businesses: [],
-    caterers: [],
+    caterers: [{id: ""}],
     venues: [],
     decorators: [],
     vendors: [],
     weddings: [],
     personnel: [],
-    to_do: [],
+    to_dos: [],
     user: {}
   });
 
@@ -34,7 +34,7 @@ export default function useApplicationData() {
       .finally(() => {
         setLoading(false);
       });
-  }, []);
+  }, [state.user]);
 
   useEffect(() => {
     Promise.all([
@@ -42,47 +42,46 @@ export default function useApplicationData() {
       axios.get("/api/caterers"),
       axios.get("/api/venues"),
       axios.get("/api/decorators"),
-      axios.get("/api/vendors"),
+      axios.get("/api/vendors")
     ]).then((all) => {
       setState(prev => (
-        {
-        ...prev,
+        { ...prev,
         businesses: all[0].data.businesses,
-        caterers: all[1].data.caterers,
+        caterers: all[1].data.Caterers,
         venues: all[2].data.venues,
-        decorators: all[3].data.decorators,
-        vendors: all[4].data.vendors,
+        decorators: all[3].data.Decorators,
+        vendors: all[4].data.vendors
       }));
     });
-  }, [state.user]);
+  }, []);
 
   function getUserData(user){
     const userId = user.id
     Promise.all([
       axios.get("/api/weddings"),
       axios.get("/api/to_dos"),
-      axios.get("/api/favorites")
+      //axios.get("/api/favorites")
     ]).then((all)=>{
       setState(prev =>({
         ...prev,
         weddings: all[0].data.weddings,
         to_dos: all[1].data.to_dos,
-        favorites: all[2].data.favorites
+        //favorites: all[2].data.favorites
       }))
     })
   }
 
   function setTab(tab) {
-    setState({ ...state, tab });
+    setState(prev => ({ ...prev, tab}));
   };
 
   function setFilter(filter) {
-    setState({ ...state, filter });
+    setState(prev => ({ ...prev, filter}));
   }
 
   function setUser(user) {
     localStorage.setItem('user',JSON.stringify(user))
-    setState(prev => ({ ...prev, user }));
+    setState(prev => ({ ...prev, user}));
     getUserData(user)
   }
 
@@ -92,15 +91,21 @@ export default function useApplicationData() {
   }
 
   function setLoading(loading) {
-    setState(prev => ({ ...prev, loading }));
+    setState(prev => ({ ...prev, loading}));
   }
-
 
   function logout(){
     setState(prev => ({ ...prev, user:null }));
     localStorage.removeItem('user');
   }
 
-  return { state, setTab, setFilter,setUser, getCurrentUser, logout };
+  function setWedding(wedding) {
+    setState(prev => ({ ...prev, wedding}));
+  }
+
+
+
+
+  return {state, setTab, setFilter, setUser, getCurrentUser, logout, setWedding};
 
 }

@@ -21,10 +21,7 @@ export default function Application(props) {
     setWedding
   } = useApplicationData();
 
-
- const isLoggedIn = state.user
-
-  console.log('This is the user object after logging in: ',state.user)
+  
 
   //let userWeddings = getUserWeddings(state, user_id);
   //let listings = getFilteredListings(state, user_id);
@@ -37,10 +34,8 @@ export default function Application(props) {
 
       <Nav
         selected={state.tab}
-
-        onClick={setTab}
+        setTab={setTab}
         user={state.user}
-
       />
       <img
         class="application-image"
@@ -54,7 +49,11 @@ export default function Application(props) {
           <Route path="/" element={<AboutPage />} />
           <Route path="/register" element={<UserSignUp />} />
 
-          <Route path="/browse" element={<BusinessList />} />
+          <Route path="/browse" element={<BusinessList 
+            state={state}
+            caterers={state.caterers}
+            setFilter={setFilter}
+          />} />
 
 
           <Route path="/login" element={<Login 

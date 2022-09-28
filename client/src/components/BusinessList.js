@@ -2,19 +2,15 @@ import React from 'react'
 import BusinessListItem from "./partials/BusinessListItem"
 import "../styles/BusinessList.css"
 import Filter from './partials/Filter'
+import Caterer from './partials/Caterer'
 
 export default function BusinessList(props) {
 
-
-  let mappedBuinesses = props.state.businesses.map((b) => {
-    return (
-      <BusinessListItem
-        key={b.id}
-        image_url={b.image_url}
-        name={b.name}
-        profession={b.profession}
-        description={b.description}
-        city={b.city}
+  const mappedCatering = props.caterers.map((c) => {
+    return(
+      <Caterer 
+        key={c.id}
+        caterer={c}
       />
     )
   })
@@ -57,7 +53,7 @@ export default function BusinessList(props) {
         </div>
       </div>
       <div>
-        {mappedBuinesses}
+        {mappedCatering}
       </div>
     </div>
   )
