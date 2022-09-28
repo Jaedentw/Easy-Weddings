@@ -19,19 +19,18 @@ function findThingsByBusinessId(state, key, business_id) {
 }
 
 
-//ACTUAL HELPERS
+//ACTUAL EXPORTED HELPERS
 export function getUserWeddings(state, user_id) {
 
-  findThingsByUserId(state, "weddings", user_id)
-  // let userWeddings = [];
+  let userWeddings = [];
 
-  // for(let wedding of state.weddings) {
-  //   if(wedding.user_id === user_id) {
-  //     userWeddings.push(wedding);
-  //   }
-  // };
+  for(let wedding of state.weddings) {
+    if(wedding.user_id === user_id) {
+      userWeddings.push(wedding);
+    }
+  };
 
-  // return(userWeddings);
+  return(userWeddings);
 }
 
 export function getFilteredListings(state, user_id) {
@@ -68,4 +67,14 @@ export function getBusinessListings(state, business_id) {
   //     }
   //   }
   //   return favorites
+}
+
+export function getUserWedding(state, userWeddings) {
+  console.log(state.wedding_id)
+  for (let ele of userWeddings) {
+    if(state.wedding_id === ele.id) {
+      console.log("get", ele)
+      return ele
+    }
+  }
 }

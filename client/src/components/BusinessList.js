@@ -5,7 +5,8 @@ import Filter from './partials/Filter'
 
 export default function BusinessList(props) {
 
-  let mappedBuinesses = props.businesses.map((b) => {
+
+  let mappedBuinesses = props.state.businesses.map((b) => {
     return (
       <BusinessListItem
         key={b.id}
@@ -24,28 +25,28 @@ export default function BusinessList(props) {
         <div class="business-buttons">
           <Filter
             name="Favorites"
-            selected={props.selected}
-            onClick={props.onClick}
+            selected={props.state.filter}
+            onClick={props.setFilter}
           />
           <Filter
             name="Caterers"
-            selected={props.selected}
-            onClick={props.onClick}
+            selected={props.state.filter}
+            onClick={props.setFilter}
           />
           <Filter
             name="Decorators"
-            selected={props.selected}
-            onClick={props.onClick}
+            selected={props.state.filter}
+            onClick={props.setFilter}
           />
           <Filter
             name="Venues"
-            selected={props.selected}
-            onClick={props.onClick}
+            selected={props.state.filter}
+            onClick={props.setFilter}
           />
           <Filter
             name="Vendors"
-            selected={props.selected}
-            onClick={props.onClick}
+            selected={props.state.filter}
+            onClick={props.setFilter}
           />
         </div>
         <div>
@@ -55,8 +56,9 @@ export default function BusinessList(props) {
         ></input>
         </div>
       </div>
-      
-      {mappedBuinesses}
+      <div>
+        {mappedBuinesses}
+      </div>
     </div>
   )
 }

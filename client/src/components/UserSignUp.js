@@ -11,6 +11,7 @@ export default function UserSignUp(props) {
     setInputs(values => ({...values, [name]: value}))
   }
 
+
   return (
     <div class="form-container">
       <form
@@ -120,6 +121,17 @@ export default function UserSignUp(props) {
           />
         </span>
       </form>
+      <div class="form-business">
+        <p>Would you like to create a business account?</p>
+        <lable>Yes
+        <input 
+          type="checkbox" 
+          name="is_business"
+        /></lable>
+      </div>
+      <div>
+        <button>Create Account</button>
+      </div>
     </div>
   )
 }

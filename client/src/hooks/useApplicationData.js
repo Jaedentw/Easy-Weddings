@@ -3,10 +3,9 @@ import axios from 'axios';
 
 export default function useApplicationData() {
 
-
-
   let [state, setState] = useState({
     tab: "About",
+    wedding: "",
     loading: false,
     filter: "Favorites",
     businesses: [],
@@ -19,6 +18,7 @@ export default function useApplicationData() {
     to_do: [],
     user: {}
   });
+
 
   useEffect(() => {
     setLoading(true);
@@ -44,7 +44,8 @@ export default function useApplicationData() {
       axios.get("/api/decorators"),
       axios.get("/api/vendors"),
     ]).then((all) => {
-      setState(prev => ({
+      setState(prev => (
+        {
         ...prev,
         businesses: all[0].data.businesses,
         caterers: all[1].data.caterers,
@@ -67,7 +68,6 @@ export default function useApplicationData() {
         weddings: all[0].data.weddings,
         to_dos: all[1].data.to_dos,
         favorites: all[2].data.favorites
-
       }))
     })
   }
@@ -95,10 +95,12 @@ export default function useApplicationData() {
     setState(prev => ({ ...prev, loading }));
   }
 
+
   function logout(){
     setState(prev => ({ ...prev, user:null }));
     localStorage.removeItem('user');
   }
 
   return { state, setTab, setFilter,setUser, getCurrentUser, logout };
+
 }

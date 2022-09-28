@@ -5,11 +5,14 @@ export default function WeddingListItem(props) {
 
 
   return (
-    <div 
-    style={{backgroundImage: props.image}}
+    <div class="wedding_container"
+    onClick={() => props.onClick(props)}
     >
-      {props.name}
-      {props.date}
+      <img alt="wedding" class="wedding_image" src={props.image_url}/>
+      <div class="wedding_text">
+        <p>{props.name}</p>
+        <p>{props.date}</p>
+      </div>
     </div>
   )
 }
