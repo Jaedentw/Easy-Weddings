@@ -1,8 +1,8 @@
 import React from 'react'
-import BusinessListItem from "./partials/BusinessListItem"
+import BusinessListItem from "./vendors page/BusinessListItem"
 import "../styles/BusinessList.css"
-import Filter from './partials/Filter'
-import Caterer from './partials/Caterer'
+import Filter from './vendors page/Filter'
+import Caterer from './vendors page/Caterer'
 
 export default function BusinessList(props) {
 
