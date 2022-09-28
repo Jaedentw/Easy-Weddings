@@ -21,17 +21,24 @@ export default function Application(props) {
     setWedding
   } = useApplicationData();
 
+
+  console.log('This is the user object after logging in: ',state.user)
+
   //let userWeddings = getUserWeddings(state, user_id);
   //let listings = getFilteredListings(state, user_id);
 
 
   return (
+  
     <main class="main">
 
 
       <Nav
         selected={state.tab}
-        setTab={setTab}
+
+        onClick={setTab}
+        user={state.user}
+
       />
       <img
         class="application-image"
@@ -40,22 +47,21 @@ export default function Application(props) {
 
 
       <>
-        <Nav></Nav>
+        
         <Routes>
           <Route path="/" element={<AboutPage />} />
           <Route path="/register" element={<UserSignUp />} />
-          <Route path="/browse" element={<BusinessList 
-            state={state}
-            setFilter={setFilter}
-          />} />
+
+          <Route path="/browse" element={<BusinessList />} />
+
+
+          
           <Route path="/login" element={<Login 
-            state={state}
-            setUser={setUser}
-          />} />
-          <Route path="/weddings" element={<WeddingList
-            state={state}
-            setWedding={setWedding}
-          />} />
+              state = {state}
+              setUser = {setUser}
+           />} />
+          
+
         </Routes>
       </>
 

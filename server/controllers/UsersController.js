@@ -48,7 +48,7 @@ const getById = (req, res) => {
   UsersModel.getById(id)
     .then(user => {
       if (!user) {
-        return res.status(404).send({ message: 'user not found!' });
+        return res.status(404).send({ message: 'user not found!!!!! Test' });
       }
 
       res.status(200).send({ message: 'Here is your user!', user });
@@ -113,7 +113,9 @@ const remove = (req, res) => {
 };
 
 const getProfile = (req, res) => {
+  console.log('get profile controller ID')
   const { userId } = req.session;
+  
   if (!userId) {
     return res.status(401).send({ message: 'User is not logged in' });
   }

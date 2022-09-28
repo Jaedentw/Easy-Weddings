@@ -22,7 +22,9 @@ export default function useApplicationData() {
 
   useEffect(() => {
     setLoading(true);
-    axios.get("/api/profile").then((response) => {
+    console.log('Get api Profile')
+    axios.get("/api/users/profile").then((response) => {
+      console.log('Initial user query: ',response.data.user)
       setUser(response.data.user);
     }
 
@@ -54,7 +56,8 @@ export default function useApplicationData() {
     });
   }, [state.user]);
 
-  function getUserData(){
+  function getUserData(user){
+    const userId = user.id
     Promise.all([
       axios.get("/api/weddings"),
       axios.get("/api/to_dos"),
@@ -78,17 +81,26 @@ export default function useApplicationData() {
   }
 
   function setUser(user) {
+    localStorage.setItem('user',JSON.stringify(user))
     setState(prev => ({ ...prev, user }));
-    getUserData()
+    getUserData(user)
+  }
+
+  function getCurrentUser(){
+    const currentUser = localStorage.getItem('user')
+    return JSON.parse(currentUser)
   }
 
   function setLoading(loading) {
     setState(prev => ({ ...prev, loading }));
   }
 
-  function setWedding(wedding_id) {
-    setState(prev => ({ ...prev, wedding_id }));
+
+  function logout(){
+    setState(prev => ({ ...prev, user:null }));
+    localStorage.removeItem('user');
   }
 
-  return { state, setTab, setFilter, setUser, setWedding};
+  return { state, setTab, setFilter,setUser, getCurrentUser, logout };
+
 }

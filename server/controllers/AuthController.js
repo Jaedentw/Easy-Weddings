@@ -1,6 +1,6 @@
 const bcrypt = require('bcryptjs');
 
-const { AuthModel } = require('../models');
+const { AuthModel, UsersModel } = require('../models');
 
 const register = (req, res) => {
   const { email, password } = req.body;
@@ -35,15 +35,18 @@ const login = (req, res) => {
       if (!user) {
         return res.status(401).send({ message: 'Invalid credentials!' });
       }
-      console.log(hashedPassword = bcrypt.hashSync(password, 10))
+
       const passwordsMatch = bcrypt.compareSync(password, user.password);
       if (!passwordsMatch) {
         return res.status(401).send({ message: 'Invalid credentials!' });
       }
 
       req.session.userId = user.id;
+      delete user.password;
+      res.status(200).send({message: 'User logged in successfully!',user });
 
-      res.status(200).send({ message: 'User logged in successfully!' });
+      
+
     })
     .catch(error => {
       console.log(error.message);

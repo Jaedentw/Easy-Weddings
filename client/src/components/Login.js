@@ -1,28 +1,69 @@
 import { useState } from "react";
-import "../styles/Form.css"
+import {useNavigate} from "react-router-dom";
+import "../styles/Form.css";
+import axios from "axios";
 
 
 export default function Login(props) {
 
-  const [inputs, setInputs] = useState({});
+
+  const [data, setData] = useState({
+    email: "",
+    password: "",
+  });
+
+  const navigate = useNavigate();
+
+
+  function handleLogin(event){
+    console.log('This is the credentials',event)
+    event.preventDefault();
+
+
+    axios.post("/api/auth/login", data)
+    .then((response) => {
+
+      console.log(response);
+      props.setUser(response.data.user)
+      navigate('/')
+    })
+  
+    .catch(
+      console.log('Error logging in!')
+    )
+
+  }
 
   const handleChange = (event) => {
-    const name = event.target.name;
-    const value = event.target.value;
-    setInputs(values => ({ ...values, [name]: value }));
-  };
+    const newdata = {...data}
+    newdata[event.target.name] = event.target.value
+    setData(newdata)
+  }
+
+  
 
   return (
-    <form>
-      <label for="email">Enter your email:</label>
-      <input type="email" id="email" name="email"></input>
+    <div>
+      <form onSubmit={handleLogin}>
+        <label>Email:</label>
+        <input
+          name="email"
+          type="text"
+          placeholder="Email"
+          value={data.email || ""}
+          onChange={handleChange}
+        />
 
-      <label for="email">Enter your password:</label>
-      <input type="password" id="password" name="password"></input>
-
-    </form>
-
-
+        <input
+          name="password"
+          type="password"
+          placeholder="Password"
+          value={data.password || ""}
+          onChange={handleChange}
+        />
+        <input type="submit" value="Submit"></input>
+      </form>
+    </div>
 
 
   );

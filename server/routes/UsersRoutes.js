@@ -12,6 +12,9 @@ router.post('/', UsersController.create);
 // Read All
 router.get('/', UsersController.getAll);
 
+
+router.get('/profile', UsersController.getProfile);
+
 // Read One
 router.get('/:id', UsersController.getById);
 
@@ -21,6 +24,7 @@ router.put('/:id', UsersController.update);
 // DELETE - delete
 router.delete('/:id', UsersController.remove);
 
-router.get('/profile', UsersController.getProfile);
+//router.get('/profile', UsersController.getProfile);
+
 
 module.exports = router;
