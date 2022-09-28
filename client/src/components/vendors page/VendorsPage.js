@@ -1,10 +1,9 @@
 import React from 'react'
-import BusinessListItem from "./vendors page/BusinessListItem"
-import "../styles/BusinessList.css"
-import Filter from './vendors page/Filter'
-import Caterer from './vendors page/Caterer'
+import "../../styles/VendorPage.css"
+import Filter from './Filter'
+import Caterer from './Caterer'
 
-export default function BusinessList(props) {
+export default function VendorsPage(props) {
 
   const mappedCatering = props.caterers.map((c) => {
     return(
