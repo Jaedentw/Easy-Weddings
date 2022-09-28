@@ -22,6 +22,8 @@ export default function Application(props) {
   } = useApplicationData();
 
 
+ const isLoggedIn = state.user
+
   console.log('This is the user object after logging in: ',state.user)
 
   //let userWeddings = getUserWeddings(state, user_id);
@@ -55,7 +57,6 @@ export default function Application(props) {
           <Route path="/browse" element={<BusinessList />} />
 
 
-          
           <Route path="/login" element={<Login 
               state = {state}
               setUser = {setUser}
