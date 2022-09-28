@@ -1,13 +1,13 @@
 import React from 'react';
-import "../styles/VendorsPage.css";
-import BusinessList from './BusinessList';
-import WeddingListItem from './partials/WeddingListItem';
+import "../styles/Application.css";
 import AboutPage from './AboutPage';
 import Nav from './Nav';
 import useApplicationData from "../hooks/useApplicationData";
 import UserSignUp from './UserSignUp';
 import { Routes, Route } from 'react-router-dom';
 import Login from './Login';
+import WeddingList from './WeddingList';
+import BusinessList from './BusinessList';
 
 //import {getUserWeddings} from "../helpers/selectors"
 
@@ -17,7 +17,8 @@ export default function Application(props) {
     state,
     setTab,
     setFilter,
-    setUser
+    setUser,
+    setWedding
   } = useApplicationData();
 
   //let userWeddings = getUserWeddings(state, user_id);
@@ -30,7 +31,7 @@ export default function Application(props) {
 
       <Nav
         selected={state.tab}
-        onClick={setTab}
+        setTab={setTab}
       />
       <img
         class="application-image"
@@ -43,11 +44,18 @@ export default function Application(props) {
         <Routes>
           <Route path="/" element={<AboutPage />} />
           <Route path="/register" element={<UserSignUp />} />
-          <Route path="/browse" element={<BusinessList />} />
+          <Route path="/browse" element={<BusinessList 
+            state={state}
+            setFilter={setFilter}
+          />} />
           <Route path="/login" element={<Login 
-              state = {state}
-              setUser = {setUser}
-           />} />
+            state={state}
+            setUser={setUser}
+          />} />
+          <Route path="/weddings" element={<WeddingList
+            state={state}
+            setWedding={setWedding}
+          />} />
         </Routes>
       </>
 

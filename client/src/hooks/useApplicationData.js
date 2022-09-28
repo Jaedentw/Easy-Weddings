@@ -3,10 +3,9 @@ import axios from 'axios';
 
 export default function useApplicationData() {
 
-
-
   let [state, setState] = useState({
     tab: "About",
+    wedding: "",
     loading: false,
     filter: "Favorites",
     businesses: [],
@@ -87,5 +86,9 @@ export default function useApplicationData() {
     setState(prev => ({ ...prev, loading }));
   }
 
-  return { state, setTab, setFilter,setUser };
+  function setWedding(wedding_id) {
+    setState(prev => ({ ...prev, wedding_id }));
+  }
+
+  return { state, setTab, setFilter, setUser, setWedding};
 }

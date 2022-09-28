@@ -23,24 +23,24 @@ export default function Nav(props) {
         <Link to="/">
           <Tab
             name="About"
-            onClick={props.onClick}
+            onClick={props.setTab}
             selected={props.selected}
           />
         </Link>
         <Tab
           name="Weddings"
-          onClick={props.onClick}
+          onClick={props.setTab}
           selected={props.selected}
         />
         <Tab
           name="Your Listings"
-          onClick={props.onClick}
+          onClick={props.setTab}
           selected={props.selected}
         />
         <Link to="/browse">
           <Tab
             name="Vendors"
-            onClick={props.onClick}
+            onClick={props.setTab}
             selected={props.selected}
           />
         </Link>
@@ -48,7 +48,7 @@ export default function Nav(props) {
 
           <Tab
             name="Register"
-            onClick={props.onClick}
+            onClick={props.setTab}
             selected={props.selected}
 
           />
@@ -59,7 +59,7 @@ export default function Nav(props) {
 
           <Tab
             name="login"
-            onClick={props.onClick}
+            onClick={props.setTab}
             selected={props.selected}
 
           />
