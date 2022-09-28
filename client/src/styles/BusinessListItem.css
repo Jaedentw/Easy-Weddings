@@ -65,7 +65,7 @@
   flex-direction: column;
   width: 100%;
   align-content: flex-start;
-  border-bottom: 3px gray solid
+  border-bottom: 3px gray solid;
 }
 .upper-text h1 {
   margin: 1px;
@@ -87,4 +87,10 @@
 
 .location {
   margin-right: 5px;
+}
+
+.scroller {
+  overflow-y: scroll;
+  scrollbar-color: rebeccapurple green;
+  scrollbar-width: thin;
 }
