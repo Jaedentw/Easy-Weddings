@@ -5,6 +5,8 @@ import { Link } from "react-router-dom";
 
 export default function Nav(props) {
 
+
+
   return (
     <nav class="nav-container">
       <div class="upper-nav">
@@ -13,7 +15,7 @@ export default function Nav(props) {
 
 
         <div class="nav-log">
-          <strong>Signed in as: </strong><span>Jaeden</span>
+          <strong>Signed in as: </strong><span>{props.user.first_name}</span>
         </div>
       </div>
 
