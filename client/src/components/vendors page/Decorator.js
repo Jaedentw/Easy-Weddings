@@ -15,7 +15,7 @@ export default function Decorator(props) {
         <div class="text scroller">
           <div class="upper-text">
             <h1>{decorator.name}</h1>
-            <p>Decorator - Specialty: {decorator.specialty} - <a href={decorator.website_url}>Menu</a></p>
+            <p>Decorator - Specialty: {decorator.specialty} - <a href={decorator.website_url}>Website</a></p>
           </div>
           <p>{decorator.description}</p>
           <div>

@@ -35,18 +35,24 @@
   background-color: palevioletred;
   border-bottom-right-radius: 10px;
   border-bottom-left-radius: 10px;
+  text-decoration: none;
+  color: black;
 }
 
 .nav-bar-item:hover {
   background-color: rgb(215, 58, 110);
   border-bottom-right-radius: 10px;
   border-bottom-left-radius: 10px;
+  text-decoration: none;
+  color: black;
 }
 
 .nav-bar-item-selected {
   background-color: rgb(215, 58, 110);
   border-bottom-right-radius: 10px;
   border-bottom-left-radius: 10px;
+  text-decoration: none;
+  color: black;
 }
 
 .title-font {
@@ -54,6 +60,8 @@
   font-family: 'Kaushan Script', cursive;
   font-size: 50px;
   margin: 0px;
+  text-decoration: none;
+  color: black;
 }
 
 .nav-log {
@@ -65,4 +73,8 @@
 
 .nav-log strong {
   margin-right: 5px;
+}
+
+.blue-line-be-gone {
+  text-decoration: none;
 }

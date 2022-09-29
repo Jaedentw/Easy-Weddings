@@ -1,7 +1,7 @@
 import React from 'react';
 import "../styles/nav.css";
 import Tab from './partials/Tab';
-import { Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 
 export default function Nav(props) {
 
@@ -10,9 +10,7 @@ export default function Nav(props) {
   return (
     <nav class="nav-container">
       <div class="upper-nav">
-        <p class="title-font">Easy Weddings</p>
-
-
+        <a href="/" class="title-font">Easy Weddings</a>
 
         <div class="nav-log">
           <strong>Signed in as: </strong><span>{props.user.first_name}</span>
@@ -22,13 +20,13 @@ export default function Nav(props) {
 
       <div class="nav-bar-container">
 
-        <Link to="/">
+        <NavLink to="/" class="blue-line-be-gone">
           <Tab
             name="About"
             onClick={props.setTab}
             selected={props.selected}
           />
-        </Link>
+        </NavLink>
         <Tab
           name="Weddings"
           onClick={props.setTab}
@@ -39,35 +37,30 @@ export default function Nav(props) {
           onClick={props.setTab}
           selected={props.selected}
         />
-        <Link to="/browse">
+
+        <NavLink to="/browse" class="blue-line-be-gone">
           <Tab
             name="Vendors"
             onClick={props.setTab}
             selected={props.selected}
           />
-        </Link>
-        <Link to="/register">
+        </NavLink>
 
+        <NavLink to="/register" class="blue-line-be-gone">
           <Tab
             name="Register"
             onClick={props.setTab}
             selected={props.selected}
-
           />
-        </Link>
+        </NavLink>
 
-
-        <Link to="/login">
-
+        <NavLink to="/login" class="blue-line-be-gone">
           <Tab
             name="login"
             onClick={props.setTab}
             selected={props.selected}
-
           />
-        </Link>
-
-
+        </NavLink>
 
       </div>
     </nav>

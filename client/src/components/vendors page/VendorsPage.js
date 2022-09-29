@@ -2,17 +2,68 @@ import React from 'react'
 import "../../styles/VendorPage.css"
 import Filter from './Filter'
 import Caterer from './Caterer'
+import Vendor from './Vendor'
+import Venue from './Venue'
+import Decorator from './Decorator'
+
+
 
 export default function VendorsPage(props) {
 
-  const mappedCatering = props.caterers.map((c) => {
-    return(
-      <Caterer 
-        key={c.id}
-        caterer={c}
-      />
-    )
-  })
+  console.log("IDIOT", props.state.filter)
+
+  function mapShit(filter, state) {
+    if(filter === "Caterers") {
+      return (
+        state.caterers.map((c) => {
+          return(
+            <Caterer 
+              key={c.id}
+              caterer={c}
+            />
+          )
+        })
+      )
+    }
+    if(filter === "Decorators") {
+      return (
+        state.decorators.map((c) => {
+          return(
+            <Decorator 
+              key={c.id}
+              decorator={c}
+            />
+          )
+        })
+      )
+    }
+    if(filter === "Venues") {
+      return (
+        state.venues.map((c) => {
+          return(
+            <Venue 
+              key={c.id}
+              venue={c}
+            />
+          )
+        })
+      )
+    }
+    if (filter === "Vendors") {
+      return (
+        state.vendors.map((c) => {
+          return(
+            <Vendor 
+              key={c.id}
+              vendor={c}
+            />
+          )
+        })
+      )
+    }
+  }
+
+  let mapped = mapShit(props.state.filter, props.state)
 
   return (
     <div class="business-list-container">
@@ -52,7 +103,7 @@ export default function VendorsPage(props) {
         </div>
       </div>
       <div>
-        {mappedCatering}
+        {mapped}
       </div>
     </div>
   )

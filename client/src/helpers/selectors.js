@@ -44,18 +44,7 @@ export function getFilteredListings(state, user_id) {
     // }
     // return favorites
   }
-  if(state.filter === "Caterers") {
-    return state.caterers
-  }
-  if(state.filter === "Decorators") {
-    return state.decorators
-  }
-  if(state.filter === "Venues") {
-    return state.venues
-  }
-  if(state.filter === "Vendors") {
-    return state.vendors
-  }
+
 }
 
 export function getBusinessListings(state, business_id) {

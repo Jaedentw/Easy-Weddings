@@ -21,7 +21,7 @@ export default function Application(props) {
     setWedding
   } = useApplicationData();
 
-  
+  console.log(state.vendors)
 
   //let userWeddings = getUserWeddings(state, user_id);
   //let listings = getFilteredListings(state, user_id);

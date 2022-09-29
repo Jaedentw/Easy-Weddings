@@ -15,7 +15,7 @@ export default function Vendor(props) {
         <div class="text scroller">
           <div class="upper-text">
             <h1>{vendor.name}</h1>
-            <p>{vendor.specialty} - Rate Per Hour: {vendor.rate_per_hour} - <a href={vendor.website_url}>Menu</a></p>
+            <p>{vendor.specialty} - Rate Per Hour: {vendor.rate_per_hour} - <a href={vendor.website_url}>Website</a></p>
           </div>
           <p>{vendor.description}</p>
           <div>

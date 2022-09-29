@@ -15,7 +15,7 @@ export default function Venue(props) {
         <div class="text scroller">
           <div class="upper-text">
             <h1>{venue.name}</h1>
-            <p>Venue - Capacity: {venue.capacity} - <a href={venue.website_url}>Menu</a></p>
+            <p>Venue - Capacity: {venue.capacity} - <a href={venue.website_url}>Website</a></p>
           </div>
           <p>{venue.description}</p>
           <div>
