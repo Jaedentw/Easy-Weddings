@@ -6,8 +6,8 @@ import useApplicationData from "../hooks/useApplicationData";
 import UserSignUp from './UserSignUp';
 import { Routes, Route } from 'react-router-dom';
 import Login from './Login';
-import WeddingList from './WeddingList';
-import BusinessList from './BusinessList';
+
+import VendorsPage from './vendors page/VendorsPage';
 
 //import {getUserWeddings} from "../helpers/selectors"
 
@@ -21,7 +21,7 @@ export default function Application(props) {
     setWedding
   } = useApplicationData();
 
-  
+  console.log(state.vendors)
 
   //let userWeddings = getUserWeddings(state, user_id);
   //let listings = getFilteredListings(state, user_id);
@@ -49,7 +49,7 @@ export default function Application(props) {
           <Route path="/" element={<AboutPage />} />
           <Route path="/register" element={<UserSignUp />} />
 
-          <Route path="/browse" element={<BusinessList 
+          <Route path="/browse" element={<VendorsPage 
             state={state}
             caterers={state.caterers}
             setFilter={setFilter}
