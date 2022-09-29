@@ -7,8 +7,7 @@ import useApplicationData from "../hooks/useApplicationData";
 import UserSignUp from './UserSignUp';
 import { Routes, Route } from 'react-router-dom';
 import Login from './Login';
-
-import VendorsPage from './vendors page/VendorsPage';
+import VendorsPage from './vendors_page/VendorsPage';
 
 //import {getUserWeddings} from "../helpers/selectors"
 
