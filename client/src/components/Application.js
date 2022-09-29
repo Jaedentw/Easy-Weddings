@@ -1,4 +1,5 @@
 import React from 'react';
+import "../styles/nav.css"
 import "../styles/Application.css";
 import AboutPage from './AboutPage';
 import Nav from './Nav';
@@ -20,8 +21,6 @@ export default function Application(props) {
     setUser,
     setWedding
   } = useApplicationData();
-
-  console.log(state.vendors)
 
   //let userWeddings = getUserWeddings(state, user_id);
   //let listings = getFilteredListings(state, user_id);
@@ -45,7 +44,7 @@ export default function Application(props) {
 
       <>
         
-        <Routes>
+        <Routes >
           <Route path="/" element={<AboutPage />} />
           <Route path="/register" element={<UserSignUp />} />
 
@@ -57,9 +56,9 @@ export default function Application(props) {
 
 
           <Route path="/login" element={<Login 
-              state = {state}
-              setUser = {setUser}
-           />} />
+            state = {state}
+            setUser = {setUser}
+          />} />
           
 
         </Routes>

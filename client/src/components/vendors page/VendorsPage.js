@@ -10,7 +10,6 @@ import Decorator from './Decorator'
 
 export default function VendorsPage(props) {
 
-  console.log("IDIOT", props.state.filter)
 
   function mapShit(filter, state) {
     if(filter === "Caterers") {
