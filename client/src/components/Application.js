@@ -8,6 +8,7 @@ import UserSignUp from './UserSignUp';
 import { Routes, Route } from 'react-router-dom';
 import Login from './Login';
 import VendorsPage from './vendors_page/VendorsPage';
+import WeddingList from './WeddingList'
 
 //import {getUserWeddings} from "../helpers/selectors"
 
@@ -49,16 +50,19 @@ export default function Application(props) {
 
           <Route path="/browse" element={<VendorsPage 
             state={state}
-            caterers={state.caterers}
             setFilter={setFilter}
           />} />
 
 
           <Route path="/login" element={<Login 
-            state = {state}
-            setUser = {setUser}
+            state={state}
+            setUser={setUser}
           />} />
           
+          <Route path="/weddings" element={<WeddingList
+            state={state}
+            setWedding={setWedding}
+          />}/>
 
         </Routes>
       </>

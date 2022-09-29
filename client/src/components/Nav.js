@@ -20,25 +20,29 @@ export default function Nav(props) {
 
       <div class="nav-bar-container">
 
-        <NavLink to="/" class="blue-line-be-gone">
+        <NavLink to="/" >
           <Tab
             name="About"
             onClick={props.setTab}
             selected={props.selected}
           />
         </NavLink>
-        <Tab
-          name="Weddings"
-          onClick={props.setTab}
-          selected={props.selected}
-        />
+        
+        <NavLink to="/weddings">
+          <Tab
+            name="Weddings"
+            onClick={props.setTab}
+            selected={props.selected}
+          />
+        </NavLink>
+
         <Tab
           name="Your Listings"
           onClick={props.setTab}
           selected={props.selected}
         />
 
-        <NavLink to="/browse" class="blue-line-be-gone">
+        <NavLink to="/browse">
           <Tab
             name="Vendors"
             onClick={props.setTab}
@@ -46,7 +50,7 @@ export default function Nav(props) {
           />
         </NavLink>
 
-        <NavLink to="/register" class="blue-line-be-gone">
+        <NavLink to="/register">
           <Tab
             name="Register"
             onClick={props.setTab}
@@ -54,7 +58,7 @@ export default function Nav(props) {
           />
         </NavLink>
 
-        <NavLink to="/login" class="blue-line-be-gone">
+        <NavLink to="/login">
           <Tab
             name="login"
             onClick={props.setTab}

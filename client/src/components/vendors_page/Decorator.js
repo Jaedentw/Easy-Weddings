@@ -19,7 +19,7 @@ export default function Decorator(props) {
           </div>
           <p>{decorator.description}</p>
           <div>
-            <p>{decorator.theme}</p>
+            <strong>Theme: </strong>{decorator.theme || "none"}
           </div>
         </div>
       </div>

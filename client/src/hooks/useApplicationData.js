@@ -7,7 +7,7 @@ export default function useApplicationData() {
     tab: "About",
     wedding: "",
     loading: false,
-    filter: "Favorites",
+    filter: "Caterers",
     businesses: [],
     caterers: [{id: ""}],
     venues: [],
