@@ -33,20 +33,6 @@ export function getUserWeddings(state, user_id) {
   return(userWeddings);
 }
 
-export function getFilteredListings(state, user_id) {
-  if(state.filter === "Favorites") {
-    findThingsByUserId(state, "favorites", user_id)
-    // let favorites = [];
-    // for(let favorite of state.favorites) {
-    //   if(favorite.user_id === user_id) {
-    //     favorites.push(favorite);
-    //   }
-    // }
-    // return favorites
-  }
-
-}
-
 export function getBusinessListings(state, business_id) {
   findThingsByBusinessId(state, "favorites", business_id)
   // let favorites = [];

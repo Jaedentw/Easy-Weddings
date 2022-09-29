@@ -37,6 +37,7 @@ CREATE TABLE businesses (
   address VARCHAR(200) NOT NULL,
   postal_code VARCHAR(200) NOT NULL,
   email VARCHAR(200) UNIQUE NOT NULL,
+  website_url VARCHAR(200) NOT NULL,
   phone BIGINT UNIQUE NOT NULL
 );
 
@@ -76,8 +77,8 @@ CREATE TABLE vendors (
   FOREIGN KEY(business_id) REFERENCES businesses (id) ON DELETE CASCADE,
   name VARCHAR(200) NOT NULL,
   city VARCHAR(200) NOT NULL,
-  specialty VARCHAR(50) NOT NULL,
   website_url VARCHAR(200) NOT NULL,
+  specialty VARCHAR(50) NOT NULL,
   image_url VARCHAR(200) NOT NULL,
   rate_per_hour SMALLINT,
   description VARCHAR(1000) NOT NULL,
@@ -91,9 +92,9 @@ CREATE TABLE venues (
   FOREIGN KEY(business_id) REFERENCES businesses (id) ON DELETE CASCADE,
   name VARCHAR(200) NOT NULL,
   city VARCHAR(200) NOT NULL,
+  website_url VARCHAR(200) NOT NULL,
   capacity INTEGER NOT NULL,
   theme VARCHAR(500),
-  website_url VARCHAR(200) NOT NULL,
   image_url VARCHAR(200) NOT NULL,
   description VARCHAR(1000) NOT NULL,
   extra_features VARCHAR(1000)

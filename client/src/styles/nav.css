@@ -21,6 +21,10 @@
   margin-bottom: 5px;
 }
 
+.nav-bar-container a {
+  text-decoration: none;
+}
+
 .nav-bar-item {
   display: flex;
   border-left: 3px black solid;
@@ -75,6 +79,3 @@
   margin-right: 5px;
 }
 
-.blue-line-be-gone {
-  text-decoration: none;
-}

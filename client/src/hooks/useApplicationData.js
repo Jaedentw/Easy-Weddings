@@ -77,7 +77,6 @@ export default function useApplicationData() {
 
   function setFilter(filter) {
     setState(prev => ({ ...prev, filter}));
-    console.log(filter);
   }
 
   function setUser(user) {
