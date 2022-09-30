@@ -15,7 +15,7 @@ export default function Caterer(props) {
         />
         <div class="text scroller">
           <div class="upper-text">
-            <h1>NAME{caterer.name}</h1>
+            <h1>{caterer.name}</h1>
             <p>Catering - Specialty: {caterer.cuisine} - <a href={caterer.menu_url}>Menu</a></p>
           </div>
           <p>{caterer.description}</p>
