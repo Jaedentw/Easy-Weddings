@@ -1,33 +1,40 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import "../styles/nav.css";
 import Tab from './partials/Tab';
 import { NavLink } from "react-router-dom";
 
 export default function Nav(props) {
 
-  let isLoggedIn = false;
+  const [isLoggedIn, setIsloggedIn] = useState(
+    null
+  )
 
-  if (props.user == null) {
-    isLoggedIn = false;
-  }
-  else {
-    isLoggedIn = true;
-  }
+  useEffect(()=>{
+    if (props.user === null) {
+      setIsloggedIn(false);
+    }
+    else {
+      setIsloggedIn(true);
+    }
+  },[props.user])
 
+
+  
+  console.log('This is the props.user on nav: ', props.user)
 
   return (
     <nav class="nav-container">
       <div class="upper-nav">
         <a href="/" class="title-font">Easy Weddings</a>
 
-        {isLoggedIn &&
+        {(isLoggedIn &&
 
           <div class="nav-log">
-            <strong>Signed in as: </strong><span>{props.user.first_name}</span>
+            <strong>Signed in as: </strong><span>{props.user?.first_name}</span>
             <div>
               <button onClick={props.logout} value="Logout">Logout</button>
             </div>
-          </div>
+          </div>)
         }
       </div>
 
