@@ -34,7 +34,7 @@ export default function useApplicationData() {
       .finally(() => {
         setLoading(false);
       });
-  }, [state.user]);
+  }, []);
 
   useEffect(() => {
     Promise.all([

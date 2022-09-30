@@ -18,7 +18,8 @@ export default function Application(props) {
     setTab,
     setFilter,
     setUser,
-    setWedding
+    setWedding,
+    logout
   } = useApplicationData();
 
   //let userWeddings = getUserWeddings(state, user_id);
@@ -26,7 +27,7 @@ export default function Application(props) {
 
 
   return (
-  
+
     <main class="main">
 
 
@@ -34,6 +35,7 @@ export default function Application(props) {
         selected={state.tab}
         setTab={setTab}
         user={state.user}
+        logout={logout}
       />
       <img
         class="application-image"
@@ -42,8 +44,8 @@ export default function Application(props) {
 
 
       <>
-        
-        <Routes >
+      
+      <Routes >
           <Route path="/" element={<AboutPage />} />
           <Route path="/register" element={<UserSignUp />} />
 
