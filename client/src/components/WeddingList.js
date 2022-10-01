@@ -6,7 +6,7 @@ import { getUserWeddings, getUserWedding } from "../helpers/selectors";
 
 export default function WeddingList(props) {
     
-  let userWeddings = getUserWeddings(props.state, props.user.id);
+  let userWeddings = getUserWeddings(props.state, props.state.user.id);
 
   let mappedWeddings = userWeddings.map((w) => {
     return (
@@ -21,23 +21,23 @@ export default function WeddingList(props) {
     )
   })
 
-  // function renderWeddings(state) {
-  //   if(!state.wedding) {
-  //     return mappedWeddings;
-  //   } else {
-  //     let wedding = getUserWedding(state, userWeddings);
-  //     console.log(wedding)
-  //     return <Wedding
+  function renderWeddings(state) {
+    if(!state.wedding) {
+      return mappedWeddings;
+    } else {
+      let wedding = getUserWedding(state, userWeddings);
+      console.log(wedding)
+      return <Wedding
         
-  //     />
-  //   }
-  // }
+      />
+    }
+  }
 
   return (
     <div class="wedding_list_container">
       <h1 class="wedding-header">Your Weddings</h1>
       <div class="wedding_list_items">
-        
+        {renderWeddings(props.state)}
       </div>
     </div>
   )

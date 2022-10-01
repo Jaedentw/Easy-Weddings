@@ -34,7 +34,7 @@ export default function useApplicationData() {
       .finally(() => {
         setLoading(false);
       });
-  }, [state.user]);
+  }, []); //DO NOT PUT STATE.USER, IT CAUSES INFINITE RENDERING
 
   useEffect(() => {
     Promise.all([

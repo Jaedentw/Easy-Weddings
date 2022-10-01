@@ -13,11 +13,6 @@ export default function VendorsPage(props) {
       <div class="business-nav-container">
         <div class="business-buttons">
           <Filter
-            name="Favorites"
-            selected={props.state.filter}
-            onClick={props.setFilter}
-          />
-          <Filter
             name="Caterers"
             selected={props.state.filter}
             onClick={props.setFilter}

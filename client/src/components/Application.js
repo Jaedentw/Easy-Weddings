@@ -19,7 +19,8 @@ export default function Application(props) {
     setTab,
     setFilter,
     setUser,
-    setWedding
+    setWedding,
+    logout
   } = useApplicationData();
 
   //let userWeddings = getUserWeddings(state, user_id);
@@ -35,6 +36,7 @@ export default function Application(props) {
         selected={state.tab}
         setTab={setTab}
         user={state.user}
+        logout={logout}
       />
       <img
         class="application-image"
