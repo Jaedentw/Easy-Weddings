@@ -1,20 +1,41 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import "../styles/nav.css";
 import Tab from './partials/Tab';
 import { NavLink } from "react-router-dom";
 
 export default function Nav(props) {
 
+  const [isLoggedIn, setIsloggedIn] = useState(
+    null
+  )
+
+  useEffect(()=>{
+    if (props.user === null) {
+      setIsloggedIn(false);
+    }
+    else {
+      setIsloggedIn(true);
+    }
+  },[props.user])
+
+
   
+  console.log('This is the props.user on nav: ', props.user)
 
   return (
     <nav class="nav-container">
       <div class="upper-nav">
         <a href="/" class="title-font">Easy Weddings</a>
 
-        <div class="nav-log">
-          <strong>Signed in as: </strong><span>{props.user.first_name}</span>
-        </div>
+        {(isLoggedIn &&
+
+          <div class="nav-log">
+            <strong>Signed in as: </strong><span>{props.user?.first_name}</span>
+            <div>
+              <button onClick={props.logout} value="Logout">Logout</button>
+            </div>
+          </div>)
+        }
       </div>
 
 
@@ -27,14 +48,24 @@ export default function Nav(props) {
             selected={props.selected}
           />
         </NavLink>
-        
-        <NavLink to="/weddings">
-          <Tab
-            name="Weddings"
-            onClick={props.setTab}
-            selected={props.selected}
-          />
-        </NavLink>
+
+        {isLoggedIn &&
+          <NavLink to="/weddings" class="blue-line-be-gone">
+            <Tab
+              name="Weddings"
+              onClick={props.setTab}
+              selected={props.selected}
+            />
+          </NavLink>
+        }
+        {!isLoggedIn &&
+          <NavLink to="/login" class="blue-line-be-gone">
+            <Tab
+              name="Weddings"
+              onClick={props.setTab}
+            />
+          </NavLink>
+        }
 
         <Tab
           name="Your Listings"
@@ -50,22 +81,24 @@ export default function Nav(props) {
           />
         </NavLink>
 
-        <NavLink to="/register">
-          <Tab
-            name="Register"
-            onClick={props.setTab}
-            selected={props.selected}
-          />
-        </NavLink>
-
-        <NavLink to="/login">
-          <Tab
-            name="login"
-            onClick={props.setTab}
-            selected={props.selected}
-          />
-        </NavLink>
-
+        {!isLoggedIn &&
+          <NavLink to="/register" class="blue-line-be-gone">
+            <Tab
+              name="Register"
+              onClick={props.setTab}
+              selected={props.selected}
+            />
+          </NavLink>
+        }
+        {!isLoggedIn &&
+          <NavLink to="/login" class="blue-line-be-gone">
+            <Tab
+              name="login"
+              onClick={props.setTab}
+              selected={props.selected}
+            />
+          </NavLink>
+        }
       </div>
     </nav>
   );

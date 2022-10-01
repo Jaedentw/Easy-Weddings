@@ -28,7 +28,7 @@ export default function Application(props) {
 
 
   return (
-  
+
     <main class="main">
 
 
@@ -45,8 +45,8 @@ export default function Application(props) {
 
 
       <>
-        
-        <Routes >
+      
+      <Routes >
           <Route path="/" element={<AboutPage />} />
           <Route path="/register" element={<UserSignUp />} />
 

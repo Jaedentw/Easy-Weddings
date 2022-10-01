@@ -16,25 +16,8 @@ export default function useApplicationData() {
     weddings: [],
     personnel: [],
     to_dos: [],
-    user: {}
+    user: null
   });
-
-
-  useEffect(() => {
-    setLoading(true);
-    console.log('Get api Profile')
-    axios.get("/api/users/profile").then((response) => {
-      console.log('Initial user query: ',response.data.user)
-      setUser(response.data.user);
-    }
-
-    ).catch(() => {
-      console.log('Not authenticated!');
-    })
-      .finally(() => {
-        setLoading(false);
-      });
-  }, []); //DO NOT PUT STATE.USER, IT CAUSES INFINITE RENDERING
 
   useEffect(() => {
     Promise.all([
@@ -95,8 +78,10 @@ export default function useApplicationData() {
   }
 
   function logout(){
-    setState(prev => ({ ...prev, user:null }));
+    console.log('logout funtion user has logged out')
     localStorage.removeItem('user');
+    console.log('checking local storage')
+    setState(prev => ({ user:null }));
   }
 
   function setWedding(wedding) {

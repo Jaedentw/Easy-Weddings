@@ -1,7 +1,8 @@
 import { useState } from "react";
-import {useNavigate} from "react-router-dom";
-import "../styles/Form.css";
+import { useNavigate } from "react-router-dom";
 import axios from "axios";
+import "../styles/Login.css";
+
 
 
 export default function Login(props) {
@@ -15,55 +16,65 @@ export default function Login(props) {
   const navigate = useNavigate();
 
 
-  function handleLogin(event){
-    console.log('This is the credentials',event)
+  function handleLogin(event) {
     event.preventDefault();
 
 
     axios.post("/api/auth/login", data)
-    .then((response) => {
+      .then((response) => {
+        props.setUser(response.data.user);
+        navigate('/');
+      })
 
-      console.log(response);
-      props.setUser(response.data.user)
-      navigate('/')
-    })
-  
-    .catch(
-      console.log('Error logging in!')
-    )
+      .catch(
+        console.log('Error logging in!')
+      );
+
+    
 
   }
+
+  
 
   const handleChange = (event) => {
-    const newdata = {...data}
-    newdata[event.target.name] = event.target.value
-    setData(newdata)
-  }
+    const newdata = { ...data };
+    newdata[event.target.name] = event.target.value;
+    setData(newdata);
+  };
 
-  
+
 
   return (
-    <div>
-      <form onSubmit={handleLogin}>
-        <label>Email:</label>
-        <input
-          name="email"
-          type="text"
-          placeholder="Email"
-          value={data.email || ""}
-          onChange={handleChange}
-        />
 
-        <input
-          name="password"
-          type="password"
-          placeholder="Password"
-          value={data.password || ""}
-          onChange={handleChange}
-        />
-        <input type="submit" value="Submit"></input>
-      </form>
-    </div>
+    <form onSubmit={handleLogin}>
+      <div className="form-inner">
+        <h2>Login</h2>
+        <div className="form-group">
+          <label>Email: </label>
+          <input
+            name="email"
+            type="text"
+            placeholder="Email"
+            value={data.email || ""}
+            onChange={handleChange}
+          />
+        </div>
+        <div className="form-group">
+          <label>Password: </label>
+          <input
+            name="password"
+            type="password"
+            placeholder="Password"
+            value={data.password || ""}
+            onChange={handleChange}
+          />
+        </div>
+        <div className="form-group">
+          <input type="submit" value="Login"></input>
+        </div>
+      </div>
+    </form>
+
 
 
   );

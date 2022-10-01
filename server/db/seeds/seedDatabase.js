@@ -154,134 +154,174 @@ module.exports = `
                     '6048998989');
 
   
-    INSERT INTO caterers (business_id,image_url,capacity,cuisine,menu_url,description) VALUES (
+    INSERT INTO caterers (business_id,image_url,capacity,cuisine,description,name,city,menu_url) VALUES (
       '1',
       'https://www.classiccaterers.ca/uploads/1/3/6/5/136543716/published/top-rated-catering-service-niagara.png?1615309848',
       '50',
       'BBQ',
-      'MenuURL',
-      'Our service offers amazing dishes of all varieties to ensure everyone enjoys their meals!'
+      'Our service offers amazing dishes of all varieties to ensure everyone enjoys their meals!',
+      'All the Kings Men.',
+      'Toronto',
+      'https://thekingstonsocial.com/wp-content/uploads/2021/07/kingston-social-house-bbq-catering-menu.jpg'
     );
 
-    INSERT INTO caterers (business_id,image_url,capacity,cuisine,menu_url,description) VALUES (
+    INSERT INTO caterers (business_id,image_url,capacity,cuisine,description,name,city,menu_url) VALUES (
       '2',
       'https://mk.ca/wp-content/uploads/2017/04/008.jpg',
       '150',
       'Open course',
-      'MenuURL',
-      'Enjoy our service with a buffet style dinner, eat as much as you like we got you covered!'
+      'Enjoy our service with a buffet style dinner, eat as much as you like we got you covered!',
+      'Feast and Fêtes',
+      'Toronto',
+      'https://d3octkd2uqmyim.cloudfront.net/media/bi/2353/photo-strip-wedding-menus-2x.jpg?q=1631541005'
     );
 
-    INSERT INTO caterers (business_id,image_url,capacity,cuisine,menu_url,description) VALUES (
+    INSERT INTO caterers (business_id,image_url,capacity,cuisine,description,name,city,menu_url) VALUES (
       '3',
       'https://www.bostonindiancatering.com/blog-admin/images/the-best-indian-wedding-food-caterers-available-online050051.jpeg',
       '75',
       'sea food',
-      'MenuURL',
-      'We offer the best sea food meals for any event!'
+      'We offer the best sea food meals for any event!',
+      'Karden and Craig',
+      'Vancouver',
+      'https://www.documentsanddesigns.com/images/Universal_Sea_Shells/Seashell_Menus/E_Menu_Card_Antique_Shell_Sidebar.gif'
     );
 
-    INSERT INTO caterers (business_id,image_url,capacity,cuisine,menu_url,description) VALUES (
+    INSERT INTO caterers (business_id,image_url,capacity,cuisine,description,name,city,menu_url) VALUES (
       '4',
       'https://brettones.com/x/cdn/?https://storage.googleapis.com/wzukusers/user-28631016/images/5991eb3864cef9Pu1fXG/Brettomenu_d600.jpg',
       '200',
       'Italian',
-      'MenuURL',
-      'We will ensure your entire family and friends are well fed with are vast selection of italian food!'
+      'We will ensure your entire family and friends are well fed with are vast selection of italian food!',
+      'Nonnas Food',
+      'Toronto',
+      'https://i.etsystatic.com/14229232/r/il/cdb75f/1156082012/il_570xN.1156082012_py47.jpg'
     );
 
-    INSERT INTO caterers (business_id,image_url,capacity,cuisine,menu_url,description) VALUES (
+    INSERT INTO caterers (business_id,image_url,capacity,cuisine,description,name,city,menu_url) VALUES (
       '5',
       'https://www.mawaskitchen.com/wp-content/uploads/soups-in-flight-2020.jpg',
       '150',
       'Soups',
-      'MenuURL',
-      'We have the best soups around, choose any type or amount, we got you covered!'
+      'We have the best soups around, choose any type or amount, we got you covered!',
+      'Top Hat Catering',
+      'Calgary',
+      'https://marketplace.canva.com/EADzltv7Fmk/1/0/1131w/canva-green-and-gold-box-border-geometric-floral-wedding-menu-la509GLjtQQ.jpg'
     );
 
     
-    INSERT INTO decorators (business_id,image_url,specialty,description,theme) VALUES (
+    INSERT INTO decorators (business_id,image_url,specialty,description,theme,name,city,website_url) VALUES (
       '6',
       'https://media.weddingz.in/images/89a9671bca73f2fcf2f5bcbbf8fe7ba1/top-5-wedding-decorators-in-chandigarh-who-can-create-that-magical-setting-for-you-2.jpg',
       'pink',
       'Let us turn your event into a princess theme experience!',
-      'princess'
+      'princess',
+      'A Bella Casa',
+      'Toronto',
+      'https://babylondecor.com/'
     );
 
-    INSERT INTO decorators (business_id,image_url,specialty,description,theme) VALUES (
+    INSERT INTO decorators (business_id,image_url,specialty,description,theme,name,city,website_url) VALUES (
       '7',
       'https://miro.medium.com/max/1400/0*NWYFtAjpEZwozsQc.jpg',
       'classical',
       'Our service will make your wedding very traditional and classical',
-      'traditional'
+      'traditional',
+      'Elegant Decor',
+      'Toronto',
+      'http://mylavishevent.com/'
     );
 
-    INSERT INTO decorators (business_id,image_url,specialty,description,theme) VALUES (
+    INSERT INTO decorators (business_id,image_url,specialty,description,theme,name,city,website_url) VALUES (
       '8',
       'https://greenweddingshoes.com/wp-content/uploads/2019/12/lushindustrial-wedding-thumb.jpg',
       'capacity',
       'Want a modern look for your venue? choose us as your decorators, ANY size',
-      'modern'
+      'modern',
+      'Adaptive Decor',
+      'Vancouver',
+      'https://www.amorwedding.ca/'
     );
 
-    INSERT INTO decorators (business_id,image_url,specialty,description,theme) VALUES (
+    INSERT INTO decorators (business_id,image_url,specialty,description,theme,name,city,website_url) VALUES (
       '9',
       'https://www.theknot.com/tk-media/images/a48b8802-d4ab-4d4b-b0ee-b4b5ce33df8b~rs_768.h',
       'Environmental',
       'Any environment does not matter! we will make your event connect with nature!',
-      'Nature'
+      'Nature',
+      'Cottage Crafts',
+      'Vancouver',
+      'https://www.weddingsbyardenian.com/'
     );
 
-    INSERT INTO decorators (business_id,image_url,specialty,description,theme) VALUES (
+    INSERT INTO decorators (business_id,image_url,specialty,description,theme,name,city,website_url) VALUES (
       '10',
       'https://www.theknot.com/tk-media/images/3ef84acc-823f-4431-8d2b-f95d9a862a50~rs_768.h',
       'Dark',
       'We offer amazing Gothic style decorations for any event',
-      'Gothic'
+      'Gothic',
+      'Dark Sense Decor',
+      'Toronto',
+      'https://www.etsy.com/ca/market/goth_wedding_decor'
     );
 
     
 
 
 
-    INSERT INTO venues (business_id,image_url,theme,capacity,description) VALUES (
+    INSERT INTO venues (business_id,image_url,theme,capacity,description,name,city,website_url) VALUES (
       '1',
       'https://cdn0.weddingwire.ca/vendor/0722/3_2/960/jpg/guild-inn-estate-toronto-historic-wedding-venue-wedluxe-magazine_50_10722-158739593284178.jpeg',
       'modern',
       '50',
-      'Very simple, mordern wedding venue. Designed for smaller weddings'
+      'Very simple, mordern wedding venue. Designed for smaller weddings',
+      'Beyond Beautiful',
+      'Toronto',
+      'https://www.destinyweddings.ca/'
     );
 
-    INSERT INTO venues (business_id,image_url,theme,capacity,description) VALUES (
+    INSERT INTO venues (business_id,image_url,theme,capacity,description,name,city,website_url) VALUES (
       '3',
       'https://media.cntraveler.com/photos/56e0811762c2faba1dda7045/master/pass/peabody-opera-house-wedding-cr-mnc-photography.jpg',
       'Glamorous',
       '300',
-      'This venue is designed for massive weddings! bring all your friends and family we will fit them comfortably '
+      'This venue is designed for massive weddings! bring all your friends and family we will fit them comfortably ',
+      'Dream Wedding',
+      'Toronto',
+      'https://espacestudio.ca/'
     );
 
-    INSERT INTO venues (business_id,image_url,theme,capacity,description) VALUES (
+    INSERT INTO venues (business_id,image_url,theme,capacity,description,name,city,website_url) VALUES (
       '5',
       'https://i.insider.com/5b73256864dce830008b5068?width=700',
       'Traditional',
       '100',
-      'Choose our venue for an amazing traditional wedding venue designed for medium sized weddings'
+      'Choose our venue for an amazing traditional wedding venue designed for medium sized weddings',
+      'Rustic Gold Chapel',
+      'Vancouver',
+      'http://www.thepersianpalace.ca/'
     );
 
-    INSERT INTO venues (business_id,image_url,theme,capacity,description) VALUES (
+    INSERT INTO venues (business_id,image_url,theme,capacity,description,name,city,website_url) VALUES (
       '7',
       'https://www.crosswindsgolf.com/wp-content/uploads/2019/08/Outdoor-Wedding-Venues-720x380.jpg',
       'Nature',
       '75',
-      'Let nature be with you when you celebrate your wedding day!'
+      'Let nature be with you when you celebrate your wedding day!',
+      'Graceful Gardens',
+      'Calgary',
+      'https://www.markham.ca/wps/portal/home/arts/heintzman-house'
     );
 
-    INSERT INTO venues (business_id,image_url,theme,capacity,description) VALUES (
+    INSERT INTO venues (business_id,image_url,theme,capacity,description,name,city,website_url) VALUES (
       '9',
       'https://cdn0.weddingwire.com/article/0431/original/1280/jpg/21340-casa-marina-iris-moore-photography.jpeg',
       'Beach front',
       '50',
-      'Enjoy your wedding day on the beach! amazing beach front style wedding'
+      'Enjoy your wedding day on the beach! amazing beach front style wedding',
+      'Tropical Villa',
+      'Toronto',
+      'https://ascottparc.com/'
     );
 `;
 
