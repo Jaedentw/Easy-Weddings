@@ -20,7 +20,7 @@ export default function Venue(props) {
           <p>{venue.description}</p>
           <div>
             <p>{venue.extra_features}</p>
-            <p>{venue.theme}</p>
+            <strong>Theme: </strong>{venue.theme || "none"}
           </div>
         </div>
       </div>

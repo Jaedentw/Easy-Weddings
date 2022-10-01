@@ -6,7 +6,7 @@ import { getUserWeddings, getUserWedding } from "../helpers/selectors";
 
 export default function WeddingList(props) {
     
-  let userWeddings = getUserWeddings(props.state, props.user.id);
+  let userWeddings = getUserWeddings(props.state, props.state.user.id);
 
   let mappedWeddings = userWeddings.map((w) => {
     return (
