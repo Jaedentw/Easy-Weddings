@@ -1,11 +1,13 @@
 import React from "react";
-import WeddingListItem from "./partials/WeddingListItem";
-import "../styles/WeddingList.css"
+import WeddingListItem from "./WeddingListItem";
+import "../../styles/WeddingsPage.css"
 import Wedding from "./Wedding";
-import { getUserWeddings, getUserWedding } from "../helpers/selectors";
+import { getUserWeddings } from "../../helpers/WeddingsPageHelpers";
 
 export default function WeddingList(props) {
-    
+
+  const state = props.state
+  
   let userWeddings = getUserWeddings(props.state, props.state.user.id);
 
   let mappedWeddings = userWeddings.map((w) => {
@@ -15,8 +17,9 @@ export default function WeddingList(props) {
         date={w.date}
         name={w.name}
         image_url={w.image_url}
-        onClick={props.setWedding}
-        wedding={props.state.wedding}
+        wedding={w}
+        setWedding={props.setWedding}
+        selectedWedding={props.state.wedding}
       />
     )
   })
@@ -25,17 +28,19 @@ export default function WeddingList(props) {
     if(!state.wedding) {
       return mappedWeddings;
     } else {
-      let wedding = getUserWedding(state, userWeddings);
-      console.log(wedding)
       return <Wedding
-        
+        wedding={state.wedding}
       />
     }
   }
 
   return (
     <div class="wedding_list_container">
-      <h1 class="wedding-header">Your Weddings</h1>
+      <div class="upper_wedding_list">
+        <i class="fa-sharp fa-solid fa-arrow-left fa-lg"></i>
+        <h1 class="wedding_header">{state.wedding ? state.wedding.name : "Your Weddings"}</h1>
+        <i></i>
+      </div>
       <div class="wedding_list_items">
         {renderWeddings(props.state)}
       </div>

@@ -106,7 +106,7 @@ CREATE TABLE weddings (
   user_id INTEGER NOT NULL,
   FOREIGN KEY(user_id) REFERENCES users (id) ON DELETE CASCADE,
   name VARCHAR(200) NOT NULL,
-  date DATE,
+  date VARCHAR(200),
   budget INTEGER,
   guest_count INTEGER,
   image_url VARCHAR(500)
@@ -126,8 +126,7 @@ CREATE TABLE to_do (
   id SERIAL PRIMARY KEY NOT NULL,
   wedding_id INTEGER NOT NULL,
   FOREIGN KEY(wedding_id) REFERENCES weddings (id) ON DELETE CASCADE,
-  title VARCHAR(100) NOT NULL,
-  notes VARCHAR(500)
+  title VARCHAR(100) NOT NULL
 );
 
 CREATE TABLE favorites (

@@ -8,7 +8,7 @@ import UserSignUp from './UserSignUp';
 import { Routes, Route } from 'react-router-dom';
 import Login from './Login';
 import VendorsPage from './vendors_page/VendorsPage';
-import WeddingList from './WeddingList'
+import WeddingList from './weddings_page/WeddingsPage'
 
 //import {getUserWeddings} from "../helpers/selectors"
 
@@ -30,8 +30,6 @@ export default function Application(props) {
   return (
 
     <main class="main">
-
-
       <Nav
         selected={state.tab}
         setTab={setTab}
@@ -41,34 +39,26 @@ export default function Application(props) {
       <img
         class="application-image"
         src="https://thumbs.dreamstime.com/b/banner-background-many-fake-white-roses-top-view-soft-focus-219199318.jpg"
-        alt="Flowers" />
-
-
+        alt="White Roses" />
       <>
       
       <Routes >
           <Route path="/" element={<AboutPage />} />
           <Route path="/register" element={<UserSignUp />} />
-
           <Route path="/browse" element={<VendorsPage 
             state={state}
             setFilter={setFilter}
           />} />
-
-
           <Route path="/login" element={<Login 
             state={state}
             setUser={setUser}
           />} />
-          
           <Route path="/weddings" element={<WeddingList
             state={state}
             setWedding={setWedding}
           />}/>
-
         </Routes>
       </>
-
     </main>
   );
 

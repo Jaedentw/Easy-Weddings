@@ -4,7 +4,6 @@ import Venue from '../components/vendors_page/Venue'
 import Decorator from '../components/vendors_page/Decorator'
 
 function mapCaterers(caterers) {
-  console.log("function caterers",caterers)
   return (
     caterers.map((c) => {
       return(
