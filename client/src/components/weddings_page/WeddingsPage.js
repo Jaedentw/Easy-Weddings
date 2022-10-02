@@ -19,7 +19,6 @@ export default function WeddingList(props) {
         image_url={w.image_url}
         wedding={w}
         setWedding={props.setWedding}
-        selectedWedding={props.state.wedding}
       />
     )
   })
@@ -32,6 +31,7 @@ export default function WeddingList(props) {
         state={state}
         wedding={state.wedding}
         setFilter={props.setFilter}
+        setWedding={props.setWedding}
       />
     }
   }
@@ -39,7 +39,7 @@ export default function WeddingList(props) {
   return (
     <div class="wedding_list_container">
       <div class="upper_wedding_list">
-        <i class="fa-sharp fa-solid fa-arrow-left fa-lg" onClick={() => props.setWedding(null)} ></i>
+        <i class={state.wedding ? "fa-sharp fa-solid fa-arrow-left fa-lg" : ""} onClick={() => props.setWedding(null)} ></i>
         <h1 class="wedding_header">{state.wedding ? state.wedding.name : "Your Weddings"}</h1>
         <i></i>
       </div>
