@@ -9,8 +9,8 @@ export default function Wedding(props) {
   return (
     <div>
       <div class="upper_wedding">
-        <div class="wedding_page_image">
-          <img src={state.wedding.image_url} alt="wedding"/>
+        <div>
+          {/* <img class="wedding_page_image" src={state.wedding.image_url} alt="wedding"/> */}
         </div>
         <div class="wedding_info">
 

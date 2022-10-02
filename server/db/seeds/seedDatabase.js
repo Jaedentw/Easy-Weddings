@@ -156,9 +156,9 @@ module.exports = `
 
   
   INSERT INTO caterers (business_id,image_url,capacity,cuisine,description,name,city,menu_url) VALUES (
-    '1',
+    1,
     'https://www.classiccaterers.ca/uploads/1/3/6/5/136543716/published/top-rated-catering-service-niagara.png?1615309848',
-    '50',
+    50,
     'BBQ',
     'Our service offers amazing dishes of all varieties to ensure everyone enjoys their meals!',
     'All the Kings Men.',
@@ -167,7 +167,7 @@ module.exports = `
   );
 
   INSERT INTO caterers (business_id,image_url,capacity,cuisine,description,name,city,menu_url) VALUES (
-    '2',
+    2,
     'https://mk.ca/wp-content/uploads/2017/04/008.jpg',
     '150',
     'Open course',
@@ -178,7 +178,7 @@ module.exports = `
   );
 
   INSERT INTO caterers (business_id,image_url,capacity,cuisine,description,name,city,menu_url) VALUES (
-    '3',
+    3,
     'https://www.bostonindiancatering.com/blog-admin/images/the-best-indian-wedding-food-caterers-available-online050051.jpeg',
     '75',
     'sea food',
@@ -189,7 +189,7 @@ module.exports = `
   );
 
   INSERT INTO caterers (business_id,image_url,capacity,cuisine,description,name,city,menu_url) VALUES (
-    '4',
+    4,
     'https://brettones.com/x/cdn/?https://storage.googleapis.com/wzukusers/user-28631016/images/5991eb3864cef9Pu1fXG/Brettomenu_d600.jpg',
     '200',
     'Italian',
@@ -200,7 +200,7 @@ module.exports = `
   );
 
   INSERT INTO caterers (business_id,image_url,capacity,cuisine,description,name,city,menu_url) VALUES (
-    '5',
+    5,
     'https://www.mawaskitchen.com/wp-content/uploads/soups-in-flight-2020.jpg',
     '150',
     'Soups',
@@ -212,7 +212,7 @@ module.exports = `
 
   
   INSERT INTO decorators (business_id,image_url,specialty,description,theme,name,city,website_url) VALUES (
-    '6',
+    1,
     'https://media.weddingz.in/images/89a9671bca73f2fcf2f5bcbbf8fe7ba1/top-5-wedding-decorators-in-chandigarh-who-can-create-that-magical-setting-for-you-2.jpg',
     'pink',
     'Let us turn your event into a princess theme experience!',
@@ -223,7 +223,7 @@ module.exports = `
   );
 
   INSERT INTO decorators (business_id,image_url,specialty,description,theme,name,city,website_url) VALUES (
-    '7',
+    2,
     'https://miro.medium.com/max/1400/0*NWYFtAjpEZwozsQc.jpg',
     'classical',
     'Our service will make your wedding very traditional and classical',
@@ -234,7 +234,7 @@ module.exports = `
   );
 
   INSERT INTO decorators (business_id,image_url,specialty,description,theme,name,city,website_url) VALUES (
-    '8',
+    3,
     'https://greenweddingshoes.com/wp-content/uploads/2019/12/lushindustrial-wedding-thumb.jpg',
     'capacity',
     'Want a modern look for your venue? choose us as your decorators, ANY size',
@@ -245,7 +245,7 @@ module.exports = `
   );
 
   INSERT INTO decorators (business_id,image_url,specialty,description,theme,name,city,website_url) VALUES (
-    '9',
+    4,
     'https://www.theknot.com/tk-media/images/a48b8802-d4ab-4d4b-b0ee-b4b5ce33df8b~rs_768.h',
     'Environmental',
     'Any environment does not matter! we will make your event connect with nature!',
@@ -256,7 +256,7 @@ module.exports = `
   );
 
   INSERT INTO decorators (business_id,image_url,specialty,description,theme,name,city,website_url) VALUES (
-    '10',
+    5,
     'https://www.theknot.com/tk-media/images/3ef84acc-823f-4431-8d2b-f95d9a862a50~rs_768.h',
     'Dark',
     'We offer amazing Gothic style decorations for any event',
@@ -269,7 +269,7 @@ module.exports = `
 
 
   INSERT INTO venues (business_id,image_url,theme,capacity,description,name,city,website_url) VALUES (
-    '1',
+    1,
     'https://cdn0.weddingwire.ca/vendor/0722/3_2/960/jpg/guild-inn-estate-toronto-historic-wedding-venue-wedluxe-magazine_50_10722-158739593284178.jpeg',
     'modern',
     '50',
@@ -280,7 +280,7 @@ module.exports = `
   );
 
   INSERT INTO venues (business_id,image_url,theme,capacity,description,name,city,website_url) VALUES (
-    '3',
+    2,
     'https://media.cntraveler.com/photos/56e0811762c2faba1dda7045/master/pass/peabody-opera-house-wedding-cr-mnc-photography.jpg',
     'Glamorous',
     '300',
@@ -291,7 +291,7 @@ module.exports = `
   );
 
   INSERT INTO venues (business_id,image_url,theme,capacity,description,name,city,website_url) VALUES (
-    '5',
+    3,
     'https://i.insider.com/5b73256864dce830008b5068?width=700',
     'Traditional',
     '100',
@@ -302,10 +302,10 @@ module.exports = `
   );
 
   INSERT INTO venues (business_id,image_url,theme,capacity,description,name,city,website_url) VALUES (
-    '7',
+    4,
     'https://www.crosswindsgolf.com/wp-content/uploads/2019/08/Outdoor-Wedding-Venues-720x380.jpg',
     'Nature',
-    '75',
+    75,
     'Let nature be with you when you celebrate your wedding day!',
     'Graceful Gardens',
     'Calgary',
@@ -313,10 +313,10 @@ module.exports = `
   );
 
   INSERT INTO venues (business_id,image_url,theme,capacity,description,name,city,website_url) VALUES (
-    '9',
+    5,
     'https://cdn0.weddingwire.com/article/0431/original/1280/jpg/21340-casa-marina-iris-moore-photography.jpeg',
     'Beach front',
-    '50',
+    50,
     'Enjoy your wedding day on the beach! amazing beach front style wedding',
     'Tropical Villa',
     'Toronto',
@@ -325,7 +325,7 @@ module.exports = `
 
   INSERT INTO weddings (user_id, name, date, budget, guest_count, image_url, caterers, decorators, venues)
   VALUES (
-    '1',
+    1,
     'Kostas Wedding',
     '09-09-23',
     '20000',
@@ -338,7 +338,7 @@ module.exports = `
 
   INSERT INTO weddings (user_id, name, date, budget, guest_count, image_url, caterers, decorators, venues)
   VALUES (
-    '1',
+    1,
     'Kostas Plan B',
     '09-20-2023',
     '20000',

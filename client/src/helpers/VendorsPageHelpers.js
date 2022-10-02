@@ -51,22 +51,60 @@ function mapVendors(vendors) {
     })
   )
 }
+function getWeddingListings(state, wedding) {
+
+  let data = {
+    caterers: [],
+    decorators: [],
+    venues: [],
+    vendors: []
+  }
+
+  for(let listingId of wedding.caterers) {
+    for(let listing of state.caterers) {
+      if(listingId === listing.id) {
+        data.caterers.push(listing)
+      }
+    }
+  }
+  for(let listingId of wedding.decorators) {
+    for(let listing of state.decorators) {
+      if(listingId === listing.id) {
+        data.decorators.push(listing)
+      }
+    }
+  }
+  for(let listingId of wedding.venues) {
+    for(let listing of state.venues) {
+      if(listingId === listing.id) {
+        data.venues.push(listing)
+      }
+    }
+  }
+  // for(let listingId of wedding.vendors) {
+  //   for(let listing of state.vendors) {
+  //     if(listingId === listing.id) {
+  //       data.vendirs.push(listing)
+  //     }
+  //   }
+  // }
+  console.log("return getWeddingListings",data);
+  return data
+}
 
 
 export function mapFilters(filter, state, input, wedding) {
 
   let data = state
   if(wedding) {
-    data = state.wedding
+    data = getWeddingListings(state, wedding)
   }
 
   if(filter === "Caterers") {
     if(input) {
-      console.log("input", input)
-      let filtered = data.caterers.filter( component => component.cuisine.toLowerCase().includes(input.toLowerCase()))
+      let filtered = data.caterers.filter( component => component.name.toLowerCase().includes(input.toLowerCase()))
       return mapCaterers(filtered)
     } else {
-      console.log(data.caterers)
       return mapCaterers(data.caterers)
     }
   }
