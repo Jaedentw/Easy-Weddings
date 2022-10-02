@@ -7,7 +7,7 @@ DROP TABLE IF EXISTS vendors CASCADE;
 DROP TABLE IF EXISTS venues CASCADE;
 DROP TABLE IF EXISTS weddings CASCADE;
 DROP TABLE IF EXISTS personnel CASCADE;
-DROP TABLE IF EXISTS to_do CASCADE;
+DROP TABLE IF EXISTS to_dos CASCADE;
 DROP TABLE IF EXISTS favorites CASCADE;
 
 
@@ -106,28 +106,22 @@ CREATE TABLE weddings (
   user_id INTEGER NOT NULL,
   FOREIGN KEY(user_id) REFERENCES users (id) ON DELETE CASCADE,
   name VARCHAR(200) NOT NULL,
-  date DATE,
+  caterers INTEGER ARRAY,
+  decorators INTEGER ARRAY,
+  venues INTEGER ARRAY,
+  vendors INTEGER ARRAY,
+  date VARCHAR(200),
   budget INTEGER,
   guest_count INTEGER,
   image_url VARCHAR(500)
 );
-
-
-CREATE TABLE personnel (
-  id SERIAL PRIMARY KEY NOT NULL,
-  business_id INTEGER NOT NULL,
-  FOREIGN KEY(business_id) REFERENCES businesses (id) ON DELETE CASCADE,
-  wedding_id INTEGER NOT NULL,
-  FOREIGN KEY(wedding_id) REFERENCES weddings (id) ON DELETE CASCADE
-);
  
-
-CREATE TABLE to_do (
+CREATE TABLE to_dos (
   id SERIAL PRIMARY KEY NOT NULL,
   wedding_id INTEGER NOT NULL,
   FOREIGN KEY(wedding_id) REFERENCES weddings (id) ON DELETE CASCADE,
   title VARCHAR(100) NOT NULL,
-  notes VARCHAR(500)
+  checked BOOLEAN NOT NULL DEFAULT false
 );
 
 CREATE TABLE favorites (

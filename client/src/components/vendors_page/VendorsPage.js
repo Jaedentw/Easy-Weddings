@@ -1,12 +1,12 @@
 import {useState} from 'react'
 import "../../styles/VendorPage.css"
-import Filter from './Filter'
+import Filter from '../partials/Filter'
 import {mapFilters} from '../../helpers/VendorsPageHelpers'
 
 export default function VendorsPage(props) {
 
   let [search, setSearch] = useState()
-  let mapped = mapFilters(props.state.filter, props.state, search)
+  let mapped = mapFilters(props.state.filter, props.state, search, props.state.wedding)
   
   return (
     <div class="business-list-container">

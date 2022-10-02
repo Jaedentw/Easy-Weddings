@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
-import "../styles/nav.css";
-import Tab from './partials/Tab';
+import "../../styles/nav.css";
+import Tab from './Tab';
 import { NavLink } from "react-router-dom";
 
 export default function Nav(props) {
@@ -18,10 +18,6 @@ export default function Nav(props) {
     }
   },[props.user])
 
-
-  
-  console.log('This is the props.user on nav: ', props.user)
-
   return (
     <nav class="nav-container">
       <div class="upper-nav">
@@ -30,9 +26,11 @@ export default function Nav(props) {
         {(isLoggedIn &&
 
           <div class="nav-log">
-            <strong>Signed in as: </strong><span>{props.user?.first_name}</span>
+            <div class="upper-log">
+              <strong>Signed in as: </strong><span>{props.user?.first_name}</span>
+            </div>
             <div>
-              <button onClick={props.logout} value="Logout">Logout</button>
+              <button onClick={props.logout} value="Logout"><i class="fa-solid fa-right-from-bracket"></i> Logout</button>
             </div>
           </div>)
         }

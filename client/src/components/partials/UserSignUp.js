@@ -1,5 +1,5 @@
 import {useState} from "react";
-import "../styles/Form.css"
+import "../../styles/Form.css"
 
 export default function UserSignUp(props) {
 

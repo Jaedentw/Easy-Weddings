@@ -5,7 +5,7 @@ export default function useApplicationData() {
 
   let [state, setState] = useState({
     tab: "About",
-    wedding: "",
+    wedding: null,
     loading: false,
     filter: "Caterers",
     businesses: [],
@@ -27,6 +27,7 @@ export default function useApplicationData() {
       axios.get("/api/decorators"),
       axios.get("/api/vendors")
     ]).then((all) => {
+      console.log("all", all)
       setState(prev => (
         { ...prev,
         businesses: all[0].data.businesses,
@@ -38,17 +39,17 @@ export default function useApplicationData() {
     });
   }, []);
 
-  function getUserData(user){
-    const userId = user.id
+  function getUserData(){
     Promise.all([
       axios.get("/api/weddings"),
       axios.get("/api/to_dos"),
       //axios.get("/api/favorites")
     ]).then((all)=>{
+      console.log("user all", all)
       setState(prev =>({
         ...prev,
         weddings: all[0].data.weddings,
-        to_dos: all[1].data.to_dos,
+        to_dos: all[1].data.To_dos,
         //favorites: all[2].data.favorites
       }))
     })
@@ -65,7 +66,7 @@ export default function useApplicationData() {
   function setUser(user) {
     localStorage.setItem('user',JSON.stringify(user))
     setState(prev => ({ ...prev, user}));
-    getUserData(user)
+    getUserData()
   }
 
   function getCurrentUser(){
@@ -73,24 +74,17 @@ export default function useApplicationData() {
     return JSON.parse(currentUser)
   }
 
-  function setLoading(loading) {
-    setState(prev => ({ ...prev, loading}));
-  }
-
   function logout(){
     console.log('logout funtion user has logged out')
     localStorage.removeItem('user');
     console.log('checking local storage')
-    setState(prev => ({ user:null }));
+    setState(prev => ({...prev, user:null }));
   }
 
   function setWedding(wedding) {
     setState(prev => ({ ...prev, wedding}));
   }
 
-
-
-
+  
   return {state, setTab, setFilter, setUser, getCurrentUser, logout, setWedding};
-
 }

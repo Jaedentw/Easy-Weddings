@@ -3,7 +3,7 @@ const { db } = require('../db');
 const create = (userId, name, color, emoji) => {
   return db
     .query(
-      'INSERT INTO to_do (userId, name, color, emoji) VALUES ($1, $2, $3, $4) RETURNING *',
+      'INSERT INTO to_dos (userId, name, color, emoji) VALUES ($1, $2, $3, $4) RETURNING *',
       [userId, name, color, emoji]
     )
     .then(data => data.rows[0])
@@ -12,14 +12,14 @@ const create = (userId, name, color, emoji) => {
 
 const getAll = () => {
   return db
-    .query('SELECT * FROM to_do')
+    .query('SELECT * FROM to_dos')
     .then(data => data.rows)
     .catch(err => console.error(err.stack));
 };
 
 const getById = id => {
   return db
-    .query('SELECT * FROM to_do WHERE id = $1', [id])
+    .query('SELECT * FROM to_dos WHERE id = $1', [id])
     .then(data => data.rows[0])
     .catch(err => console.error(err.stack));
 };
@@ -27,7 +27,7 @@ const getById = id => {
 const update = (name, color, emoji, id) => {
   return db
     .query(
-      'UPDATE to_do SET name = $1, color = $2, emoji = $3 WHERE id = $4 RETURNING *',
+      'UPDATE to_dos SET name = $1, color = $2, emoji = $3 WHERE id = $4 RETURNING *',
       [name, color, emoji, id]
     )
     .then(data => data.rows[0])
@@ -36,7 +36,7 @@ const update = (name, color, emoji, id) => {
 
 const remove = id => {
   return db
-    .query('DELETE FROM to_do WHERE id = $1', [id])
+    .query('DELETE FROM to_dos WHERE id = $1', [id])
     .then(data => data.rows)
     .catch(err => console.error(err.stack));
 };

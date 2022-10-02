@@ -3,10 +3,7 @@ import { useNavigate } from "react-router-dom";
 import axios from "axios";
 import "../styles/Login.css";
 
-
-
 export default function Login(props) {
-
 
   const [data, setData] = useState({
     email: "",
@@ -15,34 +12,25 @@ export default function Login(props) {
 
   const navigate = useNavigate();
 
-
   function handleLogin(event) {
     event.preventDefault();
-
 
     axios.post("/api/auth/login", data)
       .then((response) => {
         props.setUser(response.data.user);
-        navigate('/');
+        navigate('/weddings');
       })
 
-      .catch(
-        console.log('Error logging in!')
+      .catch((res) =>
+        console.log('Error logging in!', res.data)
       );
-
-    
-
   }
-
-  
 
   const handleChange = (event) => {
     const newdata = { ...data };
     newdata[event.target.name] = event.target.value;
     setData(newdata);
   };
-
-
 
   return (
 
@@ -74,8 +62,6 @@ export default function Login(props) {
         </div>
       </div>
     </form>
-
-
 
   );
 

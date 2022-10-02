@@ -1,0 +1,81 @@
+.upper_wedding {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  width: 100%;
+  padding-bottom: 20px;
+  border-bottom: 4px grey dotted;
+  margin-bottom: 20px;
+}
+
+.info_box {
+  border-radius: 5px;
+  border: 4px black solid;
+  height: 90px;
+  background-color: white;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+}
+
+.lower_wedding {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
+.page_image {
+  display: flex;
+  height: 200px;
+  width: 200px;
+  object-fit: cover;
+}
+
+.vendor_set {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+
+.to_do_container {
+  display: flex;
+  border: 2px black solid;
+  margin-bottom: 5px;
+  border-radius: 2px;
+  background-color: white;
+  align-items: center;
+  width: 100%;
+}
+.to_do_container i{
+  margin: 3px;
+}
+
+.weddingInfo {
+  border-radius: 5px;
+  border: 4px black solid;
+  margin-left: 20px;
+  padding: 10px;
+  width: 800px;
+  height: 400px;
+  background-color: white;
+}
+
+.info_container {
+  width: 100%;
+  height: 100%;
+}
+
+.info_body {
+  border-radius: 5px;
+  border: 4px black solid;
+  height: 90%;
+  padding: 5px;
+  background-color: rgb(190, 188, 188);
+}
+
+.info_buttons {
+  display: flex;
+  flex-direction: row;
+}

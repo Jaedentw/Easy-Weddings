@@ -1,3 +1,9 @@
+.wedding_container {
+  height: 300px;
+  width: 300px;
+  margin-bottom: 10px;
+}
+
 .wedding_image {
   display: flex;
   height: 300px;

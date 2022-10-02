@@ -4,7 +4,7 @@
   width: 75%;
   padding: 20px;
   height: max-content;
-  background-color: pink;
+  background-color: antiquewhite;
 }
 
 .business-nav-container {
@@ -23,21 +23,22 @@
 .business-btn {
   border: 3px black solid;
   border-radius: 10px;
-  background-color: palevioletred;
+  background-color: rgb(190, 188, 188);
   margin: 5px;
   margin-top: 0px;
   padding: 2px;
 }
 
 .business-btn:hover {
-  background-color: rgb(215, 58, 110);
+  background-color: rgb(165, 208, 216);
 }
 .business-btn-selected {
-  background-color: rgb(215, 58, 110);
+  background-color: rgb(165, 208, 216);
 }
 
 .business-search {
   border: 3px black solid;
   border-radius: 10px;
+  background-color: white;
 }
 
