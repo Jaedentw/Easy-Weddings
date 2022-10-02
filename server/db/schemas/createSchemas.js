@@ -106,22 +106,16 @@ CREATE TABLE weddings (
   user_id INTEGER NOT NULL,
   FOREIGN KEY(user_id) REFERENCES users (id) ON DELETE CASCADE,
   name VARCHAR(200) NOT NULL,
+  caterers VARCHAR(200)[],
+  decorators VARCHAR(200)[],
+  venues VARCHAR(200)[],
+  vendors VARCHAR(200)[],
   date VARCHAR(200),
   budget INTEGER,
   guest_count INTEGER,
   image_url VARCHAR(500)
 );
-
-
-CREATE TABLE personnel (
-  id SERIAL PRIMARY KEY NOT NULL,
-  business_id INTEGER NOT NULL,
-  FOREIGN KEY(business_id) REFERENCES businesses (id) ON DELETE CASCADE,
-  wedding_id INTEGER NOT NULL,
-  FOREIGN KEY(wedding_id) REFERENCES weddings (id) ON DELETE CASCADE
-);
  
-
 CREATE TABLE to_do (
   id SERIAL PRIMARY KEY NOT NULL,
   wedding_id INTEGER NOT NULL,

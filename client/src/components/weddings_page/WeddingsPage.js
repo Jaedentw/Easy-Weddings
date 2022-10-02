@@ -29,7 +29,9 @@ export default function WeddingList(props) {
       return mappedWeddings;
     } else {
       return <Wedding
+        state={state}
         wedding={state.wedding}
+        setFilter={props.setFilter}
       />
     }
   }
@@ -37,7 +39,7 @@ export default function WeddingList(props) {
   return (
     <div class="wedding_list_container">
       <div class="upper_wedding_list">
-        <i class="fa-sharp fa-solid fa-arrow-left fa-lg"></i>
+        <i class="fa-sharp fa-solid fa-arrow-left fa-lg" onClick={() => props.setWedding(null)} ></i>
         <h1 class="wedding_header">{state.wedding ? state.wedding.name : "Your Weddings"}</h1>
         <i></i>
       </div>

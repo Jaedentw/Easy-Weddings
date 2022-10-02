@@ -323,24 +323,30 @@ module.exports = `
     'https://ascottparc.com/'
   );
 
-  INSERT INTO weddings (user_id, name, date, budget, guest_count, image_url)
+  INSERT INTO weddings (user_id, name, date, budget, guest_count, image_url, caterers, decorators, venues)
   VALUES (
     '1',
     'Kostas Wedding',
     '09-09-23',
     '20000',
     '50',
-    'https://www.brides.com/thmb/umh5TKE4fIOD5bbbmfTHzqqj2lM=/735x0/brides-cover-image-36476d79c52f4b6d8bc9894d859649a6.jpeg'
+    'https://www.brides.com/thmb/umh5TKE4fIOD5bbbmfTHzqqj2lM=/735x0/brides-cover-image-36476d79c52f4b6d8bc9894d859649a6.jpeg',
+    [3, 4],
+    [3, 4],
+    [3, 4]
   );
 
-  INSERT INTO weddings (user_id, name, date, budget, guest_count, image_url)
+  INSERT INTO weddings (user_id, name, date, budget, guest_count, image_url, caterers, decorators, venues)
   VALUES (
     '1',
     'Kostas Plan B',
     '09-20-2023',
     '20000',
     '50',
-    'https://www.brides.com/thmb/aCmNTcqQTvDVpHBJEXSiew8F9uU=/1064x1067/filters:fill(auto,1)/Indhira-Jason-Wedding-206-86bba0d2e23e42ecbe67f51bdc4cd17e.jpg'
+    'https://www.brides.com/thmb/aCmNTcqQTvDVpHBJEXSiew8F9uU=/1064x1067/filters:fill(auto,1)/Indhira-Jason-Wedding-206-86bba0d2e23e42ecbe67f51bdc4cd17e.jpg',
+    [1, 2],
+    [1, 2],
+    [1, 2]
   );
 `;
 

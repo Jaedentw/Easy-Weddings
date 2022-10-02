@@ -53,39 +53,45 @@ function mapVendors(vendors) {
 }
 
 
-export function mapFilters(filter, state, input) {
+export function mapFilters(filter, state, input, wedding) {
+
+  let data = state
+  if(wedding) {
+    data = state.wedding
+  }
+
   if(filter === "Caterers") {
     if(input) {
       console.log("input", input)
-      let filtered = state.caterers.filter( component => component.cuisine.toLowerCase().includes(input.toLowerCase()))
+      let filtered = data.caterers.filter( component => component.cuisine.toLowerCase().includes(input.toLowerCase()))
       return mapCaterers(filtered)
     } else {
-      console.log(state.caterers)
-      return mapCaterers(state.caterers)
+      console.log(data.caterers)
+      return mapCaterers(data.caterers)
     }
   }
   if(filter === "Decorators") {
     if(input) {
-      let filtered = state.decorators.filter( component => component.name.toLowerCase().includes(input.toLowerCase()))
+      let filtered = data.decorators.filter( component => component.name.toLowerCase().includes(input.toLowerCase()))
       return mapDecorators(filtered)
     } else {
-      return mapDecorators(state.decorators)
+      return mapDecorators(data.decorators)
     }
   }
   if(filter === "Venues") {
     if(input) {
-      let filtered = state.venues.filter( component => component.name.toLowerCase().includes(input.toLowerCase()))
+      let filtered = data.venues.filter( component => component.name.toLowerCase().includes(input.toLowerCase()))
       return mapVenues(filtered)
     } else {
-      return mapVenues(state.venues)
+      return mapVenues(data.venues)
     }
   }
   if (filter === "Vendors") {
     if(input) {
-      let filtered = state.vendors.filter( component => component.name.toLowerCase().includes(input.toLowerCase()))
+      let filtered = data.vendors.filter( component => component.name.toLowerCase().includes(input.toLowerCase()))
       return mapVendors(filtered)
     } else {
-      return mapVendors(state.vendors)
+      return mapVendors(data.vendors)
     }
   }
 }

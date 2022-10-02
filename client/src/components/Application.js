@@ -56,6 +56,7 @@ export default function Application(props) {
           <Route path="/weddings" element={<WeddingList
             state={state}
             setWedding={setWedding}
+            setFilter={setFilter}
           />}/>
         </Routes>
       </>
