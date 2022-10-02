@@ -323,8 +323,9 @@ module.exports = `
     'https://ascottparc.com/'
   );
 
-  INSERT INTO weddings (user_id, name, date, budget, guest_count, image_url, caterers, decorators, venues)
+  INSERT INTO weddings (id, user_id, name, date, budget, guest_count, image_url, caterers, decorators, venues)
   VALUES (
+    1,
     1,
     'Kostas Wedding',
     '09-09-23',
@@ -336,8 +337,9 @@ module.exports = `
     ARRAY [3, 4]
   );
 
-  INSERT INTO weddings (user_id, name, date, budget, guest_count, image_url, caterers, decorators, venues)
+  INSERT INTO weddings (id, user_id, name, date, budget, guest_count, image_url, caterers, decorators, venues)
   VALUES (
+    2,
     1,
     'Kostas Plan B',
     '09-20-2023',
@@ -348,6 +350,18 @@ module.exports = `
     ARRAY [1, 2],
     ARRAY [1, 2]
   );
+
+  INSERT INTO to_dos (id, wedding_id, title, checked)
+  VALUES (1, 1, 'Decide on flowers', false);
+
+  INSERT INTO to_dos (id, wedding_id, title, checked)
+  VALUES (2, 1, 'Contact caterer', false);
+
+  INSERT INTO to_dos (id, wedding_id, title, checked)
+  VALUES (3, 1, 'Pick best man', false);
+
+  INSERT INTO to_dos (id, wedding_id, title, checked)
+  VALUES (4, 1, 'Pick a Wife', true);
 `;
 
 

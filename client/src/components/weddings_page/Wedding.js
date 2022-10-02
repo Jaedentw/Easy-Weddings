@@ -1,6 +1,6 @@
 import React from "react";
 import VendorsPage from "../vendors_page/VendorsPage";
-import ToDoList from "./WeddingInfo";
+import WeddingInfo from "./WeddingInfo";
 import "../../styles/Wedding.css"
 import "../../styles/WeddingListItem.css"
 import WeddingListItem from "./WeddingListItem";
@@ -23,7 +23,7 @@ export default function Wedding(props) {
           />
         </div>
         <div class="todo">
-          <ToDoList
+          <WeddingInfo
             state={props.state}
           />
         </div>
