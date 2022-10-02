@@ -70,10 +70,10 @@
 
 .nav-log {
   display: flex;
-  justify-content: right;
   flex-direction: column;
   flex-grow: 1;
   padding: 10px;
+  align-items: flex-end;
 }
 
 .nav-log strong {

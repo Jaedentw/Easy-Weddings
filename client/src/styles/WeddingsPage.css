@@ -3,6 +3,7 @@
   flex-direction: column;
   width: 75%;
   background-color: pink;
+  height: inherit;
 }
 
 .wedding_list_items {

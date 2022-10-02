@@ -30,9 +30,11 @@ export default function Nav(props) {
         {(isLoggedIn &&
 
           <div class="nav-log">
-            <strong>Signed in as: </strong><span>{props.user?.first_name}</span>
+            <div class="upper-log">
+              <strong>Signed in as: </strong><span>{props.user?.first_name}</span>
+            </div>
             <div>
-              <button onClick={props.logout} value="Logout">Logout</button>
+              <button onClick={props.logout} value="Logout"><i class="fa-solid fa-right-from-bracket"></i> Logout</button>
             </div>
           </div>)
         }

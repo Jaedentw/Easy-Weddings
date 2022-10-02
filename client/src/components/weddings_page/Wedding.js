@@ -1,6 +1,7 @@
 import React from "react";
 import VendorsPage from "../vendors_page/VendorsPage";
 //import ToDoList from "./ToDoList";
+import "../../styles/Wedding.css"
 
 export default function Wedding(props) {
 
@@ -10,7 +11,7 @@ export default function Wedding(props) {
     <div>
       <div class="upper_wedding">
         <div>
-          {/* <img class="wedding_page_image" src={state.wedding.image_url} alt="wedding"/> */}
+          <img class="page_image" src={state.wedding.image_url} alt="wedding"></img>
         </div>
         <div class="wedding_info">
 
