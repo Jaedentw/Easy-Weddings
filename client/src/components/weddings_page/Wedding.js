@@ -21,20 +21,24 @@ export default function Wedding(props) {
             date={wedding.date}
             setWedding={props.setWedding}
           />
+          <div class="info_box">
+            <span><strong>Budget: </strong> {wedding.budget}</span>
+            <span><strong>Guest Count: </strong> {wedding.guest_count}</span>
+          </div>
         </div>
-        <div class="todo">
+        <div class="weddingInfo">
           <WeddingInfo
             state={props.state}
           />
         </div>
       </div>
       <div class="lower_wedding">
-        <div class="vendor_set">
-          <VendorsPage
-            state={props.state}
-            setFilter={props.setFilter}
-          />
-        </div>
+        <h2 class="wedding_header upper_wedding" >Your Saved Vendors</h2>
+        <VendorsPage
+          state={props.state}
+          setFilter={props.setFilter}
+        />
+
       </div>
     </div>
   )

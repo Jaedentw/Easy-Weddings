@@ -88,7 +88,6 @@ function getWeddingListings(state, wedding) {
   //     }
   //   }
   // }
-  console.log("return getWeddingListings",data);
   return data
 }
 
@@ -96,7 +95,7 @@ function getWeddingListings(state, wedding) {
 export function mapFilters(filter, state, input, wedding) {
 
   let data = state
-  if(wedding) {
+  if(wedding && state.tab === "Weddings") {
     data = getWeddingListings(state, wedding)
   }
 

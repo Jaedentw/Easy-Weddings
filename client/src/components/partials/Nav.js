@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
-import "../styles/nav.css";
-import Tab from './partials/Tab';
+import "../../styles/nav.css";
+import Tab from './Tab';
 import { NavLink } from "react-router-dom";
 
 export default function Nav(props) {
@@ -17,10 +17,6 @@ export default function Nav(props) {
       setIsloggedIn(true);
     }
   },[props.user])
-
-
-  
-  console.log('This is the props.user on nav: ', props.user)
 
   return (
     <nav class="nav-container">

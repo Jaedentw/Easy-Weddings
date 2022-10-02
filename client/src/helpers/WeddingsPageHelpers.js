@@ -1,3 +1,5 @@
+import ToDo from "../components/weddings_page/ToDo";
+
 export function getUserWeddings(state, user_id) {
 
   if(!state.weddings || !user_id) {
@@ -28,6 +30,32 @@ export function getWeddingToDos(state, wedding_id) {
       weddingToDos.push(toDo)
     }
   }
-
   return(weddingToDos)
+}
+
+export function mappedWeddingFilters(filter, toDos, Guests) {
+  if(filter === "Information") {
+    return (
+      ""
+    )
+  }
+  if(filter === "To Do") {
+    return (
+      toDos.map((t) => {
+        return (
+          <ToDo
+            key={t.id}
+            title={t.title}
+            checked={t.checked}
+          />
+        )
+      })
+    )
+    
+  }
+  if(filter === "Guests") {
+    return (
+      ""
+    )
+  }
 }

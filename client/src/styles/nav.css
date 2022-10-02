@@ -10,7 +10,7 @@
   height: 80px;
   top: relative;
   flex-direction: row;
-  background-color: palevioletred;
+  background-color: rgb(190, 188, 188);
 }
 
 .nav-bar-container {
@@ -36,7 +36,7 @@
   margin: 1px;
   margin-top: 0px;
   height: 30px;
-  background-color: palevioletred;
+  background-color:rgb(190, 188, 188);
   border-bottom-right-radius: 10px;
   border-bottom-left-radius: 10px;
   text-decoration: none;
@@ -44,7 +44,7 @@
 }
 
 .nav-bar-item:hover {
-  background-color: rgb(215, 58, 110);
+  background-color: rgb(165, 208, 216);
   border-bottom-right-radius: 10px;
   border-bottom-left-radius: 10px;
   text-decoration: none;
@@ -52,7 +52,7 @@
 }
 
 .nav-bar-item-selected {
-  background-color: rgb(215, 58, 110);
+  background-color:  rgb(165, 208, 216);
   border-bottom-right-radius: 10px;
   border-bottom-left-radius: 10px;
   text-decoration: none;

@@ -39,7 +39,7 @@ export default function useApplicationData() {
     });
   }, []);
 
-  function getUserData(user){
+  function getUserData(){
     Promise.all([
       axios.get("/api/weddings"),
       axios.get("/api/to_dos"),
@@ -49,7 +49,7 @@ export default function useApplicationData() {
       setState(prev =>({
         ...prev,
         weddings: all[0].data.weddings,
-        to_dos: all[1].data.to_dos,
+        to_dos: all[1].data.To_dos,
         //favorites: all[2].data.favorites
       }))
     })
@@ -66,7 +66,7 @@ export default function useApplicationData() {
   function setUser(user) {
     localStorage.setItem('user',JSON.stringify(user))
     setState(prev => ({ ...prev, user}));
-    getUserData(user)
+    getUserData()
   }
 
   function getCurrentUser(){
@@ -82,9 +82,9 @@ export default function useApplicationData() {
   }
 
   function setWedding(wedding) {
-    console.log("setWedding", wedding)
     setState(prev => ({ ...prev, wedding}));
   }
 
+  
   return {state, setTab, setFilter, setUser, getCurrentUser, logout, setWedding};
 }

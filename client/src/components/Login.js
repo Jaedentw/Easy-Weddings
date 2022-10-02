@@ -18,7 +18,7 @@ export default function Login(props) {
     axios.post("/api/auth/login", data)
       .then((response) => {
         props.setUser(response.data.user);
-        navigate('/');
+        navigate('/weddings');
       })
 
       .catch((res) =>

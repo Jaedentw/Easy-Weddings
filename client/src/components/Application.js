@@ -2,9 +2,9 @@ import React from 'react';
 import "../styles/nav.css"
 import "../styles/Application.css";
 import AboutPage from './AboutPage';
-import Nav from './Nav';
+import Nav from './partials/Nav';
 import useApplicationData from "../hooks/useApplicationData";
-import UserSignUp from './UserSignUp';
+import UserSignUp from './partials/UserSignUp';
 import { Routes, Route } from 'react-router-dom';
 import Login from './Login';
 import VendorsPage from './vendors_page/VendorsPage';

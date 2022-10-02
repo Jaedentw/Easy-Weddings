@@ -1,6 +1,6 @@
 import {useState} from 'react'
 import "../../styles/VendorPage.css"
-import Filter from './Filter'
+import Filter from '../partials/Filter'
 import {mapFilters} from '../../helpers/VendorsPageHelpers'
 
 export default function VendorsPage(props) {
