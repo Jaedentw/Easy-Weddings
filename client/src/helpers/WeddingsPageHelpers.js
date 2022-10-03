@@ -17,7 +17,7 @@ export function getUserWeddings(state, user_id) {
   return(userWeddings);
 }
 
-export function getWeddingToDos(state, wedding_id) {
+export function getWeddingToDosUnchecked(state, wedding_id) {
 
   if(!state.to_dos || !wedding_id) {
     return [{}]
@@ -26,7 +26,23 @@ export function getWeddingToDos(state, wedding_id) {
   let weddingToDos = [];
 
   for(let toDo of state.to_dos) {
-    if(toDo.wedding_id === wedding_id) {
+    if(toDo.wedding_id === wedding_id && toDo.checked === false) {
+      weddingToDos.push(toDo)
+    }
+  }
+  return(weddingToDos)
+}
+
+export function getWeddingToDosChecked(state, wedding_id) {
+
+  if(!state.to_dos || !wedding_id) {
+    return [{}]
+  }
+
+  let weddingToDos = [];
+
+  for(let toDo of state.to_dos) {
+    if(toDo.wedding_id === wedding_id && toDo.checked === true) {
       weddingToDos.push(toDo)
     }
   }

@@ -11,7 +11,7 @@ export default function Guest(props) {
         </div>
         <p>{props.name}</p>
       </div>
-      {props.plusOne? <div><i class="fa-solid fa-arrow-turn-down-right"></i>{props.plusOne}</div> : null}
+      {props.plusOne && <div><i class="fa-solid fa-arrow-turn-down-right"></i>{props.plusOne}</div>}
     </div>
     
   )

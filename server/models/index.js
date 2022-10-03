@@ -8,6 +8,7 @@ const UsersModel = require ('./UsersModel')
 const VendorsModel = require ('./VendorsModel')
 const VenuesModel = require ('./VenuesModel')
 const WeddingsModel = require ('./WeddingsModel')
+const GuestsModel = require ('./GuestsModel')
 
 module.exports = {
   AuthModel,
@@ -19,5 +20,6 @@ module.exports = {
   UsersModel,
   VendorsModel,
   VenuesModel,
-  WeddingsModel
+  WeddingsModel,
+  GuestsModel
 };

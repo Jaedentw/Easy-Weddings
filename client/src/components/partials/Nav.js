@@ -48,7 +48,7 @@ export default function Nav(props) {
         </NavLink>
 
         {isLoggedIn &&
-          <NavLink to="/weddings" class="blue-line-be-gone">
+          <NavLink to="/weddings">
             <Tab
               name="Weddings"
               onClick={props.setTab}
@@ -57,7 +57,7 @@ export default function Nav(props) {
           </NavLink>
         }
         {!isLoggedIn &&
-          <NavLink to="/login" class="blue-line-be-gone">
+          <NavLink to="/login">
             <Tab
               name="Weddings"
               onClick={props.setTab}
@@ -80,7 +80,7 @@ export default function Nav(props) {
         </NavLink>
 
         {!isLoggedIn &&
-          <NavLink to="/register" class="blue-line-be-gone">
+          <NavLink to="/register">
             <Tab
               name="Register"
               onClick={props.setTab}
@@ -89,7 +89,7 @@ export default function Nav(props) {
           </NavLink>
         }
         {!isLoggedIn &&
-          <NavLink to="/login" class="blue-line-be-gone">
+          <NavLink to="/login">
             <Tab
               name="login"
               onClick={props.setTab}

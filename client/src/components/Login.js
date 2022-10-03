@@ -19,6 +19,7 @@ export default function Login(props) {
       .then((response) => {
         props.setUser(response.data.user);
         navigate('/weddings');
+        props.setTab('Weddings')
       })
 
       .catch((res) =>

@@ -130,5 +130,15 @@ CREATE TABLE favorites (
   FOREIGN KEY(user_id) REFERENCES users (id) ON DELETE CASCADE,
   business_id INTEGER NOT NULL,
   FOREIGN KEY(business_id) REFERENCES businesses (id) ON DELETE CASCADE
+);
+
+CREATE TABLE guests (
+  id SERIAL PRIMARY KEY NOT NULL,
+  wedding_id INTEGER NOT NULL,
+  FOREIGN KEY(wedding_id) REFERENCES weddings ON DELETE CASCADE,
+  name VARCHAR(200) NOT NULL,
+  confirmed BOOLEAN DEFAULT null,
+  value INTEGER DEFAULT 1,
+  plus_one VARCHAR(200)
 )
 `;
