@@ -52,6 +52,7 @@ export default function Application(props) {
           <Route path="/login" element={<Login 
             state={state}
             setUser={setUser}
+            setTab={setTab}
           />} />
           <Route path="/weddings" element={<WeddingList
             state={state}

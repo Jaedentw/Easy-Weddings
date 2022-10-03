@@ -11,6 +11,7 @@ const UsersRoutes = require ('./UsersRoutes')
 const VendorsRoutes = require ('./VendorsRoutes')
 const VenuesRoutes = require ('./VenuesRoutes')
 const WeddingsRoutes = require ('./WeddingsRoutes')
+const GuestsRoutes = require ('./GuestsRoutes')
 
 const router = express.Router();
 
@@ -46,6 +47,9 @@ router.use('/api/venues', VenuesRoutes);
 
 // CRUD REST API weddings ROUTES
 router.use('/api/weddings', WeddingsRoutes);
+
+// CRUD REST API guests ROUTES
+router.use('/api/guests', GuestsRoutes);
 
 // Catch all route
 router.use((req, res) => {

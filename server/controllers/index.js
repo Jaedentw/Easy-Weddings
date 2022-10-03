@@ -9,6 +9,7 @@ const UsersController = require ('./UsersController')
 const VendorsController = require ('./VendorsController')
 const VenuesController = require ('./VenuesController')
 const WeddingsController = require ('./WeddingsController')
+const GuestsController = require ('./GuestsController')
 
 module.exports = {
   IndexController,
@@ -21,5 +22,6 @@ module.exports = {
   UsersController,
   VendorsController,
   VenuesController,
-  WeddingsController
+  WeddingsController,
+  GuestsController
 };

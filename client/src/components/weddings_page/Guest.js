@@ -2,17 +2,12 @@ import "../../styles/Wedding.css"
 
 export default function Guest(props) {
 
-
   return(
-    <div class="guest_container">
-      <div>
-        <div>
-          {props.confirmed? <i class="fa-regular fa-square-check"></i> : <i class="fa-regular fa-square"></i>}
-        </div>
-        <p>{props.name}</p>
-      </div>
-      {props.plusOne? <div><i class="fa-solid fa-arrow-turn-down-right"></i>{props.plusOne}</div> : null}
+    <div class="to_do_container">
+      <span class="to_do">
+        <p>{props.name}</p>{props.plus_one && <p>: {props.plus_one}</p>}
+      </span>
+      <i class="fa-solid fa-trash-can trash"></i>
     </div>
-    
   )
 }

@@ -4,10 +4,15 @@ import WeddingInfo from "./WeddingInfo";
 import "../../styles/Wedding.css"
 import "../../styles/WeddingListItem.css"
 import WeddingListItem from "./WeddingListItem";
+import {getAllWeddingGuestsCount, getWeddingGuestsCount} from "../../helpers/WeddingsPageHelpers"
 
 export default function Wedding(props) {
 
   const wedding = props.state.wedding;
+  let all = getAllWeddingGuestsCount(props.state, wedding.id)
+  let pending = getWeddingGuestsCount(props.state, wedding.id, null)
+  let confirmed = getWeddingGuestsCount(props.state, wedding.id, true)
+  let declined = getWeddingGuestsCount(props.state, wedding.id, false)
 
   return (
     <div>
@@ -22,8 +27,10 @@ export default function Wedding(props) {
             setWedding={props.setWedding}
           />
           <div class="info_box">
-            <span><strong>Budget: </strong> {wedding.budget}</span>
-            <span><strong>Guest Count: </strong> {wedding.guest_count}</span>
+            <span><strong>Total Guests Invited: </strong> {all}</span>
+            <span><strong>Pending: </strong> {pending}</span>
+            <span><strong>Confirmed: </strong> {confirmed}</span>
+            <span><strong>Declined: </strong> {declined}</span>
           </div>
         </div>
         <div class="weddingInfo">

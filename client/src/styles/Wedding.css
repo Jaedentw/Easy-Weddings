@@ -3,9 +3,6 @@
   flex-direction: row;
   justify-content: center;
   width: 100%;
-  padding-bottom: 20px;
-  border-bottom: 4px grey dotted;
-  margin-bottom: 20px;
 }
 
 .info_box {
@@ -13,7 +10,7 @@
   border: 4px black solid;
   height: 90px;
   background-color: white;
-  padding: 10px;
+  padding: 5px;
   display: flex;
   flex-direction: column;
 }
@@ -24,6 +21,13 @@
   justify-content: center;
   align-items: center;
   width: 100%;
+}
+.lower_wedding h2{
+  padding: 20px;
+  border-bottom: 4px grey dotted;
+  border-top: 4px grey dotted;
+  margin: 20px;
+  width: 132%;
 }
 
 .page_image {
@@ -47,6 +51,7 @@
   background-color: white;
   align-items: center;
   width: 100%;
+  justify-content: space-between;
 }
 .to_do_container i{
   margin: 3px;
@@ -73,9 +78,26 @@
   height: 90%;
   padding: 5px;
   background-color: rgb(190, 188, 188);
+  overflow-y: scroll;
+  scrollbar-width: thin;
+}
+
+.info_label{
+  margin-bottom: 5px;
 }
 
 .info_buttons {
   display: flex;
   flex-direction: row;
+}
+
+.to_do {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding:  2px;
+}
+
+.fa-trash-can:hover{
+  color: red;
 }
