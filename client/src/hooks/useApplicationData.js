@@ -43,14 +43,14 @@ export default function useApplicationData() {
     Promise.all([
       axios.get("/api/weddings"),
       axios.get("/api/to_dos"),
-      //axios.get("/api/favorites")
+      axios.get("/api/guests")
     ]).then((all)=>{
       console.log("user all", all)
       setState(prev =>({
         ...prev,
         weddings: all[0].data.weddings,
         to_dos: all[1].data.To_dos,
-        //favorites: all[2].data.favorites
+        guests: all[2].data.guests
       }))
     })
   }
