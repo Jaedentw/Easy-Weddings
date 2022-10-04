@@ -13,6 +13,8 @@
   padding: 5px;
   display: flex;
   flex-direction: column;
+  width: 97%;
+  margin-top: 20px;
 }
 
 .lower_wedding {
@@ -50,11 +52,15 @@
   border-radius: 2px;
   background-color: white;
   align-items: center;
-  width: 100%;
+  width: 98%;
   justify-content: space-between;
+  padding: 0;
 }
 .to_do_container i{
   margin: 3px;
+}
+.to_do_container p {
+  margin: 0;
 }
 
 .weddingInfo {
@@ -75,7 +81,7 @@
 .info_body {
   border-radius: 5px;
   border: 4px black solid;
-  height: 90%;
+  height: 85%;
   padding: 5px;
   background-color: rgb(190, 188, 188);
   overflow-y: scroll;
@@ -83,6 +89,7 @@
 }
 
 .info_label{
+  margin: 0px;
   margin-bottom: 5px;
 }
 

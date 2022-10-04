@@ -1,4 +1,4 @@
-input, button {
+.login-container input, button {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
@@ -9,7 +9,7 @@ input, button {
   outline: none;
 }
 
-form {
+.login-container form {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
@@ -19,7 +19,7 @@ form {
   top: 5%;
 }
 
-form:after {
+.login-container form:after {
   margin: 0;
   padding: 0;
   box-sizing: border-box;

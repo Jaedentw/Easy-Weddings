@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
-import styles from "../styles/Login.module.css";
+import "../styles/Login.css";
 
 export default function Login(props) {
 
@@ -34,13 +34,13 @@ export default function Login(props) {
   };
 
   return (
+    <body class="login-container">
     <form onSubmit={handleLogin}>
-      <div className={styles['form-inner']}>
+      <div className='form-inner'>
         <h2>Login</h2>
-        <div className={styles['form-group']}>
-          <label className={styles.label}>Email: </label>
+        <div className='form-group'>
+          <label >Email: </label>
           <input
-            className={styles.input}
             name="email"
             type="text"
             placeholder="Email"
@@ -48,10 +48,9 @@ export default function Login(props) {
             onChange={handleChange}
           />
         </div>
-        <div className={styles['form-group']}>
-          <label className={styles.label}>Password: </label>
+        <div className='form-group'>
+          <label>Password: </label>
           <input
-            className={styles.input}
             name="password"
             type="password"
             placeholder="Password"
@@ -59,11 +58,12 @@ export default function Login(props) {
             onChange={handleChange}
           />
         </div>
-        <div className={styles['form-group']}>
-          <input type="submit" value="Login" classname={styles.input}></input>
+        <div className='form-group'>
+          <input type="submit" value="Login"></input>
         </div>
       </div>
     </form>
+    </body>
   );
 
 }
