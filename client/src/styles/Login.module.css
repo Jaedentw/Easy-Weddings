@@ -1,11 +1,8 @@
-* {
+input, button {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
   font-family: sans-serif;
-}
-
-input, button {
   appearance: none;
   background: none;
   border: none;
@@ -13,12 +10,20 @@ input, button {
 }
 
 form {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: sans-serif;
   display: block;
   position: relative;
   top: 5%;
 }
 
 form:after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: sans-serif;
   content: '';
   display: block;
   position: absolute;
@@ -39,6 +44,10 @@ div .form-inner {
 }
 
 div .form-inner h2 {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: sans-serif;
   color: #888;
   font-size: 28px;
   font-weight: 500;
