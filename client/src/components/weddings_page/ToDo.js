@@ -12,8 +12,11 @@ export default function ToDo(props) {
         <p>{props.title}</p>
       </span>
 
-      
-      <i class="fa-solid fa-trash-can trash"></i>
+      <span>
+        <i class="fa-sharp fa-solid fa-pen-to-square"></i>
+        <i class="fa-sharp fa-solid fa-trash-can trash"></i>
+      </span>
+
     </div>
     
   )

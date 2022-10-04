@@ -7,7 +7,10 @@ export default function Guest(props) {
       <span class="to_do">
         <p>{props.name}</p>{props.plus_one && <p>: {props.plus_one}</p>}
       </span>
-      <i class="fa-solid fa-trash-can trash"></i>
+      <span>
+        <i class="fa-sharp fa-solid fa-pen-to-square"></i>
+        <i class="fa-sharp fa-solid fa-trash-can trash"></i>
+      </span>
     </div>
   )
 }

@@ -15,12 +15,11 @@ export default function Venue(props) {
         <div class="text scroller">
           <div class="upper-text">
             <h1>{venue.name}</h1>
-            <p>Venue - Capacity: {venue.capacity} - <a href={venue.website_url}>Website</a></p>
+            <p><strong>Capacity: </strong>{venue.capacity} - <strong>Theme: </strong>{venue.theme} - <a href={venue.website_url}>Website</a></p>
           </div>
           <p>{venue.description}</p>
           <div>
             <p>{venue.extra_features}</p>
-            <strong>Theme: </strong>{venue.theme || "none"}
           </div>
         </div>
       </div>
@@ -28,8 +27,7 @@ export default function Venue(props) {
       <div class="lower-business">
         <p> <strong class="location">Located in:</strong><div>{venue.city}</div></p>
         <div class="upper-business">
-          <i class="fa-solid fa-plus fa-lg fa-sharp"></i>
-          <i class="fa-solid fa-heart fa-lg"></i>
+          {props.state.tab === "Your Listings"? <i class="fa-sharp fa-solid fa-pen-to-square fa-lg"></i> : <i class="fa-sharp fa-solid fa-plus fa-lg"></i>}
         </div>
       </div>
     </section>

@@ -15,20 +15,17 @@ export default function Decorator(props) {
         <div class="text scroller">
           <div class="upper-text">
             <h1>{decorator.name}</h1>
-            <p>Decorator - Specialty: {decorator.specialty} - <a href={decorator.website_url}>Website</a></p>
+            <p><strong>Specialty: </strong> {decorator.specialty} - 
+            <strong> Theme: </strong>{decorator.theme} - <a href={decorator.website_url}>Website</a></p>
           </div>
           <p>{decorator.description}</p>
-          <div>
-            <strong>Theme: </strong>{decorator.theme || "none"}
-          </div>
         </div>
       </div>
 
       <div class="lower-business">
         <p> <strong class="location">Located in:</strong><div>{decorator.city}</div></p>
         <div class="upper-business">
-          <i class="fa-solid fa-plus fa-lg fa-sharp"></i>
-          <i class="fa-solid fa-heart fa-lg"></i>
+          {props.state.tab === "Your Listings"? <i class="fa-sharp fa-solid fa-pen-to-square fa-lg"></i> : <i class="fa-sharp fa-solid fa-plus fa-lg"></i>}
         </div>
       </div>
     </section>

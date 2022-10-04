@@ -3,49 +3,53 @@ import Vendor from '../components/vendors_page/Vendor'
 import Venue from '../components/vendors_page/Venue'
 import Decorator from '../components/vendors_page/Decorator'
 
-function mapCaterers(caterers) {
+function mapCaterers(state, caterers) {
   return (
     caterers.map((c) => {
       return(
         <Caterer 
           key={c.id}
           caterer={c}
+          state={state}
         />
       )
     })
   )
 }
-function mapDecorators(decorators) {
+function mapDecorators(state, decorators) {
   return (
     decorators.map((c) => {
       return(
         <Decorator
           key={c.id}
           decorator={c}
+          state={state}
         />
       )
     })
   )
 }
-function mapVenues(venues) {
+function mapVenues(state, venues) {
   return (
     venues.map((c) => {
       return(
         <Venue
           key={c.id}
           venue={c}
+          state={state}
         />
       )
     })
   )
 }
-function mapVendors(vendors) {
+function mapVendors(state, vendors) {
   return (
     vendors.map((c) => {
       return(
         <Vendor
           key={c.id}
           vendor={c}
+          state={state}
         />
       )
     })
@@ -102,33 +106,33 @@ export function mapFilters(filter, state, input, wedding) {
   if(filter === "Caterers") {
     if(input) {
       let filtered = data.caterers.filter( component => component.name.toLowerCase().includes(input.toLowerCase()))
-      return mapCaterers(filtered)
+      return mapCaterers(state, filtered)
     } else {
-      return mapCaterers(data.caterers)
+      return mapCaterers(state, data.caterers)
     }
   }
   if(filter === "Decorators") {
     if(input) {
       let filtered = data.decorators.filter( component => component.name.toLowerCase().includes(input.toLowerCase()))
-      return mapDecorators(filtered)
+      return mapDecorators(state, filtered)
     } else {
-      return mapDecorators(data.decorators)
+      return mapDecorators(state, data.decorators)
     }
   }
   if(filter === "Venues") {
     if(input) {
       let filtered = data.venues.filter( component => component.name.toLowerCase().includes(input.toLowerCase()))
-      return mapVenues(filtered)
+      return mapVenues(state, filtered)
     } else {
-      return mapVenues(data.venues)
+      return mapVenues(state, data.venues)
     }
   }
   if (filter === "Vendors") {
     if(input) {
       let filtered = data.vendors.filter( component => component.name.toLowerCase().includes(input.toLowerCase()))
-      return mapVendors(filtered)
+      return mapVendors(state, filtered)
     } else {
-      return mapVendors(data.vendors)
+      return mapVendors(state, data.vendors)
     }
   }
 }
