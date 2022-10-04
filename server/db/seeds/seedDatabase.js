@@ -323,9 +323,8 @@ module.exports = `
     'https://ascottparc.com/'
   );
 
-  INSERT INTO weddings (id, user_id, name, date, image_url, caterers, decorators, venues)
+  INSERT INTO weddings (user_id, name, date, image_url, caterers, decorators, venues)
   VALUES (
-    1,
     1,
     'Kostas Wedding',
     '09-09-23',
@@ -335,9 +334,8 @@ module.exports = `
     ARRAY [3, 4]
   );
 
-  INSERT INTO weddings (id, user_id, name, date, image_url, caterers, decorators, venues)
+  INSERT INTO weddings (user_id, name, date, image_url, caterers, decorators, venues)
   VALUES (
-    2,
     1,
     'Kostas Plan B',
     '09-20-2023',

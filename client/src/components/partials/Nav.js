@@ -10,7 +10,7 @@ export default function Nav(props) {
   )
 
   useEffect(()=>{
-    if (props.user === null) {
+    if (!props.user.id) {
       setIsloggedIn(false);
     }
     else {

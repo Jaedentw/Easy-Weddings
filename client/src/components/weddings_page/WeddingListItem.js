@@ -3,7 +3,6 @@ import "../../styles/WeddingListItem.css"
 
 export default function WeddingListItem(props) {
 
-  console.log(props.setWedding)
   return (
     <div 
       class="wedding_container"

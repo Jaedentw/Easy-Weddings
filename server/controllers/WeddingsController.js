@@ -6,14 +6,14 @@ const create = (req, res) => {
     return res.status(401).send({ message: 'User is not logged in' });
   }
 
-  const { name, color, emoji } = req.body;
-  if (!name || !color || !emoji) {
+  const { name } = req.body;
+  if (!name) {
     return res
       .status(400)
-      .send({ message: 'Provide name, color and emoji to create a wedding' });
+      .send({ message: 'Provide name to create a wedding' });
   }
 
-  WeddingsModel.create(userId, name, color, emoji)
+  WeddingsModel.create(userId, name)
     .then(wedding => {
       res.status(201).send({ message: 'Created!', wedding });
     })
@@ -67,11 +67,11 @@ const update = (req, res) => {
     return res.status(401).send({ message: 'User is not logged in' });
   }
 
-  const { name, color, emoji } = req.body;
-  if (!name || !color || !emoji) {
+  const { name } = req.body;
+  if (!name) {
     return res
       .status(400)
-      .send({ message: 'Provide name, color and emoji to update a wedding' });
+      .send({ message: 'Provide name, to update a wedding' });
   }
 
   const { id } = req.params;

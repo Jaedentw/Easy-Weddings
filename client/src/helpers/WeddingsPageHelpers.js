@@ -3,7 +3,7 @@ import Guest from "../components/weddings_page/Guest"
 
 export function getUserWeddings(state, user_id) {
   if(!state.weddings || !user_id) {
-    return [{}]
+    return []
   }
   let userWeddings = [];
   for(let wedding of state.weddings) {
@@ -17,7 +17,7 @@ export function getUserWeddings(state, user_id) {
 //TODO RELATED FUNCTIONS
 function getWeddingToDos(state, wedding_id, checked) {
   if(!state.to_dos || !wedding_id) {
-    return [{}]
+    return []
   }
   let weddingToDos = [];
   for(let toDo of state.to_dos) {
