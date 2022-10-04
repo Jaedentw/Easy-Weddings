@@ -1,10 +1,10 @@
 const { db } = require('../db');
 
-const create = (userId, name, color, emoji) => {
+const create = (user_id, name) => {
   return db
     .query(
-      'INSERT INTO weddings (userId, name, color, emoji) VALUES ($1, $2, $3, $4) RETURNING *',
-      [userId, name, color, emoji]
+      'INSERT INTO weddings (user_id, name) VALUES ($1, $2) RETURNING *',
+      [user_id, name]
     )
     .then(data => data.rows[0])
     .catch(err => console.error(err.stack));

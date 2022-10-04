@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import "../styles/nav.css"
 import "../styles/Application.css";
 import AboutPage from './AboutPage';
@@ -21,8 +21,14 @@ export default function Application(props) {
     setFilter,
     setUser,
     setWedding,
-    logout
+    logout,
+    getProfile
   } = useApplicationData();
+
+
+  useEffect(()=>{
+    getProfile()
+  },[])
 
   //let userWeddings = getUserWeddings(state, user_id);
   //let listings = getFilteredListings(state, user_id);
@@ -61,6 +67,7 @@ export default function Application(props) {
             setFilter={setFilter}
           />}/>
           <Route path="/create-wedding" element={<CreateWedding
+          state={state}
           />}/>
         </Routes>
       </>
