@@ -9,6 +9,7 @@ import { Routes, Route } from 'react-router-dom';
 import Login from './Login';
 import VendorsPage from './vendors_page/VendorsPage';
 import WeddingList from './weddings_page/WeddingsPage'
+import CreateWedding from './weddings_page/CreateWedding';
 
 //import {getUserWeddings} from "../helpers/selectors"
 
@@ -58,6 +59,8 @@ export default function Application(props) {
             state={state}
             setWedding={setWedding}
             setFilter={setFilter}
+          />}/>
+          <Route path="/create-wedding" element={<CreateWedding
           />}/>
         </Routes>
       </>

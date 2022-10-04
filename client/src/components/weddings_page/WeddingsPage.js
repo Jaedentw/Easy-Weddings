@@ -3,11 +3,12 @@ import WeddingListItem from "./WeddingListItem";
 import "../../styles/WeddingsPage.css"
 import Wedding from "./Wedding";
 import { getUserWeddings } from "../../helpers/WeddingsPageHelpers";
+import { useNavigate } from "react-router-dom";
 
 export default function WeddingList(props) {
 
   const state = props.state
-  
+  const navigate = useNavigate();
   let userWeddings = getUserWeddings(props.state, props.state.user.id);
 
   let mappedWeddings = userWeddings.map((w) => {
@@ -25,6 +26,12 @@ export default function WeddingList(props) {
 
   function renderWeddings(state) {
     if(!state.wedding) {
+      mappedWeddings.unshift(
+        <WeddingListItem
+          image_url="https://cdn.icon-icons.com/icons2/916/PNG/512/Plus_icon-icons.com_71848.png"
+          setWedding={navigate}
+        />
+      )
       return mappedWeddings;
     } else {
       return <Wedding
