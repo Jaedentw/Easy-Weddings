@@ -29,9 +29,9 @@ export default function CreateWedding(props) {
 
     axios.post("/api/weddings/", data)
       .then((response) => {
-        props.setUser(response.data.user);
+        props.getUserData();
         navigate('/weddings');
-        props.setTab('Weddings')
+        props.setTab('Weddings');
       })
 
       .catch((res) =>
@@ -53,7 +53,7 @@ export default function CreateWedding(props) {
           name="wedding_name"
           type="text"
           placeholder="Name your Wedding"
-          value={inputs.wedding_name}
+          value={inputs.wedding_name || ""}
           onChange={handleChange}
         />
         <label>Date:</label>
@@ -69,7 +69,7 @@ export default function CreateWedding(props) {
           name="wedding_image"
           type="text"
           placeholder="Image URL"
-          value={inputs.wedding_image || null}
+          value={inputs.wedding_image}
           onChange={handleChange}
         />
 

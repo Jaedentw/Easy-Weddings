@@ -94,7 +94,8 @@ export default function useApplicationData() {
     localStorage.removeItem('user');
     console.log('checking local storage');
     axios.post("/api/auth/logout").then(() => {
-      setState(prev => ({ ...prev, user: {} }));
+      setState(prev => ({ ...prev, user: {} }))
+      console.log("logout", state.user);
     }).finally(
       navigate('/')
     );
@@ -106,5 +107,5 @@ export default function useApplicationData() {
   }
 
 
-  return { state, setTab, setFilter, setUser, getCurrentUser, logout, setWedding, getProfile };
+  return { state, setTab, setFilter, setUser, getCurrentUser, logout, setWedding, getProfile, getUserData };
 }
