@@ -10,6 +10,7 @@ import Login from './Login';
 import VendorsPage from './vendors_page/VendorsPage';
 import WeddingList from './weddings_page/WeddingsPage'
 import CreateWedding from './weddings_page/CreateWedding';
+import Regsiter from './partials/Register';
 
 //import {getUserWeddings} from "../helpers/selectors"
 
@@ -52,7 +53,7 @@ export default function Application(props) {
       
       <Routes >
           <Route path="/" element={<AboutPage />} />
-          <Route path="/register" element={<UserSignUp />} />
+          <Route path="/register" element={<Regsiter />} />
           <Route path="/browse" element={<VendorsPage 
             state={state}
             setFilter={setFilter}

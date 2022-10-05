@@ -1,10 +1,21 @@
 const { db } = require('../db');
 
-const create = (userId, name, color, emoji) => {
+const create = (name, email, phone, country, city, province, postal_code, address, website_url, hashedPassword) => {
   return db
     .query(
-      'INSERT INTO businesses (userId, name, color, emoji) VALUES ($1, $2, $3, $4) RETURNING *',
-      [userId, name, color, emoji]
+      'INSERT INTO businesses (name, email, phone, country, city, province, postal_code, address, website_url, password) VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING *',
+      [
+        name,
+        email,
+        phone,
+        country,
+        city,
+        province,
+        postal_code,
+        address,
+        website_url,
+        hashedPassword
+      ]
     )
     .then(data => data.rows[0])
     .catch(err => console.error(err.stack));
