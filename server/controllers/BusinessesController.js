@@ -1,19 +1,18 @@
 const { BusinessesModel } = require('../models');
+const bcrypt = require('bcryptjs');
 
 const create = (req, res) => {
-  const { userId } = req.session;
-  if (!userId) {
-    return res.status(401).send({ message: 'User is not logged in' });
-  }
-
-  const { name, color, emoji } = req.body;
-  if (!name || !color || !emoji) {
+  console.log('buisness: ', req.body);
+  const { name, email, phone, country, city, province, postal_code, address, website_url, password } = req.body;
+  if (!name || !email || !phone || !country || !city || !province || !postal_code || !address || !website_url || !password) {
     return res
       .status(400)
       .send({ message: 'Provide name, color and emoji to create a fruit' });
   }
 
-  BusinessesModel.create(userId, name, color, emoji)
+  const hashedPassword = bcrypt.hashSync(password, 10);
+
+  BusinessesModel.create(name, email, phone, country, city, province, postal_code, address, website_url, hashedPassword)
     .then(fruit => {
       res.status(201).send({ message: 'Created!', fruit });
     })
@@ -32,7 +31,7 @@ const getAll = (req, res) => {
         return res.status(200).send({ message: 'No businesses available!' });
       }
 
-      res.status(200).send({businesses});
+      res.status(200).send({ businesses });
     })
     .catch(error => {
       console.log(error.message);
