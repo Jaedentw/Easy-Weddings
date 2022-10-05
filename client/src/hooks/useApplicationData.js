@@ -103,6 +103,7 @@ export default function useApplicationData() {
   }
 
   function setWedding(wedding) {
+    setTab("Weddings");
     setState(prev => ({ ...prev, wedding }));
   }
 

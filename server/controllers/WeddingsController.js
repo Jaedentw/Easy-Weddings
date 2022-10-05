@@ -8,9 +8,7 @@ const create = (req, res) => {
 
   const { name } = req.body;
   if (!name) {
-    return res
-      .status(400)
-      .send({ message: 'Provide name to create a wedding' });
+    return res.status(400).send({ message: 'Provide name to create a wedding' });
   }
 
   WeddingsModel.create(userId, name)

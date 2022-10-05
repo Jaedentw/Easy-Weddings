@@ -1,3 +1,14 @@
+.login-container{
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  justify-content: left
+}
+.login-container i{
+  display: flex;
+  margin: 50px;
+  justify-self: left;
+}
 .login-container input, button {
   margin: 0;
   padding: 0;
@@ -9,6 +20,10 @@
   outline: none;
 }
 
+.login-container form[name="create-form"] {
+  margin-left: 30%;
+}
+
 .login-container form {
   margin: 0;
   padding: 0;
@@ -17,7 +32,9 @@
   display: block;
   position: relative;
   top: 5%;
+  margin-left: 40%;
 }
+
 
 .login-container form:after {
   margin: 0;
@@ -32,7 +49,7 @@
   right: -5px;
   bottom: -5px;
   z-index: 1;
-  background-image: linear-gradient(to bottom right, #34001b, #FE4880);
+  background-image: linear-gradient(to bottom right, black, black);
 }
 
 div .form-inner {
@@ -68,8 +85,12 @@ div .form-inner .form-group{
   transition: 0.4s;
 }
 
+
 .form-inner .form-group:focus-within label {
-  color: #FE4880
+  color: black
+}
+.form-inner .form-group:focus-within label[id="wedding_name"] {
+  color: red
 }
 
 div .form-inner .form-group input {
@@ -89,7 +110,7 @@ div .form-inner input[type="submit"] {
   display: inline-block;
   padding: 10px 15px;
   border-radius: 8px;
-  background-image: linear-gradient(to right, #25001a 50%, #25001a 50%, #FE4880);
+  background-image: linear-gradient(to right, rgb(190, 188, 188) 50%, rgb(165, 208, 216) 50%);
   background-size: 200%;
   background-position: 0%;
   transition: 0.4s;
