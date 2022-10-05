@@ -365,7 +365,68 @@ module.exports = `
 
   INSERT INTO guests (id, wedding_id, name, confirmed)
   VALUES (3, 1, 'Tiger', false);
+
+
+
+INSERT INTO vendors (business_id, name, city, website_url, specialty, image_url, rate_per_hour, description)
+  VALUES (
+    1,
+    'DJ wed that',
+    'Toronto',
+    'https://www.3owls.ca/',
+    'house music',
+    'https://upload.wikimedia.org/wikipedia/commons/b/bd/Robert_Hood_Live_%40_Kennedys%2C_Dublin%2C_Ireland_2009.JPG',
+    '250',
+    'Make your wedding fun and groovy with DJ wed that.  A night to remember!'
+  );
+
+
+  INSERT INTO vendors (business_id, name, city, website_url, specialty, image_url, rate_per_hour, description)
+  VALUES (
+    2,
+    'Pope Francis',
+    'Vatican City',
+    'https://www.vatican.va/content/vatican/en.html',
+    'Catholicism',
+    'https://static.politico.com/4f/46/e13b7e064ff49c66070de4f5e64b/https-delivery.gettyimages.com/downloads/461608174',
+    '25000',
+    'Your wedding couldnt be more holier with Pope Francis as your father for your wedding'
+  );
+
+
+  INSERT INTO vendors (business_id, name, city, website_url, specialty, image_url, rate_per_hour, description)
+  VALUES (
+    3,
+    'Hips dont lie',
+    'Vancouver',
+    'https://hipsdontlie.ca/',
+    'Belly Dance, Bollywood, Samba, Jazz, Brazilian',
+    'https://s3-media0.fl.yelpcdn.com/bphoto/Lifh8-qneCTHE_39HAzDSg/l.jpg',
+    '150',
+    'Have the best wedding dancers at your wedding, we will bring light and flare to your wedding'
+  );
+
+  INSERT INTO vendors (business_id, name, city, website_url, specialty, image_url, rate_per_hour, description)
+  VALUES (
+    5,
+    'COUTURE BRIDAL ALTERATIONS',
+    'Toronto',
+    'https://www.couturebridalalterations.ca/',
+    'custom, alterations, tailoring.',
+    'https://static.wixstatic.com/media/e93f5e_70d57ef82364463fa5f4a076ac90c346~mv2_d_3410_2512_s_4_2.jpeg/v1/fill/w_3410,h_2512,al_c/e93f5e_70d57ef82364463fa5f4a076ac90c346~mv2_d_3410_2512_s_4_2.jpeg',
+    '100',
+    'Look your best! with our services we ensure you and your friends will look fabulous'
+  );
+
+  INSERT INTO vendors (business_id, name, city, website_url, specialty, image_url, rate_per_hour, description)
+  VALUES (
+    7,
+    'Mandegaran Studio',
+    'Toronto',
+    'http://mandegaranstudio.ca/',
+    'Any enviroment',
+    'https://carriej.ca/wp-content/uploads/2018/01/Sprucewood-Shores-Winery-Photographer-2-scaled.jpg',
+    '125',
+    'we obsessed with photography because we obsessed with people, what it means to be human and the magic of the unseen connection we share. we love to Create lasting memories in an artistic and elegantly way. In two words, Your Love is our motivation.'
+  );
 `;
-
-
-
