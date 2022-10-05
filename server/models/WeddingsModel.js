@@ -24,12 +24,14 @@ const getById = id => {
     .catch(err => console.error(err.stack));
 };
 
-const update = (name, color, emoji, id) => {
+const update = (id, user_id, name, caterers, decorators, venues, vendors, image_url) => {
+  console.log("function id", user_id)
   return db
     .query(
-      'UPDATE weddings SET name = $1, color = $2, emoji = $3 WHERE id = $4 RETURNING *',
-      [name, color, emoji, id]
+      'UPDATE weddings SET user_id = $2, name = $3, caterers = $4, decorators = $5, venues = $6, vendors = $7, image_url = $8 WHERE id = $1 RETURNING *',
+      [id, user_id, name, caterers, decorators, venues, vendors, image_url]
     )
+    .then(data => console.log(data))
     .then(data => data.rows[0])
     .catch(err => console.error(err.stack));
 };

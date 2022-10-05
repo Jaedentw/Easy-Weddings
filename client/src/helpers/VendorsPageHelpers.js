@@ -9,6 +9,7 @@ function mapCaterers(state, caterers) {
       return (
         <Caterer
           key={c.id}
+          id={c.id}
           caterer={c}
           state={state}
         />
@@ -22,6 +23,7 @@ function mapDecorators(state, decorators) {
       return (
         <Decorator
           key={c.id}
+          id={c.id}
           decorator={c}
           state={state}
         />
@@ -35,6 +37,7 @@ function mapVenues(state, venues) {
       return (
         <Venue
           key={c.id}
+          id={c.id}
           venue={c}
           state={state}
         />
@@ -48,6 +51,7 @@ function mapVendors(state, vendors) {
       return (
         <Vendor
           key={c.id}
+          id={c.id}
           vendor={c}
           state={state}
         />

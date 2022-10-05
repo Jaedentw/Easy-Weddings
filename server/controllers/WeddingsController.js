@@ -46,6 +46,7 @@ const getById = (req, res) => {
   WeddingsModel.getById(id)
     .then(wedding => {
       if (!wedding) {
+        console.log("get by id", wedding)
         return res.status(404).send({ message: 'wedding not found!' });
       }
 
@@ -60,12 +61,16 @@ const getById = (req, res) => {
 };
 
 const update = (req, res) => {
+
+  console.log("req.body", req.body)
+
   const { userId } = req.session;
   if (!userId) {
     return res.status(401).send({ message: 'User is not logged in' });
   }
 
-  const { name } = req.body;
+  const { name, caterers, decorators, venues, vendors, image_url } = req.body;
+  console.log("caterer",caterers)
   if (!name) {
     return res
       .status(400)
@@ -74,7 +79,7 @@ const update = (req, res) => {
 
   const { id } = req.params;
 
-  WeddingsModel.update(name, color, emoji, id)
+  WeddingsModel.update(id, userId, name, caterers, decorators, venues, vendors, image_url)
     .then(wedding => {
       if (!wedding) {
         return res.status(404).send({ message: 'wedding not found!' });
