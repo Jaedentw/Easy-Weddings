@@ -17,7 +17,7 @@ export default function Login(props) {
 
     axios.post("/api/auth/login", data)
       .then((response) => {
-        props.getUserData()
+        props.setUser(response.data.user);
         navigate('/weddings');
         props.setTab('Weddings')
       })
@@ -34,7 +34,7 @@ export default function Login(props) {
   };
 
   return (
-    <body class="login-container">
+    <div class="login-container">
     <form onSubmit={handleLogin}>
       <div className='form-inner'>
         <h2>Login</h2>
@@ -63,7 +63,7 @@ export default function Login(props) {
         </div>
       </div>
     </form>
-    </body>
+    </div>
   );
 
 }

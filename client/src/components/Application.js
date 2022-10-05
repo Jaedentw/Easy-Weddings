@@ -60,6 +60,7 @@ export default function Application(props) {
           <Route path="/login" element={<Login 
             state={state}
             getUserData={getUserData}
+            setUser={setUser}
             setTab={setTab}
           />} />
           <Route path="/weddings" element={<WeddingList
