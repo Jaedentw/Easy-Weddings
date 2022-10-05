@@ -112,7 +112,7 @@ CREATE TABLE weddings (
   venues INTEGER ARRAY,
   vendors INTEGER ARRAY,
   date VARCHAR(200),
-  image_url VARCHAR(500)
+  image_url VARCHAR(500) DEFAULT 'https://upload.wikimedia.org/wikipedia/commons/thumb/a/ac/White_flag_of_surrender.svg/800px-White_flag_of_surrender.svg.png'
 );
  
 CREATE TABLE to_dos (

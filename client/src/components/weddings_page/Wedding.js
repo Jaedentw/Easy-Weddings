@@ -25,6 +25,7 @@ export default function Wedding(props) {
             name={wedding.name}
             date={wedding.date}
             setWedding={props.setWedding}
+            state={props.state}
           />
           <div class="info_box">
             <span><strong>Total Guests Invited: </strong> {all}</span>

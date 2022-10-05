@@ -19,6 +19,7 @@ export default function WeddingList(props) {
     return (
       <WeddingListItem
         key={w.id}
+        state={state}
         date={w.date}
         name={w.name}
         image_url={w.image_url}
@@ -33,6 +34,7 @@ export default function WeddingList(props) {
       mappedWeddings.unshift(
         <WeddingListItem
           key={0}
+          state={state}
           image_url="https://cdn.icon-icons.com/icons2/916/PNG/512/Plus_icon-icons.com_71848.png"
           setWedding={navigate}
         />

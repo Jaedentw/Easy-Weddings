@@ -2,7 +2,7 @@
   display: flex;
   flex-direction: column;
   width: 100%;
-  height: 200%;
+  height: 300%;
   background-color: antiquewhite;
 }
 
@@ -11,6 +11,9 @@
   flex-direction: row;
   flex-wrap: wrap;
   justify-content: space-evenly;
+}
+.wli_margins {
+  margin: 30px;
 }
 
 .wedding_header {

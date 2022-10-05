@@ -1,6 +1,7 @@
 import {useState} from "react"
 import axios from "axios";
 import { useNavigate } from "react-router-dom"
+import "../../styles/Login.css";
 
 
 export default function CreateWedding(props) {
@@ -34,47 +35,63 @@ export default function CreateWedding(props) {
         props.setTab('Weddings');
       })
 
-      .catch((res) =>
-        console.log('Error logging in!', res.data)
-      );
+      .catch((res) =>{
+        console.log("message: ", res.response.data.message)
+        if(res.response.data.message === "Provide name to create a wedding") {
+          alert("Please enter a name to create a new wedding")
+        }
+      })
   }
   
 
 
   return(
-    <div class="form-container">
+    <div class="login-container">
+      <i 
+        class="fa-sharp fa-solid fa-arrow-left fa-lg"
+        onClick={() => {navigate("/weddings")}}
+      />
       <form
-        class="form"
+        name="create-form"
         autoComplete="off"
         onSubmit={handleWedding}
-      >
-        <label>Wedding Name:</label>
-        <input
-          name="wedding_name"
-          type="text"
-          placeholder="Name your Wedding"
-          value={inputs.wedding_name || ""}
-          onChange={handleChange}
-        />
-        <label>Date:</label>
-        <input
-          name="wedding_date"
-          type="text"
-          placeholder="Wedding Date"
-          value={inputs.wedding_date || ""}
-          onChange={handleChange}
-        />
-        <label>Image URL:</label>
-        <input
-          name="wedding_image"
-          type="text"
-          placeholder="Image URL"
-          value={inputs.wedding_image}
-          onChange={handleChange}
-        />
-
-        <button name="create" type="submit">Create</button>
-
+      > 
+      <div class="form-inner">
+        <h2>New Wedding</h2>
+        <div class="form-group form-required">
+          <label id="wedding_name">Name:</label>
+          <input
+            name="wedding_name"
+            type="text"
+            placeholder="Name your Wedding"
+            value={inputs.wedding_name || ""}
+            onChange={handleChange}
+          />
+        </div>
+        <div class="form-group">
+          <label>Date:</label>
+          <input
+            name="wedding_date"
+            type="text"
+            placeholder="Wedding Date"
+            value={inputs.wedding_date || ""}
+            onChange={handleChange}
+          />
+        </div>
+        <div class="form-group">
+          <label>Image URL:</label>
+          <input
+            name="wedding_image"
+            type="text"
+            placeholder="Image URL"
+            value={inputs.wedding_image}
+            onChange={handleChange}
+          />
+        </div>
+        <div class="form-group">
+          <input name="create" type="submit" value="Create"/>
+        </div>
+      </div>
       </form>
     </div>
   )

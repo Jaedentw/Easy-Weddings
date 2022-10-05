@@ -5,7 +5,7 @@ export default function WeddingListItem(props) {
 
   return (
     <div 
-      class="wedding_container"
+      class={`wedding_container ${!props.state.wedding && 'wli_margins'}`}
       onClick={props.setWedding.name === "setWedding"? () => props.setWedding(props.wedding) : () => props.setWedding("/create-wedding")}
     >
       <img alt="wedding" class="wedding_image" src={props.image_url}/>
