@@ -93,3 +93,32 @@
   overflow-y: scroll;
   scrollbar-width: thin;
 }
+
+.dropdown {
+  display: flex;
+  position: absolute;
+  width: 200px;
+  background-color: white;
+  border: 4px solid black;
+  border-radius: 4px;
+  padding: 5px;
+  overflow: hidden;
+  transform: translateX(10%);
+  flex-direction: column;
+  align-items: flex-start;
+}
+.dropdown div {
+  display: flex;
+  flex-direction: row;
+  height: 20px;
+  padding: 5px;
+  border: 3px black solid;
+  border-radius: 3px;
+  margin: 5px;
+  width: 175px;
+  justify-content: left;
+  background-color: rgb(190, 188, 188);
+}
+.dropdown div:hover {
+  background-color: rgb(165, 208, 216);
+}
