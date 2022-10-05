@@ -1,10 +1,18 @@
 const { db } = require('../db');
 
-const register = (email, password) => {
+const register = (first_name, last_name, country, province, city, address, postal_code, email, phone, password) => {
   return db
-    .query('INSERT INTO users (email, password) VALUES ($1, $2) RETURNING *', [
+    .query('INSERT INTO users (email, password,first_name,last_name,country,province,city,address,postal_code,phone) VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING *', [
       email,
-      password
+      password,
+      first_name,
+      last_name,
+      country,
+      province,
+      city,
+      address,
+      postal_code,
+      phone
     ])
     .then(data => data.rows[0])
     .catch(err => console.error(err.stack));

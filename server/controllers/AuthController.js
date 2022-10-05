@@ -3,16 +3,16 @@ const bcrypt = require('bcryptjs');
 const { AuthModel, UsersModel } = require('../models');
 
 const register = (req, res) => {
-  const { email, password } = req.body;
-  if (!email || !password) {
+  const { first_name, last_name, country, province, city, address, postal_code, email, phone, password } = req.body;
+  if (!email || !password || !first_name || !last_name, !country || !province || !city || !address || !postal_code || !phone) {
     return res
       .status(400)
-      .send({ message: 'Provide email and password to register' });
+      .send({ message: 'Please provide all details requierd!' });
   }
 
   const hashedPassword = bcrypt.hashSync(password, 10);
 
-  AuthModel.register(email, hashedPassword)
+  AuthModel.register(first_name, last_name, country, province, city, address, postal_code, email, phone, hashedPassword)
     .then(user => {
       res.status(201).send({ message: 'User registered successfully!', user });
     })
@@ -43,9 +43,9 @@ const login = (req, res) => {
 
       req.session.userId = user.id;
       delete user.password;
-      res.status(200).send({message: 'User logged in successfully!',user });
+      res.status(200).send({ message: 'User logged in successfully!', user });
 
-      
+
 
     })
     .catch(error => {
