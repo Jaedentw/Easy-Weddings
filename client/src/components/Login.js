@@ -23,7 +23,7 @@ export default function Login(props) {
       })
 
       .catch((res) =>
-        console.log('Error logging in!', res.data)
+        console.log('Not actually an error', res.data)
       );
   }
 
