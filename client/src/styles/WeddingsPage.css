@@ -12,6 +12,9 @@
   flex-wrap: wrap;
   justify-content: space-evenly;
 }
+.wli_margins {
+  margin: 30px;
+}
 
 .wedding_header {
   display: flex;
