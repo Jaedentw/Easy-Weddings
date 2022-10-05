@@ -22,7 +22,8 @@ export default function Application(props) {
     setUser,
     setWedding,
     logout,
-    getProfile
+    getProfile,
+    getUserData
   } = useApplicationData();
 
 
@@ -67,7 +68,9 @@ export default function Application(props) {
             setFilter={setFilter}
           />}/>
           <Route path="/create-wedding" element={<CreateWedding
-          state={state}
+            state={state}
+            setTab={setTab}
+            getUserData={getUserData}
           />}/>
         </Routes>
       </>

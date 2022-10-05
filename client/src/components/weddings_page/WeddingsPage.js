@@ -9,7 +9,11 @@ export default function WeddingList(props) {
 
   const state = props.state
   const navigate = useNavigate();
-  let userWeddings = getUserWeddings(props.state, props.state.user.id);
+
+  let userWeddings = [];
+  if(props.state.user) {
+    userWeddings = getUserWeddings(props.state, props.state.user.id);
+  }
 
   let mappedWeddings = userWeddings.map((w) => {
     return (
@@ -28,6 +32,7 @@ export default function WeddingList(props) {
     if(!state.wedding) {
       mappedWeddings.unshift(
         <WeddingListItem
+          key={0}
           image_url="https://cdn.icon-icons.com/icons2/916/PNG/512/Plus_icon-icons.com_71848.png"
           setWedding={navigate}
         />
@@ -35,6 +40,7 @@ export default function WeddingList(props) {
       return mappedWeddings;
     } else {
       return <Wedding
+        key={state.wedding.id}
         state={state}
         wedding={state.wedding}
         setFilter={props.setFilter}

@@ -10,7 +10,7 @@ export default function Nav(props) {
   )
 
   useEffect(()=>{
-    if (!props.user.id) {
+    if (props.user.id === undefined) {
       setIsloggedIn(false);
     }
     else {
@@ -24,7 +24,7 @@ export default function Nav(props) {
         <a href="/" class="title-font">Easy Weddings</a>
 
         {(isLoggedIn &&
-
+          
           <div class="nav-log">
             <div class="upper-log">
               <strong>Signed in as: </strong><span>{props.user?.first_name}</span>

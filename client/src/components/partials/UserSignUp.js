@@ -123,11 +123,11 @@ export default function UserSignUp(props) {
       </form>
       <div class="form-business">
         <p>Would you like to create a business account?</p>
-        <lable>Yes
+        <label>Yes
         <input 
           type="checkbox" 
           name="is_business"
-        /></lable>
+        /></label>
       </div>
       <div>
         <button>Create Account</button>
