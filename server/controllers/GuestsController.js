@@ -6,14 +6,14 @@ const create = (req, res) => {
     return res.status(401).send({ message: 'User is not logged in' });
   }
 
-  const { name, color, emoji } = req.body;
-  if (!name || !color || !emoji) {
+  const { wedding_id, name, value} = req.body;
+  if (!wedding_id || name === null || !value ) {
     return res
       .status(400)
       .send({ message: 'Please provide all details to create a guest service' });
   }
 
-  GuestsModel.create(userId, name, color, emoji)
+  GuestsModel.create(wedding_id, name, confirmed, value, plus_one )
     .then(guest => {
       res.status(201).send({ message: 'Created!', guest });
     })
@@ -67,21 +67,21 @@ const update = (req, res) => {
     return res.status(401).send({ message: 'User is not logged in' });
   }
 
-  const { name, color, emoji } = req.body;
-  if (!name || !color || !emoji) {
+  const { wedding_id, name, value, confirmed, plus_one } = req.body;
+  if (!wedding_id || !value || name === null) {
     return res
       .status(400)
-      .send({ message: 'Provide name, color and emoji to update a guest' });
+      .send({ message: 'Provide all details to update a guest' });
   }
 
   const { id } = req.params;
 
-  GuestsModel.update(name, color, emoji, id)
+  GuestsModel.update(wedding_id, name, confirmed, value, plus_one, id)
     .then(guest => {
-      if (!guest) {
+      if (!guest === {wedding_id, name, confirmed, value, plus_one, id}) {
         return res.status(404).send({ message: 'guest not found!' });
       }
-
+      console.log("update guest",guest)
       res.status(201).send({ message: 'Updated!', guest });
     })
     .catch(error => {

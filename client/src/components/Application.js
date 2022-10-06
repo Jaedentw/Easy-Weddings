@@ -8,7 +8,7 @@ import UserSignUp from './partials/UserSignUp';
 import { Routes, Route } from 'react-router-dom';
 import Login from './Login';
 import VendorsPage from './vendors_page/VendorsPage';
-import WeddingList from './weddings_page/WeddingsPage'
+import WeddingsPage from './weddings_page/WeddingsPage'
 import CreateWedding from './weddings_page/CreateWedding';
 
 //import {getUserWeddings} from "../helpers/selectors"
@@ -30,10 +30,6 @@ export default function Application(props) {
   useEffect(()=>{
     getProfile()
   },[])
-
-  //let userWeddings = getUserWeddings(state, user_id);
-  //let listings = getFilteredListings(state, user_id);
-
 
   return (
 
@@ -63,10 +59,11 @@ export default function Application(props) {
             setUser={setUser}
             setTab={setTab}
           />} />
-          <Route path="/weddings" element={<WeddingList
+          <Route path="/weddings" element={<WeddingsPage
             state={state}
             setWedding={setWedding}
             setFilter={setFilter}
+            getUserData={getUserData}
           />}/>
           <Route path="/create-wedding" element={<CreateWedding
             state={state}

@@ -97,10 +97,12 @@ function getWeddingListings(state, wedding) {
       }
     }
   }
-  for(let listingId of wedding.vendors) {
-    for(let listing of state.vendors) {
-      if(listingId === listing.id) {
-        data.vendirs.push(listing)
+  if(wedding.vendors) {
+    for(let listingId of wedding.vendors) {
+      for(let listing of state.vendors) {
+        if(listingId === listing.id) {
+          data.vendirs.push(listing)
+        }
       }
     }
   }
@@ -111,10 +113,8 @@ function getWeddingListings(state, wedding) {
 export function mapFilters(filter, state, input, wedding) {
 
   let data = state;
-  console.log('This is the tab', state.tab)
   if (wedding && state.tab === "Weddings") {
     data = getWeddingListings(state, wedding);
-    console.log('This is the wedding data: ',data)
   }
 
   if (filter === "Caterers") {

@@ -28,7 +28,7 @@ function getWeddingToDos(state, wedding_id, checked) {
   return(weddingToDos)
 };
 
-export function mappedWeddingToDos(state, checked) {
+export function mappedWeddingToDos(state, checked, getUserData) {
   
   let toDos = getWeddingToDos(state, state.wedding.id, checked)
   
@@ -39,9 +39,11 @@ export function mappedWeddingToDos(state, checked) {
           key={t.id}
           title={t.title}
           checked={t.checked}
+          toDo={t}
+          getUserData={getUserData}
         />
       )
-    })
+    }).reverse()
   )
 }
 
@@ -59,19 +61,21 @@ function getWeddingGuests(state, wedding_id, confirmation_type) {
   }
   return(weddingGuests)
 }
-export function mappedWeddingGuests(state, confirmation_type) {
+export function mappedWeddingGuests(state, confirmation_type, getUserData) {
   let guests = getWeddingGuests(state, state.wedding.id, confirmation_type)
   return (
     guests.map((g) => {
       return (
         <Guest
           key={g.id}
+          guest={g}
           name={g.name}
           confirmed={g.confirmed}
           plus_one={g.plus_one}
+          getUserData={getUserData}
         />
       )
-    })
+    }).reverse()
   )
 }
 

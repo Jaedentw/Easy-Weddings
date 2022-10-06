@@ -5,7 +5,7 @@ import Wedding from "./Wedding";
 import { getUserWeddings } from "../../helpers/WeddingsPageHelpers";
 import { useNavigate } from "react-router-dom";
 
-export default function WeddingList(props) {
+export default function WeddingPage(props) {
 
   const state = props.state
   const navigate = useNavigate();
@@ -47,6 +47,7 @@ export default function WeddingList(props) {
         wedding={state.wedding}
         setFilter={props.setFilter}
         setWedding={props.setWedding}
+        getUserData={props.getUserData}
       />
     }
   }

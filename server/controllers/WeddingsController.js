@@ -81,7 +81,7 @@ const update = (req, res) => {
 
   WeddingsModel.update(id, userId, name, caterers, decorators, venues, vendors, image_url)
     .then(wedding => {
-      if (!wedding) {
+      if (!wedding === {id, userId, name, caterers, decorators, venues, vendors, image_url}) {
         return res.status(404).send({ message: 'wedding not found!' });
       }
 

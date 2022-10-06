@@ -1,10 +1,10 @@
 const { db } = require('../db');
 
-const create = (userId, name, color, emoji) => {
+const create = (wedding_id, name, value, plus_one ) => {
   return db
     .query(
-      'INSERT INTO guests (userId, name, color, emoji) VALUES ($1, $2, $3, $4) RETURNING *',
-      [userId, name, color, emoji]
+      'INSERT INTO guests (wedding_id, name, value, plus_one ) VALUES ($1, $2, $3, $4) RETURNING *',
+      [wedding_id, name, value, plus_one]
     )
     .then(data => data.rows[0])
     .catch(err => console.error(err.stack));
@@ -24,13 +24,13 @@ const getById = id => {
     .catch(err => console.error(err.stack));
 };
 
-const update = (name, color, emoji, id) => {
+const update = (wedding_id, name, confirmed, value, plus_one, id ) => {
   return db
     .query(
-      'UPDATE guests SET name = $1, color = $2, emoji = $3 WHERE id = $4 RETURNING *',
-      [name, color, emoji, id]
+      'UPDATE guests SET wedding_id = $1, name = $2, confirmed = $3, value = $4, plus_one = $5 WHERE id = $6 RETURNING *',
+      [wedding_id, name, confirmed, value, plus_one, id]
     )
-    .then(data => data.rows[0])
+    .then(data => console.log(data.rows[0]))
     .catch(err => console.error(err.stack));
 };
 

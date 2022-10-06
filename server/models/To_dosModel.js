@@ -1,10 +1,10 @@
 const { db } = require('../db');
 
-const create = (userId, name, color, emoji) => {
+const create = (wedding_id, title, checked) => {
   return db
     .query(
-      'INSERT INTO to_dos (userId, name, color, emoji) VALUES ($1, $2, $3, $4) RETURNING *',
-      [userId, name, color, emoji]
+      'INSERT INTO to_dos (wedding_id, title, checked) VALUES ($1, $2, $3) RETURNING *',
+      [wedding_id, title, checked]
     )
     .then(data => data.rows[0])
     .catch(err => console.error(err.stack));
@@ -24,11 +24,11 @@ const getById = id => {
     .catch(err => console.error(err.stack));
 };
 
-const update = (name, color, emoji, id) => {
+const update = (id, wedding_id, title, checked) => {
   return db
     .query(
-      'UPDATE to_dos SET name = $1, color = $2, emoji = $3 WHERE id = $4 RETURNING *',
-      [name, color, emoji, id]
+      'UPDATE to_dos SET wedding_id = $2, title = $3, checked = $4 WHERE id = $1 RETURNING *',
+      [id, wedding_id, title, checked]
     )
     .then(data => data.rows[0])
     .catch(err => console.error(err.stack));

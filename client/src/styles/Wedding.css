@@ -62,6 +62,10 @@
 .to_do_container p {
   margin: 0;
 }
+.to_do_btn {
+  border: 2px black solid;
+  border-radius: 2px;
+}
 
 .weddingInfo {
   border-radius: 5px;
@@ -98,6 +102,25 @@
   flex-direction: row;
 }
 
+.info_upper {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.info_btn {
+  align-items: center;
+  border: 3px black solid;
+  border-radius: 3px;
+  margin-right: 11px;
+  margin-bottom: 5px;
+  background-color: rgb(165, 208, 216);
+  padding: 2px;
+}
+.info_btn:hover {
+  background-color: rgb(255, 255, 255);
+}
+
 .to_do {
   display: flex;
   flex-direction: row;
@@ -107,4 +130,21 @@
 
 .fa-trash-can:hover{
   color: red;
+}
+
+.row {
+  display: flex;
+  flex-direction: row;
+}
+
+.red {
+  color: red
+}
+
+.yellow {
+  color: yellow
+}
+
+.green {
+  color: green
 }
