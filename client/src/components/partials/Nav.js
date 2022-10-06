@@ -5,6 +5,7 @@ import { NavLink } from "react-router-dom";
 
 export default function Nav(props) {
 
+  console.log('nav user id:',props.user.id)
   const [isLoggedIn, setIsloggedIn] = useState(
     null
   )
