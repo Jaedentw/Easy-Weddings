@@ -62,6 +62,7 @@ export default function useApplicationData() {
     
   }
 
+
   function getUserData() {
     Promise.all([
       axios.get("/api/weddings"),

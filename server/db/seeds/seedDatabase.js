@@ -33,6 +33,20 @@ module.exports = `
     
 
 
+    INSERT INTO businesses (website_url,name,country,province,city,address,postal_code,email,phone,password) VALUES (
+      'WebURL',
+      'Kostas business',
+      'Canada',
+      'Ontario',
+      'Toronto',
+      '4517 Bloor st. EST',
+      'L4S N6B',
+      'kostabusiness@gmail.com',
+      '9057444545',
+      '$2a$10$U35lMD9rB38wy/itPaVKWekIlKgFxQN.ujMfNAkQ1fOYpkc19OWqC'
+      );
+
+
   INSERT INTO businesses (website_url,name,country,province,city,address,postal_code,email,phone,password) VALUES (
   'WebURL',
   'Honeymoon Hill',
