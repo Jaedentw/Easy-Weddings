@@ -55,7 +55,7 @@ const login = (req, res) => {
 
             req.session.userId = user.id;
             delete user.password;
-            user.isBusiness = true;
+            user.is_business = true;
             console.log('user object for business: ',user)
             res.status(200).send({ message: 'User logged in successfully!', user });
           });

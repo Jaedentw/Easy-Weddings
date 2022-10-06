@@ -5,7 +5,7 @@ import { NavLink } from "react-router-dom";
 
 export default function Nav(props) {
 
-  console.log('nav user id:',props.user.id)
+  console.log('nav user:',props.user)
   const [isLoggedIn, setIsloggedIn] = useState(
     null
   )
@@ -28,7 +28,7 @@ export default function Nav(props) {
           
           <div class="nav-log">
             <div class="upper-log">
-              <strong>Signed in as: </strong><span>{props.user?.first_name}</span>
+              <strong>Signed in as: </strong><span>{props.user.is_business?props.user.name:props.user.first_name}</span>
             </div>
             <div>
               <button onClick={props.logout} value="Logout"><i class="fa-solid fa-right-from-bracket"></i> Logout</button>
@@ -65,12 +65,13 @@ export default function Nav(props) {
             />
           </NavLink>
         }
-
+        <NavLink to="/listings">
         <Tab
           name="Your Listings"
           onClick={props.setTab}
           selected={props.selected}
         />
+        </NavLink>
 
         <NavLink to="/browse">
           <Tab
