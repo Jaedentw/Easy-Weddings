@@ -20,7 +20,7 @@ export default function useApplicationData() {
     weddings: [],
     personnel: [],
     to_dos: [],
-    user: {}
+    user: {},
   });
 
   useEffect(() => {
@@ -46,19 +46,14 @@ export default function useApplicationData() {
 
 
   function getProfile() {
+    console.log('user before getProfile',state.user)
     axios.get("/api/users/profile").then(({ data }) => {
       setUser(data.user);
+      console.log('getting user profile')
     })
       .catch((error)=>{
         console.log('Error getting profile...',error)
       });
-
-      axios.get("/api/business/profile").then(({ data }) => {
-        setUser(data.user);
-      })
-        .catch((error)=>{
-          console.log('Error getting profile...',error)
-        });
     
   }
 

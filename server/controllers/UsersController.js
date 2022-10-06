@@ -122,6 +122,7 @@ const getProfile = (req, res) => {
   else {
     UsersModel.getById(userId)
       .then((user) => {
+        delete user.password
         res.send({user})
       });
   }
