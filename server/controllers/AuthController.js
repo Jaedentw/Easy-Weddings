@@ -32,28 +32,38 @@ const login = (req, res) => {
 
   AuthModel.login(email)
     .then(user => {
-      if (!user) {
-        return res.status(401).send({ message: 'Invalid credentials!' });
+      if (user) {
+        const passwordsMatch = bcrypt.compareSync(password, user.password);
+        if (!passwordsMatch) {
+          return res.status(401).send({ message: 'Invalid credentials!' });
+        }
+
+
+        req.session.userId = user.id;
+        delete user.password;
+        res.status(200).send({ message: 'User logged in successfully!', user });
       }
+      
+      else {
+        AuthModel.businessLogin(email)
+          .then(user => {
+            const passwordsMatch = bcrypt.compareSync(password, user.password);
+            if (!passwordsMatch) {
+              return res.status(401).send({ message: 'Invalid credentials!' });
+            }
 
-      const passwordsMatch = bcrypt.compareSync(password, user.password);
-      if (!passwordsMatch) {
-        return res.status(401).send({ message: 'Invalid credentials!' });
+
+            req.session.userId = user.id;
+            delete user.password;
+            user.isBusiness = true;
+            console.log('user object for business: ',user)
+            res.status(200).send({ message: 'User logged in successfully!', user });
+          });
       }
-
-      req.session.userId = user.id;
-      delete user.password;
-      res.status(200).send({ message: 'User logged in successfully!', user });
-
-
-
-    })
-    .catch(error => {
-      console.log(error.message);
-      res
-        .status(500)
-        .send({ message: 'Error logging in user', error: error.message });
+      
     });
+
+
 };
 
 const logout = (req, res) => {

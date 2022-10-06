@@ -52,6 +52,14 @@ export default function useApplicationData() {
       .catch((error)=>{
         console.log('Error getting profile...',error)
       });
+
+      axios.get("/api/business/profile").then(({ data }) => {
+        setUser(data.user);
+      })
+        .catch((error)=>{
+          console.log('Error getting profile...',error)
+        });
+    
   }
 
   function getUserData() {
@@ -60,7 +68,6 @@ export default function useApplicationData() {
       axios.get("/api/to_dos"),
       axios.get("/api/guests")
     ]).then((all) => {
-      console.log("user all", all);
       setState(prev => ({
         ...prev,
         weddings: all[0].data.weddings,
