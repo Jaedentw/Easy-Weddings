@@ -6,22 +6,22 @@ const create = (req, res) => {
     return res.status(401).send({ message: 'User is not logged in' });
   }
 
-  const { name, color, emoji } = req.body;
-  if (!name || !color || !emoji) {
+  const { wedding_id, title, checked} = req.body;
+  if (!wedding_id || title === null || checked === null) {
     return res
       .status(400)
       .send({ message: 'Please provide all details to create a to_do service' });
   }
 
-  To_dosModel.create(userId, name, color, emoji)
+  To_dosModel.create(wedding_id, title, checked)
     .then(to_do => {
-      res.status(201).send({ message: 'Created!', decorator });
+      res.status(201).send({ message: 'Created!', to_do });
     })
     .catch(error => {
       console.log(error.message);
       res
         .status(500)
-        .send({ message: 'Error creating decorator', error: error.message });
+        .send({ message: 'Error creating to_do', error: error.message });
     });
 };
 
@@ -46,12 +46,12 @@ const getById = (req, res) => {
   const { id } = req.params;
 
   To_dosModel.getById(id)
-    .then(decorator => {
-      if (!decorator) {
-        return res.status(404).send({ message: 'decorator not found!' });
+    .then(to_do => {
+      if (!to_do) {
+        return res.status(404).send({ message: 'to_do not found!' });
       }
 
-      res.status(200).send({ message: 'Here is your decorator!', decorator });
+      res.status(200).send({ message: 'Here is your to_do!', to_do });
     })
     .catch(error => {
       console.log(error.message);
@@ -66,22 +66,21 @@ const update = (req, res) => {
   if (!userId) {
     return res.status(401).send({ message: 'User is not logged in' });
   }
-
-  const { name, color, emoji } = req.body;
-  if (!name || !color || !emoji) {
+  console.log("update", req.body)
+  const {wedding_id, title, checked} = req.body;
+  if (!wedding_id || !title || checked === null) {
     return res
       .status(400)
-      .send({ message: 'Provide name, color and emoji to update a to_do' });
+      .send({ message: 'Provide wedding_id, title and checked to update a to_do' });
   }
 
   const { id } = req.params;
 
-  To_dosModel.update(name, color, emoji, id)
+  To_dosModel.update(id, wedding_id, title, checked)
     .then(to_do => {
-      if (!to_do) {
+      if (!to_do === {id, wedding_id, title, checked}) {
         return res.status(404).send({ message: 'to_do not found!' });
       }
-
       res.status(201).send({ message: 'Updated!', to_do });
     })
     .catch(error => {

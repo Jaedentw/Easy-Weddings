@@ -1,4 +1,7 @@
 import React from "react";
+import "../../styles/VendorPageItems.css"
+import DropDown from "./DropDown";
+import DropDownMenu from "./DropDownMenu";
 
 export default function Decorator(props) {
 
@@ -25,7 +28,14 @@ export default function Decorator(props) {
       <div class="lower-business">
         <p> <strong class="location">Located in:</strong><div>{decorator.city}</div></p>
         <div class="upper-business">
-          {props.state.tab === "Your Listings"? <i class="fa-sharp fa-solid fa-pen-to-square fa-lg"></i> : <i class="fa-sharp fa-solid fa-plus fa-lg"></i>}
+        {props.state.tab === "Your Listings"? <i class="fa-sharp fa-solid fa-pen-to-square fa-lg"></i> : ( props.state.user.id &&         
+          <DropDown>
+            <DropDownMenu
+              listing={decorator}
+              state={props.state}
+            />
+          </DropDown>
+          )}
         </div>
       </div>
     </section>

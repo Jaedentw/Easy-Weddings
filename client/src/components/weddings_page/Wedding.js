@@ -37,6 +37,7 @@ export default function Wedding(props) {
         <div class="weddingInfo">
           <WeddingInfo
             state={props.state}
+            getUserData={props.getUserData}
           />
         </div>
       </div>
@@ -46,7 +47,6 @@ export default function Wedding(props) {
           state={props.state}
           setFilter={props.setFilter}
         />
-
       </div>
     </div>
   )

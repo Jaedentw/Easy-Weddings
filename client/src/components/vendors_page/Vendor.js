@@ -1,4 +1,8 @@
 import React from "react";
+import "../../styles/VendorPageItems.css"
+import DropDown from "./DropDown";
+import DropDownMenu from "./DropDownMenu";
+
 
 export default function Vendor(props) {
 
@@ -16,7 +20,7 @@ export default function Vendor(props) {
           <div class="upper-text">
             <h1>{vendor.name}</h1>
             <p>
-              <strong>{vendor.specialty} - </strong>
+              <strong>Specialty: </strong> {vendor.specialty} - 
               <strong> Rate per hour: </strong>{vendor.rate_per_hour} - <a href={vendor.website_url}>Website</a></p>
           </div>
           <p>{vendor.description}</p>
@@ -29,7 +33,14 @@ export default function Vendor(props) {
       <div class="lower-business">
         <p> <strong class="location">Located in:</strong><div>{vendor.city}</div></p>
         <div class="upper-business">
-          {props.state.tab === "Your Listings"? <i class="fa-sharp fa-solid fa-pen-to-square fa-lg"></i> : <i class="fa-sharp fa-solid fa-plus fa-lg"></i>}
+        {props.state.tab === "Your Listings"? <i class="fa-sharp fa-solid fa-pen-to-square fa-lg"></i> : ( props.state.user.id &&         
+          <DropDown>
+            <DropDownMenu
+              listing={vendor}
+              state={props.state}
+            />
+          </DropDown>
+          )}
         </div>
       </div>
     </section>

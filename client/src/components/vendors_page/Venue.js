@@ -1,4 +1,8 @@
 import React from "react";
+import "../../styles/VendorPageItems.css"
+import DropDown from "./DropDown";
+import DropDownMenu from "./DropDownMenu";
+
 
 export default function Venue(props) {
 
@@ -27,7 +31,14 @@ export default function Venue(props) {
       <div class="lower-business">
         <p> <strong class="location">Located in:</strong><div>{venue.city}</div></p>
         <div class="upper-business">
-          {props.state.tab === "Your Listings"? <i class="fa-sharp fa-solid fa-pen-to-square fa-lg"></i> : <i class="fa-sharp fa-solid fa-plus fa-lg"></i>}
+        {props.state.tab === "Your Listings"? <i class="fa-sharp fa-solid fa-pen-to-square fa-lg"></i> : ( props.state.user.id &&         
+          <DropDown>
+            <DropDownMenu
+              listing={venue}
+              state={props.state}
+            />
+          </DropDown>
+          )}
         </div>
       </div>
     </section>
