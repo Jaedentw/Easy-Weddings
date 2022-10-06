@@ -6,30 +6,32 @@ import {mapFilters} from '../../helpers/VendorsPageHelpers'
 export default function Listings (props) {
 
   let newCaterers = props.state.caterers.filter(function(ele){
-    return ele.business_id === props.state.user.id;
+    return ele.id === props.state.user.id;
   })
 
   let newDecorators = props.state.decorators.filter(function(ele){
-    return ele.business_id === props.state.user.id;
+    return ele.id === props.state.user.id;
   })
 
   let newVenues = props.state.venues.filter(function(ele){
-    return ele.business_id === props.state.user.id;
+    return ele.id === props.state.user.id;
   })
 
   let newVendors = props.state.vendors.filter(function(ele){
-    return ele.business_id === props.state.user.id;
+    return ele.id === props.state.user.id;
   })
+
 
 
   const newData = {
     caterers: newCaterers,
     decorators: newDecorators,
     venues: newVenues,
-    vendors: newVendors
+    vendors: newVendors,
+    user: props.state.user
   }
 
-  console.log('Test filter for specific caterers', newCaterers)
+  console.log('All data to be sent: ',newData)
   
 
   let [search, setSearch] = useState()

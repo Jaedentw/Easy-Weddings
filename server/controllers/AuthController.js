@@ -44,22 +44,6 @@ const login = (req, res) => {
         res.status(200).send({ message: 'User logged in successfully!', user });
       }
       
-      else {
-        AuthModel.businessLogin(email)
-          .then(user => {
-            const passwordsMatch = bcrypt.compareSync(password, user.password);
-            if (!passwordsMatch) {
-              return res.status(401).send({ message: 'Invalid credentials!' });
-            }
-
-
-            req.session.userId = user.id;
-            delete user.password;
-            user.is_business = true;
-            console.log('user object for business: ',user)
-            res.status(200).send({ message: 'User logged in successfully!', user });
-          });
-      }
       
     });
 

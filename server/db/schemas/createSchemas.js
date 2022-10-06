@@ -1,6 +1,5 @@
 module.exports = `
 DROP TABLE IF EXISTS users CASCADE;
-DROP TABLE IF EXISTS businesses CASCADE;
 DROP TABLE IF EXISTS caterers CASCADE;
 DROP TABLE IF EXISTS decorators CASCADE;
 DROP TABLE IF EXISTS vendors CASCADE;
@@ -23,29 +22,17 @@ CREATE TABLE users (
   postal_code VARCHAR(200) NOT NULL,
   email VARCHAR(200) UNIQUE NOT NULL,
   phone BIGINT UNIQUE NOT NULL,
-  password VARCHAR(200) NOT NULL
-);
-
-
-CREATE TABLE businesses (
-  id SERIAL PRIMARY KEY NOT NULL,
-  name VARCHAR(200) NOT NULL, 
-  country VARCHAR(200) NOT NULL, 
-  province VARCHAR(200) NOT NULL, 
-  city VARCHAR(200) NOT NULL, 
-  address VARCHAR(200) NOT NULL, 
-  postal_code VARCHAR(200) NOT NULL, 
-  email VARCHAR(200) UNIQUE NOT NULL, 
-  website_url VARCHAR(200) NOT NULL,
-  phone BIGINT UNIQUE NOT NULL, 
-  password VARCHAR(200) NOT NULL 
+  password VARCHAR(200) NOT NULL,
+  website_url VARCHAR(200),
+  business_name VARCHAR(200),
+  is_business BOOLEAN DEFAULT FALSE NOT NULL
 );
 
 
 CREATE TABLE caterers (
   id SERIAL PRIMARY KEY NOT NULL,
-  business_id INTEGER NOT NULL,
-  FOREIGN KEY(business_id) REFERENCES businesses (id) ON DELETE CASCADE,
+  user_id INTEGER NOT NULL,
+  FOREIGN KEY(user_id) REFERENCES users (id) ON DELETE CASCADE,
   name VARCHAR(200) NOT NULL,
   city VARCHAR(200) NOT NULL,
   image_url VARCHAR(200) NOT NULL,
@@ -59,8 +46,8 @@ CREATE TABLE caterers (
 
 CREATE TABLE decorators (
   id SERIAL PRIMARY KEY NOT NULL,
-  business_id INTEGER NOT NULL,
-  FOREIGN KEY(business_id) REFERENCES businesses (id) ON DELETE CASCADE,
+  user_id INTEGER NOT NULL,
+  FOREIGN KEY(user_id) REFERENCES users (id) ON DELETE CASCADE,
   name VARCHAR(200) NOT NULL,
   city VARCHAR(200) NOT NULL,
   website_url VARCHAR(200) NOT NULL,
@@ -73,8 +60,8 @@ CREATE TABLE decorators (
 
 CREATE TABLE vendors (
   id SERIAL PRIMARY KEY NOT NULL,
-  business_id INTEGER NOT NULL,
-  FOREIGN KEY(business_id) REFERENCES businesses (id) ON DELETE CASCADE,
+  user_id INTEGER NOT NULL,
+  FOREIGN KEY(user_id) REFERENCES users (id) ON DELETE CASCADE,
   name VARCHAR(200) NOT NULL,
   city VARCHAR(200) NOT NULL,
   website_url VARCHAR(200) NOT NULL,
@@ -88,8 +75,8 @@ CREATE TABLE vendors (
 
 CREATE TABLE venues (
   id SERIAL PRIMARY KEY NOT NULL,
-  business_id INTEGER NOT NULL,
-  FOREIGN KEY(business_id) REFERENCES businesses (id) ON DELETE CASCADE,
+  user_id INTEGER NOT NULL,
+  FOREIGN KEY(user_id) REFERENCES users (id) ON DELETE CASCADE,
   name VARCHAR(200) NOT NULL,
   city VARCHAR(200) NOT NULL,
   website_url VARCHAR(200) NOT NULL,
@@ -122,13 +109,6 @@ CREATE TABLE to_dos (
   checked BOOLEAN NOT NULL DEFAULT false
 );
 
-CREATE TABLE favorites (
-  id SERIAL PRIMARY KEY NOT NULL,
-  user_id INTEGER NOT NULL,
-  FOREIGN KEY(user_id) REFERENCES users (id) ON DELETE CASCADE,
-  business_id INTEGER NOT NULL,
-  FOREIGN KEY(business_id) REFERENCES businesses (id) ON DELETE CASCADE
-);
 
 CREATE TABLE guests (
   id SERIAL PRIMARY KEY NOT NULL,

@@ -28,7 +28,7 @@ export default function Nav(props) {
 
           <div class="nav-log">
             <div class="upper-log">
-              <strong>Signed in as: </strong><span>{props.user.is_business ? props.user.name : props.user.first_name}</span>
+              <strong>Signed in as: </strong><span>{props.user.is_business ? props.user.business_name : props.user.first_name}</span>
             </div>
             <div>
               <button onClick={props.logout} value="Logout"><i class="fa-solid fa-right-from-bracket"></i> Logout</button>
@@ -60,7 +60,7 @@ export default function Nav(props) {
         {!isLoggedIn &&
           <NavLink to="/login">
             <Tab
-              name="Weddings"
+              name="Login"
               onClick={props.setTab}
             />
           </NavLink>
@@ -68,7 +68,7 @@ export default function Nav(props) {
         {isLoggedIn && props.user.is_business &&
           <NavLink to="/listings">
             <Tab
-              name="Your Listings"
+              name="Listings"
               onClick={props.setTab}
               selected={props.selected}
             />
