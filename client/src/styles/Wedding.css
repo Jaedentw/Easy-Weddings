@@ -65,6 +65,10 @@
 .to_do_btn {
   border: 2px black solid;
   border-radius: 2px;
+  margin-left: 5px;
+}
+.to_do_btn:hover {
+  background-color: rgb(165, 208, 216);
 }
 
 .weddingInfo {

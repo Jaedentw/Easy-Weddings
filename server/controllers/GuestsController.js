@@ -81,7 +81,6 @@ const update = (req, res) => {
       if (!guest === {wedding_id, name, confirmed, value, plus_one, id}) {
         return res.status(404).send({ message: 'guest not found!' });
       }
-      console.log("update guest",guest)
       res.status(201).send({ message: 'Updated!', guest });
     })
     .catch(error => {

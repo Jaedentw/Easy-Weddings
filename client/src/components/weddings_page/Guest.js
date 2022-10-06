@@ -6,7 +6,7 @@ import classNames from "classnames"
 export default function Guest(props) {
 
   let [edit, setEdit] = useState(false)
-  let [input, setInput] = useState({});
+  let [input, setInput] = useState({guest_name: props.name, plus_one: props.plus_one});
 
   const handleChange = (event) => {
     const name = event.target.name;
@@ -24,7 +24,6 @@ export default function Guest(props) {
     if(update2) {
       props.guest[update2.type] = update2.value;
     }
-    console.log("guest", props.guest)
     axios.put(`/api/guests/${props.guest.id}`, props.guest)
     .then((response) => {console.log("GOOD", response)})
     .catch((response) => {console.log("BAD", response)})
@@ -69,19 +68,19 @@ export default function Guest(props) {
         <div>
           <input 
             name="guest_name" 
-            value={input.guest_name || props.name || ""}
+            value={input.guest_name || ""}
             onChange={handleChange}
             placeholder={props.name || ""}
           ></input>
           <input 
             name="plus_one" 
-            value={input.plus_one || props.plus_one || ""}
+            value={input.plus_one || ""}
             onChange={handleChange}
             placeholder={props.plus_one || ""}
           ></input>
           <button 
             class="to_do_btn"
-            onClick={() => {onSubmit({type: "name", value: input.guest_name}, {type: "plus_one", value: input.plus_one})}}
+            onClick={() => {onSubmit({type: "name", value: input.guest_name}, {type: "plus_one", value: input.plus_one});}}
           >Save</button>
         </div>
         : 

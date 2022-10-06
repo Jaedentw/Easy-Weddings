@@ -5,7 +5,7 @@ import axios from "axios"
 export default function ToDo(props) {
 
   let [edit, setEdit] = useState(false)
-  let [input, setInput] = useState({});
+  let [input, setInput] = useState({to_do_title: props.title});
 
   const handleChange = (event) => {
     const name = event.target.name;
