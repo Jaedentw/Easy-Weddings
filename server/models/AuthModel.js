@@ -25,4 +25,12 @@ const login = email => {
     .catch(err => console.error(err.stack));
 };
 
-module.exports = { register, login };
+const businessLogin = email => {
+  return db
+    .query('SELECT * FROM businesses WHERE email = $1', [email])
+    .then(data => data.rows[0])
+    .catch(err => console.error(err.stack));
+}
+
+
+module.exports = { register, login, businessLogin };

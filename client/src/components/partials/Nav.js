@@ -5,18 +5,19 @@ import { NavLink } from "react-router-dom";
 
 export default function Nav(props) {
 
+  console.log('nav user:', props.user);
   const [isLoggedIn, setIsloggedIn] = useState(
     null
-  )
+  );
 
-  useEffect(()=>{
+  useEffect(() => {
     if (props.user.id === undefined) {
       setIsloggedIn(false);
     }
     else {
       setIsloggedIn(true);
     }
-  },[props.user])
+  }, [props.user]);
 
   return (
     <nav class="nav-container">
@@ -24,10 +25,10 @@ export default function Nav(props) {
         <a href="/" class="title-font">Easy Weddings</a>
 
         {(isLoggedIn &&
-          
+
           <div class="nav-log">
             <div class="upper-log">
-              <strong>Signed in as: </strong><span>{props.user?.first_name}</span>
+              <strong>Signed in as: </strong><span>{props.user.is_business ? props.user.name : props.user.first_name}</span>
             </div>
             <div>
               <button onClick={props.logout} value="Logout"><i class="fa-solid fa-right-from-bracket"></i> Logout</button>
@@ -47,7 +48,7 @@ export default function Nav(props) {
           />
         </NavLink>
 
-        {isLoggedIn &&
+        {isLoggedIn && !props.user.is_business &&
           <NavLink to="/weddings">
             <Tab
               name="Weddings"
@@ -64,12 +65,15 @@ export default function Nav(props) {
             />
           </NavLink>
         }
-
-        <Tab
-          name="Your Listings"
-          onClick={props.setTab}
-          selected={props.selected}
-        />
+        {isLoggedIn && props.user.is_business &&
+          <NavLink to="/listings">
+            <Tab
+              name="Your Listings"
+              onClick={props.setTab}
+              selected={props.selected}
+            />
+          </NavLink>
+        }
 
         <NavLink to="/browse">
           <Tab

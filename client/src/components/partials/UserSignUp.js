@@ -7,6 +7,7 @@ export default function UserSignUp(props) {
 
   const [inputs, setInputs] = useState({});
 
+
   const navigate = useNavigate();
 
   const handleChange = (event) => {
@@ -27,6 +28,7 @@ export default function UserSignUp(props) {
         console.log('Error logging in!', res.data)
       );
   }
+
 
 
   return (
@@ -154,3 +156,5 @@ export default function UserSignUp(props) {
     </div>
   );
 }
+
+

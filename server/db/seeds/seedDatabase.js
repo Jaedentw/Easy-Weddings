@@ -33,8 +33,21 @@ module.exports = `
     
 
 
-  INSERT INTO businesses (user_id,website_url,name,county,province,city,address,postal_code,email,phone) VALUES (
-  '1',
+    INSERT INTO businesses (website_url,name,country,province,city,address,postal_code,email,phone,password) VALUES (
+      'WebURL',
+      'Kostas business',
+      'Canada',
+      'Ontario',
+      'Toronto',
+      '4517 Bloor st. EST',
+      'L4S N6B',
+      'kostabusiness@gmail.com',
+      '9057444545',
+      '$2a$10$U35lMD9rB38wy/itPaVKWekIlKgFxQN.ujMfNAkQ1fOYpkc19OWqC'
+      );
+
+
+  INSERT INTO businesses (website_url,name,country,province,city,address,postal_code,email,phone,password) VALUES (
   'WebURL',
   'Honeymoon Hill',
   'Canada',
@@ -43,10 +56,11 @@ module.exports = `
   '4517 Bloor st. EST',
   'L4S N6B',
   'honeymoonhill@gmail.com',
-  '9057393427');
+  '9057393427',
+  '$2a$10$U35lMD9rB38wy/itPaVKWekIlKgFxQN.ujMfNAkQ1fOYpkc19OWqC'
+  );
 
-  INSERT INTO businesses (user_id,website_url,name,county,province,city,address,postal_code,email,phone) VALUES (
-    '2',
+  INSERT INTO businesses (website_url,name,country,province,city,address,postal_code,email,phone,password) VALUES (
     'WebURL',
     'Royal Oak',
     'Canada',
@@ -55,10 +69,11 @@ module.exports = `
     '37 Oakwood Dr.',
     'B4S T9B',
     'Royaloakweddings@gmail.com',
-    '9058235423');
+    '9058235423',
+    '$2a$10$U35lMD9rB38wy/itPaVKWekIlKgFxQN.ujMfNAkQ1fOYpkc19OWqC'
+    );
 
-  INSERT INTO businesses (user_id,website_url,name,county,province,city,address,postal_code,email,phone) VALUES (
-    '3',
+  INSERT INTO businesses (website_url,name,country,province,city,address,postal_code,email,phone,password) VALUES (
     'WebURL',
     'Rustic Gold Chapel',
     'Canada',
@@ -67,10 +82,11 @@ module.exports = `
     '4773 Church st.',
     'M5G 4H7',
     'Rusticgold@gmail.com',
-    '9057778845');
+    '9057778845',
+    '$2a$10$U35lMD9rB38wy/itPaVKWekIlKgFxQN.ujMfNAkQ1fOYpkc19OWqC'
+    );
   
-  INSERT INTO businesses (user_id,website_url,name,county,province,city,address,postal_code,email,phone) VALUES (
-    '4',
+  INSERT INTO businesses (website_url,name,country,province,city,address,postal_code,email,phone,password) VALUES (
     'WebURL',
     'The Gazebo', 
     'Canada',
@@ -79,10 +95,11 @@ module.exports = `
     '75 Queen St E.',
     'N4S 8N4',
     'Thegazebonights@gmail.com',
-    '9056678745');
+    '9056678745',
+    '$2a$10$U35lMD9rB38wy/itPaVKWekIlKgFxQN.ujMfNAkQ1fOYpkc19OWqC'
+    );
 
-  INSERT INTO businesses (user_id,website_url,name,county,province,city,address,postal_code,email,phone) VALUES (
-    '5',
+  INSERT INTO businesses (website_url,name,country,province,city,address,postal_code,email,phone,password) VALUES (
     'WebURL',
     'Tropical Paradise',
     'Canada',
@@ -91,10 +108,11 @@ module.exports = `
     '567 Westlake',
     'N2P 5T3',
     'paradiseweddings@gmail.com',
-    '9053337667');
+    '9053337667',
+    '$2a$10$U35lMD9rB38wy/itPaVKWekIlKgFxQN.ujMfNAkQ1fOYpkc19OWqC'
+    );
 
-  INSERT INTO businesses (user_id,website_url,name,county,province,city,address,postal_code,email,phone) VALUES (
-    '6',
+  INSERT INTO businesses (website_url,name,country,province,city,address,postal_code,email,phone,password) VALUES (
     'WebURL',
     'Ocean Blue',
     'Canada',
@@ -103,10 +121,11 @@ module.exports = `
     '43 Bloor St.',
     'N7Y 5H3',
     'Oceanblue@gmail.com',
-    '9052325823');
+    '9052325823',
+    '$2a$10$U35lMD9rB38wy/itPaVKWekIlKgFxQN.ujMfNAkQ1fOYpkc19OWqC'
+    );
 
-  INSERT INTO businesses (user_id,website_url,name,county,province,city,address,postal_code,email,phone) VALUES (
-    '7',
+  INSERT INTO businesses (website_url,name,country,province,city,address,postal_code,email,phone,password) VALUES (
     'WebURL',
     'Chateau Gardens',
     'Canada',
@@ -115,10 +134,11 @@ module.exports = `
     '65 Burrard Street',
     'V5N 6G6',
     'ChateauGardens@gmail.com',
-    '6047672322');
+    '6047672322',
+    '$2a$10$U35lMD9rB38wy/itPaVKWekIlKgFxQN.ujMfNAkQ1fOYpkc19OWqC'
+    );
 
-  INSERT INTO businesses (user_id,website_url,name,county,province,city,address,postal_code,email,phone) VALUES (
-    '8',
+  INSERT INTO businesses (website_url,name,country,province,city,address,postal_code,email,phone,password) VALUES (
     'WebURL',
     'Bartlett Manor',
     'Canada',
@@ -127,10 +147,11 @@ module.exports = `
     '232 Burrard Street',
     'V5N 6N7',
     'Barlettmanor@gmail.com',
-    '6047882563');
+    '6047882563',
+    '$2a$10$U35lMD9rB38wy/itPaVKWekIlKgFxQN.ujMfNAkQ1fOYpkc19OWqC'
+    );
 
-  INSERT INTO businesses (user_id,website_url,name,county,province,city,address,postal_code,email,phone) VALUES (
-    '9',
+  INSERT INTO businesses (website_url,name,country,province,city,address,postal_code,email,phone,password) VALUES (
     'WebURL',
     'Meadowlands',
     'Canada',
@@ -139,10 +160,11 @@ module.exports = `
     '174 Burrard Street',
     'V5N 7P3',
     'Meadowlands@gmail.com',
-    '6043226787');
+    '6043226787',
+    '$2a$10$U35lMD9rB38wy/itPaVKWekIlKgFxQN.ujMfNAkQ1fOYpkc19OWqC'
+    );
 
-  INSERT INTO businesses (user_id,website_url,name,county,province,city,address,postal_code,email,phone) VALUES (
-    '10',
+  INSERT INTO businesses (website_url,name,country,province,city,address,postal_code,email,phone,password) VALUES (
     'WebURL',
     'Grand Mansion',
     'Canada',
@@ -151,7 +173,8 @@ module.exports = `
     '500 Burrard Street',
     'V5N 1P6',
     'Grand Mansion@gmail.com',
-    '6048998989'
+    '6048998989',
+    '$2a$10$U35lMD9rB38wy/itPaVKWekIlKgFxQN.ujMfNAkQ1fOYpkc19OWqC'
   );
 
   

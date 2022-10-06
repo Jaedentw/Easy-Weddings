@@ -15,6 +15,8 @@ router.get('/', BusinessesController.getAll);
 // Read One
 router.get('/:id', BusinessesController.getById);
 
+router.get('/profile', BusinessesController.getProfile);
+
 // UPDATE - put
 router.put('/:id', BusinessesController.update);
 
