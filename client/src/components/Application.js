@@ -65,7 +65,7 @@ export default function Application(props) {
             setWedding={setWedding}
             setFilter={setFilter}
             getUserData={getUserData}
-
+          />}/>
           <Route path="/create-wedding" element={<CreateWedding
             state={state}
             setTab={setTab}
