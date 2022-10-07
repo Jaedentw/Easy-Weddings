@@ -40,7 +40,7 @@ CREATE TABLE caterers (
   cuisine VARCHAR(1000) NOT NULL,
   menu_url VARCHAR(500) NOT NULL,
   description VARCHAR(1000) NOT NULL,
-  food_alternatives VARCHAR(500)
+  alternatives VARCHAR(500) DEFAULT 'none'
 );
 
 
@@ -84,7 +84,7 @@ CREATE TABLE venues (
   theme VARCHAR(500),
   image_url VARCHAR(200) NOT NULL,
   description VARCHAR(1000) NOT NULL,
-  extra_features VARCHAR(1000)
+  features VARCHAR(1000) DEFAULT 'none'
 );
 
 

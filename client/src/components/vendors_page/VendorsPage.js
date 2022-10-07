@@ -5,8 +5,11 @@ import {mapFilters} from '../../helpers/VendorsPageHelpers'
 
 export default function VendorsPage(props) {
 
-  let [search, setSearch] = useState()
-  let mapped = mapFilters(props.state.filter, props.state, search, props.state.wedding)
+  let filter = props.state.filter
+
+  let [searchInput, setSearchInput] = useState()
+  let [searchFilter, setSearchFilter] = useState('Name');
+  let mapped = mapFilters(filter, props.state, searchInput, props.state.wedding, searchFilter)
   
   return (
     <div class="business-list-container">
@@ -14,23 +17,27 @@ export default function VendorsPage(props) {
         <div class="business-buttons">
           <Filter
             name="Caterers"
-            selected={props.state.filter}
+            selected={filter}
             onClick={props.setFilter}
+            setSearchFilter={setSearchFilter}
           />
           <Filter
             name="Decorators"
-            selected={props.state.filter}
+            selected={filter}
             onClick={props.setFilter}
+            setSearchFilter={setSearchFilter}
           />
           <Filter
             name="Venues"
-            selected={props.state.filter}
+            selected={filter}
             onClick={props.setFilter}
+            setSearchFilter={setSearchFilter}
           />
           <Filter
             name="Vendors"
-            selected={props.state.filter}
+            selected={filter}
             onClick={props.setFilter}
+            setSearchFilter={setSearchFilter}
           />
         </div>
         <div>
@@ -38,8 +45,76 @@ export default function VendorsPage(props) {
         <input 
           class="business-search"
           placeholder="Search"
-          onInput={(event) => {setSearch(event.target.value);}}
+          onInput={(event) => {setSearchInput(event.target.value);}}
         ></input>
+        </div>
+        <div class="search_filters">
+          <strong>Search By: </strong>
+          <Filter
+            name="Name"
+            selected={searchFilter}
+            onClick={setSearchFilter}
+          />
+          <Filter
+            name="Description"
+            selected={searchFilter}
+            onClick={setSearchFilter}
+          />
+          <Filter
+            name="City"
+            selected={searchFilter}
+            onClick={setSearchFilter}
+          />
+          {filter === "Caterers" &&
+            <Filter
+              name="Cuisine"
+              selected={searchFilter}
+              onClick={setSearchFilter}
+            />
+          }
+          {filter === "Caterers" &&
+            <Filter
+              name="Alternatives"
+              selected={searchFilter}
+              onClick={setSearchFilter}
+            /> 
+          }
+          {(filter === "Decorators" || filter === "Vendors") &&
+            <Filter
+              name="Specialty"
+              selected={searchFilter}
+              onClick={setSearchFilter}
+            />
+          }
+          {filter === "Venues" &&
+            <Filter
+              name="Features"
+              selected={searchFilter}
+              onClick={setSearchFilter}
+            />
+          }
+          {(filter === "Decorators" || filter === "Venues") && 
+            <Filter
+              name="Theme"
+              selected={searchFilter}
+              onClick={setSearchFilter}
+            />
+          }
+          {(filter === "Caterers" || filter === "Venues") && 
+            <Filter
+              name="Capacity"
+              selected={searchFilter}
+              onClick={setSearchFilter}
+            />
+          }
+          {filter === "Vendors" && 
+            <Filter
+              name="Rate"
+              selected={searchFilter}
+              onClick={setSearchFilter}
+            />
+          }
+
         </div>
       </div>
       <div>

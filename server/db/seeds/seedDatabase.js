@@ -4,8 +4,8 @@ module.exports = `
   INSERT INTO users (first_name,last_name,country,province,city,address,postal_code,email,phone,password,website_url,business_name,is_business) VALUES (
     'Kosta','Vlahakis','Canada','Ontario','Toronto','75 Oakwood dr.','L4S 1P6','kostakv@outlook.com','6477778888','$2a$10$U35lMD9rB38wy/itPaVKWekIlKgFxQN.ujMfNAkQ1fOYpkc19OWqC','','',false);
 
-    INSERT INTO users (first_name,last_name,country,province,city,address,postal_code,email,phone,password,website_url,business_name,is_business) VALUES (
-      'Kosta','Vlahakis','Canada','Ontario','Toronto','75 Oakwood dr.','L4S 1P6','kostabusiness@gmail.com','6477578888','$2a$10$U35lMD9rB38wy/itPaVKWekIlKgFxQN.ujMfNAkQ1fOYpkc19OWqC','Dance Dance co.','Kostas Business',true);
+  INSERT INTO users (first_name,last_name,country,province,city,address,postal_code,email,phone,password,website_url,business_name,is_business) VALUES (
+    'Kosta','Vlahakis','Canada','Ontario','Toronto','75 Oakwood dr.','L4S 1P6','kostabusiness@gmail.com','6477578888','$2a$10$U35lMD9rB38wy/itPaVKWekIlKgFxQN.ujMfNAkQ1fOYpkc19OWqC','Dance Dance co.','Kostas Business',true);
 
   INSERT INTO users (first_name,last_name,country,province,city,address,postal_code,email,phone,password,website_url,business_name,is_business) VALUES (
     'Andrew','Gort','Canada','Ontario','Toronto','652 Springs st','N2J 7N3','andrewgort@gmail.com','6474547878','password','','',false);
@@ -80,7 +80,7 @@ module.exports = `
     'https://i.etsystatic.com/14229232/r/il/cdb75f/1156082012/il_570xN.1156082012_py47.jpg'
   );
 
-  INSERT INTO caterers (user_id,image_url,capacity,cuisine,description,name,city,menu_url) VALUES (
+  INSERT INTO caterers (user_id,image_url,capacity,cuisine,description,name,city,menu_url, alternatives) VALUES (
     5,
     'https://www.mawaskitchen.com/wp-content/uploads/soups-in-flight-2020.jpg',
     '150',
@@ -88,7 +88,8 @@ module.exports = `
     'We have the best soups around, choose any type or amount, we got you covered!',
     'Top Hat Catering',
     'Calgary',
-    'https://marketplace.canva.com/EADzltv7Fmk/1/0/1131w/canva-green-and-gold-box-border-geometric-floral-wedding-menu-la509GLjtQQ.jpg'
+    'https://marketplace.canva.com/EADzltv7Fmk/1/0/1131w/canva-green-and-gold-box-border-geometric-floral-wedding-menu-la509GLjtQQ.jpg',
+    'Gluten Free'
   );
 
   
@@ -182,7 +183,7 @@ module.exports = `
     'http://www.thepersianpalace.ca/'
   );
 
-  INSERT INTO venues (user_id,image_url,theme,capacity,description,name,city,website_url) VALUES (
+  INSERT INTO venues (user_id,image_url,theme,capacity,description,name,city,website_url, features) VALUES (
     4,
     'https://www.crosswindsgolf.com/wp-content/uploads/2019/08/Outdoor-Wedding-Venues-720x380.jpg',
     'Nature',
@@ -190,7 +191,8 @@ module.exports = `
     'Let nature be with you when you celebrate your wedding day!',
     'Graceful Gardens',
     'Calgary',
-    'https://www.markham.ca/wps/portal/home/arts/heintzman-house'
+    'https://www.markham.ca/wps/portal/home/arts/heintzman-house',
+    'Fountain'
   );
 
   INSERT INTO venues (user_id,image_url,theme,capacity,description,name,city,website_url) VALUES (

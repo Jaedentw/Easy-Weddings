@@ -111,7 +111,9 @@ function getWeddingListings(state, wedding) {
 }
 
 
-export function mapFilters(filter, state, input, wedding) {
+export function mapFilters(filter, state, input, wedding, searchBy) {
+
+  let search = (searchBy.toLowerCase() || "name")
 
   let data = state;
   if (wedding && state.tab === "Weddings") {
@@ -120,7 +122,7 @@ export function mapFilters(filter, state, input, wedding) {
 
   if (filter === "Caterers") {
     if (input) {
-      let filtered = data.caterers.filter(component => component.name.toLowerCase().includes(input.toLowerCase()));
+      let filtered = data.caterers.filter(component => component[search].toLowerCase().includes(input.toLowerCase()));
       return mapCaterers(state, filtered);
     } else {
       return mapCaterers(state, data.caterers);
@@ -128,7 +130,7 @@ export function mapFilters(filter, state, input, wedding) {
   }
   if (filter === "Decorators") {
     if (input) {
-      let filtered = data.decorators.filter(component => component.name.toLowerCase().includes(input.toLowerCase()));
+      let filtered = data.decorators.filter(component => component[search].toLowerCase().includes(input.toLowerCase()));
       return mapDecorators(state, filtered);
     } else {
       return mapDecorators(state, data.decorators);
@@ -136,7 +138,7 @@ export function mapFilters(filter, state, input, wedding) {
   }
   if (filter === "Venues") {
     if (input) {
-      let filtered = data.venues.filter(component => component.name.toLowerCase().includes(input.toLowerCase()));
+      let filtered = data.venues.filter(component => component[search].toLowerCase().includes(input.toLowerCase()));
       return mapVenues(state, filtered);
     } else {
       return mapVenues(state, data.venues);
@@ -144,7 +146,7 @@ export function mapFilters(filter, state, input, wedding) {
   }
   if (filter === "Vendors") {
     if (input) {
-      let filtered = data.vendors.filter(component => component.name.toLowerCase().includes(input.toLowerCase()));
+      let filtered = data.vendors.filter(component => component[search].toLowerCase().includes(input.toLowerCase()));
       return mapVendors(state, filtered);
     } else {
       return mapVendors(state, data.vendors);

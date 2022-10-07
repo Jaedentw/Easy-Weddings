@@ -25,14 +25,14 @@ export default function Caterer(props) {
           <div class="upper-text">
             <h1>{caterer.name}</h1>
             <p>
-              <strong>Specialty: </strong>
+              <strong>Cuisine: </strong>
                {caterer.cuisine} - 
               <strong> Capacity: </strong> {caterer.capacity} - <a href={caterer.menu_url}>Menu</a>
             </p>
           </div>
           <p>{caterer.description}</p>
           <div>
-            <p>{caterer.food_alternatives}</p>
+            {caterer.alternatives !== 'none' && <p><strong>Alternatives: </strong> {caterer.alternatives}</p>}
           </div>
         </div>
       </div>

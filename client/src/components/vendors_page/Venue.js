@@ -29,7 +29,7 @@ export default function Venue(props) {
           </div>
           <p>{venue.description}</p>
           <div>
-            <p>{venue.extra_features}</p>
+            {venue.features !== 'none' && <p><strong>Features: </strong>{venue.features}</p>}
           </div>
         </div>
       </div>

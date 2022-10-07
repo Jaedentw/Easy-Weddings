@@ -18,6 +18,11 @@
   display: flex;
   flex-direction: row;
   justify-items: space-evenly;
+  width: 100%;
+  justify-content: center;
+  border-bottom: 4px grey dotted;
+  padding-bottom: 20px;
+  margin-bottom: 20px;
 }
 
 .business-btn {
@@ -27,6 +32,8 @@
   margin: 5px;
   margin-top: 0px;
   padding: 2px;
+  padding-top: 0px;
+  text-align: center;
 }
 
 .business-btn:hover {
@@ -42,3 +49,10 @@
   background-color: white;
 }
 
+.search_filters {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
