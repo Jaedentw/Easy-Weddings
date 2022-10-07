@@ -1,3 +1,4 @@
+/* eslint-disable camelcase */
 const { CaterersModel } = require('../models');
 
 const create = (req, res) => {
@@ -6,14 +7,14 @@ const create = (req, res) => {
     return res.status(401).send({ message: 'User is not logged in' });
   }
 
-  const { name, color, emoji } = req.body;
-  if (!name || !color || !emoji) {
+  const { name, city, image_url, capacity, cuisine, menu_url, description, alternatives } = req.body;
+  if (!name || !city || !image_url || !capacity || !cuisine || !menu_url || !description) {
     return res
       .status(400)
       .send({ message: 'Please provide all details to create a Caterer service' });
   }
 
-  CaterersModel.create(userId, name, color, emoji)
+  CaterersModel.create(name, city, image_url, capacity, cuisine, menu_url, description, alternatives, userId)
     .then(caterer => {
       res.status(201).send({ message: 'Created!', caterer });
     })
@@ -32,7 +33,7 @@ const getAll = (req, res) => {
         return res.status(200).send({ message: 'No Caterers available!' });
       }
 
-      res.status(200).send({Caterers});
+      res.status(200).send({ Caterers });
     })
     .catch(error => {
       console.log(error.message);

@@ -1,3 +1,4 @@
+/* eslint-disable camelcase */
 const express = require('express');
 
 const IndexRoutes = require('./IndexRoutes');

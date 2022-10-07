@@ -73,7 +73,7 @@ export default function Application(props) {
             setTab={setTab}
             getUserData={getUserData}
           />} />
-          <Route path="/create-listing" element={<CreateListing
+          <Route path="/createlisting" element={<CreateListing
             state={state}
             setTab={setTab}
           />}/>

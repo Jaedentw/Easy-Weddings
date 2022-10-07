@@ -1,3 +1,4 @@
+/* eslint-disable camelcase */
 const { VendorsModel } = require('../models');
 
 const create = (req, res) => {
@@ -6,14 +7,14 @@ const create = (req, res) => {
     return res.status(401).send({ message: 'User is not logged in' });
   }
 
-  const { name, color, emoji } = req.body;
-  if (!name || !color || !emoji) {
+  const { name, city, website_url, specialty, image_url, rate_per_hour, description, rates_info } = req.body;
+  if (!name || !city || !website_url || !specialty || !image_url || !description) {
     return res
       .status(400)
-      .send({ message: 'Provide name, color and emoji to create a vendor' });
+      .send({ message: 'Please provide all details requierd' });
   }
 
-  VendorsModel.create(userId, name, color, emoji)
+  VendorsModel.create(name, city, website_url, specialty, image_url, rate_per_hour, description, rates_info, userId)
     .then(vendor => {
       res.status(201).send({ message: 'Created!', vendor });
     })
@@ -32,7 +33,7 @@ const getAll = (req, res) => {
         return res.status(200).send({ message: 'No vendors available!' });
       }
 
-      res.status(200).send({vendors});
+      res.status(200).send({ vendors });
     })
     .catch(error => {
       console.log(error.message);

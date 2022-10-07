@@ -1,3 +1,4 @@
+/* eslint-disable camelcase */
 const { VenuesModel } = require('../models');
 
 const create = (req, res) => {
@@ -6,14 +7,14 @@ const create = (req, res) => {
     return res.status(401).send({ message: 'User is not logged in' });
   }
 
-  const { name, color, emoji } = req.body;
-  if (!name || !color || !emoji) {
+  const { name, city, website_url, capacity, theme, image_url, description, features } = req.body;
+  if (!name || !city || !website_url || !capacity || !image_url || !description) {
     return res
       .status(400)
       .send({ message: 'Provide name, color and emoji to create a venue' });
   }
 
-  VenuesModel.create(userId, name, color, emoji)
+  VenuesModel.create(name, city, website_url, capacity, theme, image_url, description, features, userId)
     .then(venue => {
       res.status(201).send({ message: 'Created!', venue });
     })
@@ -32,7 +33,7 @@ const getAll = (req, res) => {
         return res.status(200).send({ message: 'No venues available!' });
       }
 
-      res.status(200).send({venues});
+      res.status(200).send({ venues });
     })
     .catch(error => {
       console.log(error.message);
