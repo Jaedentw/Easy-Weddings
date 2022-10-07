@@ -7,6 +7,9 @@ export default function UserSignUp(props) {
 
   const [inputs, setInputs] = useState({});
 
+  let [render, setRender] = useState(false);
+
+  console.log('Input test',inputs);
 
   const navigate = useNavigate();
 
@@ -29,6 +32,18 @@ export default function UserSignUp(props) {
       );
   }
 
+  function switchEvent() {
+    if (render === false) {
+      setRender(true);
+      inputs.is_business = true
+    }
+    else {
+      setRender(false);
+      delete inputs.business_name
+      delete inputs.website_url
+      delete inputs.is_business
+    }
+  }
 
 
   return (
@@ -146,8 +161,31 @@ export default function UserSignUp(props) {
             <input
               type="checkbox"
               name="is_business"
+              onClick={switchEvent}
+              
             /></label>
         </div>
+        {render === true &&
+          <div>
+            <label>Website URL:</label>
+            <input
+              name="website_url"
+              type="text"
+              placeholder="www."
+              value={inputs.website_url || ""}
+              onChange={handleChange}
+            />
+
+            <label>Business Name:</label>
+            <input
+              name="business_name"
+              type="text"
+              placeholder="Company name"
+              value={inputs.business_name || ""}
+              onChange={handleChange}
+            />
+          </div>
+        }
         <div>
           <input type="submit" value="Register"></input>
         </div>

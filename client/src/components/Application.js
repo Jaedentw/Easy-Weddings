@@ -33,6 +33,7 @@ export default function Application(props) {
     getProfile();
   }, []);
 
+  console.log('User at application', state.user)
   return (
 
     <main class="main">
