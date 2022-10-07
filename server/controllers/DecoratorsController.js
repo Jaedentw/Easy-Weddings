@@ -1,3 +1,4 @@
+/* eslint-disable camelcase */
 const { DecoratorsModel } = require('../models');
 
 const create = (req, res) => {
@@ -6,15 +7,15 @@ const create = (req, res) => {
     return res.status(401).send({ message: 'User is not logged in' });
   }
 
-  const { name, color, emoji } = req.body;
-  if (!name || !color || !emoji) {
+  const { name, city, website_url, image_url, specialty, description, theme } = req.body;
+  if (!name || !city || !website_url || !image_url || !specialty || !description || !theme) {
     return res
       .status(400)
       .send({ message: 'Please provide all details to create a Caterer service' });
   }
 
-  DecoratorsModel.create(userId, name, color, emoji)
-    .then(caterer => {
+  DecoratorsModel.create(name, city, website_url, image_url, specialty, description, theme, userId)
+    .then(decorator => {
       res.status(201).send({ message: 'Created!', decorator });
     })
     .catch(error => {
@@ -32,7 +33,7 @@ const getAll = (req, res) => {
         return res.status(200).send({ message: 'No Decorators available!' });
       }
 
-      res.status(200).send({Decorators});
+      res.status(200).send({ Decorators });
     })
     .catch(error => {
       console.log(error.message);

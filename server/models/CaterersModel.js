@@ -1,10 +1,11 @@
+/* eslint-disable camelcase */
 const { db } = require('../db');
 
-const create = (userId, name, color, emoji) => {
+const create = (name, city, image_url, capacity, cuisine, menu_url, description, alternatives, userId) => {
   return db
     .query(
-      'INSERT INTO caterers (userId, name, color, emoji) VALUES ($1, $2, $3, $4) RETURNING *',
-      [userId, name, color, emoji]
+      'INSERT INTO caterers (name, city, image_url, capacity, cuisine, menu_url, description, alternatives, user_id) VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9) RETURNING *',
+      [name, city, image_url, capacity, cuisine, menu_url, description, alternatives, userId]
     )
     .then(data => data.rows[0])
     .catch(err => console.error(err.stack));

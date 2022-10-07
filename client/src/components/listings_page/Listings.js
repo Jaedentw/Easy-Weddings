@@ -2,8 +2,11 @@ import React, { useState, useEffect } from 'react'
 import "../../styles/VendorPage.css"
 import Filter from '../partials/Filter'
 import {mapFilters} from '../../helpers/VendorsPageHelpers'
+import { useNavigate } from 'react-router-dom'
 
 export default function Listings (props) {
+
+  const navigate = useNavigate()
 
   useEffect(() => {
     props.setTab("Listings");
@@ -61,6 +64,7 @@ export default function Listings (props) {
             selected={props.state.filter}
             onClick={props.setFilter}
           />
+          <input type="submit" value="Create new" onClick={()=>navigate('/createlisting')}></input>
         </div>
         <div>
         <i class="fa-solid fa-magnifying-glass"></i> 
