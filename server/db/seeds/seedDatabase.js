@@ -5,7 +5,7 @@ module.exports = `
     'Kosta','Vlahakis','Canada','Ontario','Toronto','75 Oakwood dr.','L4S 1P6','kostakv@outlook.com','6477778888','$2a$10$U35lMD9rB38wy/itPaVKWekIlKgFxQN.ujMfNAkQ1fOYpkc19OWqC','','',false);
 
     INSERT INTO users (first_name,last_name,country,province,city,address,postal_code,email,phone,password,website_url,business_name,is_business) VALUES (
-      'Kosta','Vlahakis','Canada','Ontario','Toronto','75 Oakwood dr.','L4S 1P6','kostabusiness@gmail.com','6477578888','$2a$10$U35lMD9rB38wy/itPaVKWekIlKgFxQN.ujMfNAkQ1fOYpkc19OWqC','Dance Dance co.','',true);
+      'Kosta','Vlahakis','Canada','Ontario','Toronto','75 Oakwood dr.','L4S 1P6','kostabusiness@gmail.com','6477578888','$2a$10$U35lMD9rB38wy/itPaVKWekIlKgFxQN.ujMfNAkQ1fOYpkc19OWqC','Dance Dance co.','Kostas Business',true);
 
   INSERT INTO users (first_name,last_name,country,province,city,address,postal_code,email,phone,password,website_url,business_name,is_business) VALUES (
     'Andrew','Gort','Canada','Ontario','Toronto','652 Springs st','N2J 7N3','andrewgort@gmail.com','6474547878','password','','',false);

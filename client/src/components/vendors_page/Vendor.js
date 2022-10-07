@@ -39,7 +39,7 @@ export default function Vendor(props) {
       <div class="lower-business">
         <p> <strong class="location">Located in:</strong><div>{vendor.city}</div></p>
         <div class="upper-business">
-        {props.state.tab === "Your Listings"? <i class="fa-sharp fa-solid fa-pen-to-square fa-lg"></i> : ( props.state.user.id &&         
+        {props.state.tab === "Listings"? <i class="fa-sharp fa-solid fa-pen-to-square fa-lg"></i> : ( props.state.user.id &&         
           <DropDown
             isOpen={dropdown}
             onChange={setDropdown}

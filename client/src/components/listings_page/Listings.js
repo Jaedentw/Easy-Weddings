@@ -1,4 +1,4 @@
-import React, { Component,useState } from 'react'
+import React, { useState } from 'react'
 import "../../styles/VendorPage.css"
 import Filter from '../partials/Filter'
 import {mapFilters} from '../../helpers/VendorsPageHelpers'
@@ -24,6 +24,7 @@ export default function Listings (props) {
 
 
   const newData = {
+    tab: props.state.tab,
     caterers: newCaterers,
     decorators: newDecorators,
     venues: newVenues,

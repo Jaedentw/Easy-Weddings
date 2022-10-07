@@ -10,7 +10,7 @@ export default function Caterer(props) {
   function onItemClick() {
     setDropdown(false);
   }
-
+  console.log(props.state)
   const caterer = props.caterer
 
   return(
@@ -40,7 +40,7 @@ export default function Caterer(props) {
       <div class="lower-business">
         <p> <strong class="location">Located in:</strong>{caterer.city}</p>
         <div class="upper-business">
-          {props.state.tab === "Your Listings"? <i class="fa-sharp fa-solid fa-pen-to-square fa-lg"></i> : ( props.state.user.id &&         
+          {props.state.tab === "Listings"? <i class="fa-sharp fa-solid fa-pen-to-square fa-lg"></i> : ( props.state.user.id &&         
           <DropDown
             isOpen={dropdown}
             onChange={setDropdown}

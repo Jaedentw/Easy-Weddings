@@ -97,6 +97,7 @@ function getWeddingListings(state, wedding) {
       }
     }
   }
+  
   if(wedding.vendors) {
     for(let listingId of wedding.vendors) {
       for(let listing of state.vendors) {

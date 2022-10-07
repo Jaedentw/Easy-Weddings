@@ -74,6 +74,7 @@ export default function useApplicationData() {
   }
 
   function setTab(tab) {
+    console.log(tab)
     setState(prev => ({ ...prev, tab }));
   };
 
