@@ -7,12 +7,11 @@ export default function Caterer(props) {
 
   const [dropdown, setDropdown] = useState(false);
 
-  const caterer = props.caterer
-
   function onItemClick() {
-    console.log("FIRED")
     setDropdown(false);
   }
+
+  const caterer = props.caterer
 
   return(
     <section class="business-container">

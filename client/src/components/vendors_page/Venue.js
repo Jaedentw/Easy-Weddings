@@ -1,10 +1,16 @@
-import React from "react";
+import {useState} from "react";
 import "../../styles/VendorPageItems.css"
 import DropDown from "./DropDown";
 import DropDownMenu from "./DropDownMenu";
 
 
 export default function Venue(props) {
+
+  const [dropdown, setDropdown] = useState(false);
+
+  function onItemClick() {
+    setDropdown(false);
+  }
 
   const venue = props.venue
 
@@ -32,10 +38,14 @@ export default function Venue(props) {
         <p> <strong class="location">Located in:</strong><div>{venue.city}</div></p>
         <div class="upper-business">
         {props.state.tab === "Your Listings"? <i class="fa-sharp fa-solid fa-pen-to-square fa-lg"></i> : ( props.state.user.id &&         
-          <DropDown>
+          <DropDown
+            isOpen={dropdown}
+            onChange={setDropdown}
+          >
             <DropDownMenu
               listing={venue}
               state={props.state}
+              onItemClick={onItemClick}
             />
           </DropDown>
           )}

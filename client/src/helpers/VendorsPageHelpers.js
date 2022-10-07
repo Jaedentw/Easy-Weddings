@@ -101,7 +101,7 @@ function getWeddingListings(state, wedding) {
     for(let listingId of wedding.vendors) {
       for(let listing of state.vendors) {
         if(listingId === listing.id) {
-          data.vendirs.push(listing)
+          data.vendors.push(listing)
         }
       }
     }

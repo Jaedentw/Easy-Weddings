@@ -1,9 +1,15 @@
-import React from "react";
+import {useState} from "react";
 import "../../styles/VendorPageItems.css"
 import DropDown from "./DropDown";
 import DropDownMenu from "./DropDownMenu";
 
 export default function Decorator(props) {
+
+  const [dropdown, setDropdown] = useState(false);
+
+  function onItemClick() {
+    setDropdown(false);
+  }
 
   const decorator = props.decorator
 
@@ -29,10 +35,14 @@ export default function Decorator(props) {
         <p> <strong class="location">Located in:</strong><div>{decorator.city}</div></p>
         <div class="upper-business">
         {props.state.tab === "Your Listings"? <i class="fa-sharp fa-solid fa-pen-to-square fa-lg"></i> : ( props.state.user.id &&         
-          <DropDown>
+          <DropDown
+            isOpen={dropdown}
+            onChange={setDropdown}
+          >
             <DropDownMenu
               listing={decorator}
               state={props.state}
+              onItemClick={onItemClick}
             />
           </DropDown>
           )}
