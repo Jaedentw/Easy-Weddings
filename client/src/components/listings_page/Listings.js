@@ -1,9 +1,13 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import "../../styles/VendorPage.css"
 import Filter from '../partials/Filter'
 import {mapFilters} from '../../helpers/VendorsPageHelpers'
 
 export default function Listings (props) {
+
+  useEffect(() => {
+    props.setTab("Listings");
+  }, [props.state.tab])
 
   let newCaterers = props.state.caterers.filter(function(ele){
     return ele.id === props.state.user.id;
@@ -21,8 +25,6 @@ export default function Listings (props) {
     return ele.id === props.state.user.id;
   })
 
-
-
   const newData = {
     tab: props.state.tab,
     caterers: newCaterers,
@@ -31,9 +33,6 @@ export default function Listings (props) {
     vendors: newVendors,
     user: props.state.user
   }
-
-  console.log('All data to be sent: ',newData)
-  
 
   let [search, setSearch] = useState()
   let mapped = mapFilters(props.state.filter, newData, search, props.state.wedding)

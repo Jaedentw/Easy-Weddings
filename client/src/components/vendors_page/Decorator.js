@@ -32,7 +32,7 @@ export default function Decorator(props) {
       </div>
 
       <div class="lower-business">
-        <p> <strong class="location">Located in:</strong><div>{decorator.city}</div></p>
+        <p> <strong class="location">Located in:</strong>{decorator.city}</p>
         <div class="upper-business">
         {props.state.tab === "Listings"? <i class="fa-sharp fa-solid fa-pen-to-square fa-lg"></i> : ( props.state.user.id &&         
           <DropDown

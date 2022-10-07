@@ -5,7 +5,6 @@ import { NavLink } from "react-router-dom";
 
 export default function Nav(props) {
 
-  console.log('nav user:', props.user);
   const [isLoggedIn, setIsloggedIn] = useState(
     null
   );
@@ -36,10 +35,7 @@ export default function Nav(props) {
           </div>)
         }
       </div>
-
-
       <div class="nav-bar-container">
-
         <NavLink to="/" >
           <Tab
             name="About"

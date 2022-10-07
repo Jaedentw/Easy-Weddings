@@ -31,7 +31,6 @@ export default function useApplicationData() {
       axios.get("/api/decorators"),
       axios.get("/api/vendors")
     ]).then((all) => {
-      console.log("all", all);
       setState(prev => (
         {
           ...prev,
@@ -74,7 +73,6 @@ export default function useApplicationData() {
   }
 
   function setTab(tab) {
-    console.log(tab)
     setState(prev => ({ ...prev, tab }));
   };
 

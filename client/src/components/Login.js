@@ -11,14 +11,14 @@ export default function Login(props) {
   });
 
   const navigate = useNavigate();
-
+  
   function handleLogin(event) {
     event.preventDefault();
 
     axios.post("/api/auth/login", data)
       .then((response) => {
         props.setUser(response.data.user);
-        if (props.state.user.is_business) {
+        if (response.data.user.is_business) {
           navigate('/listings');
           props.setTab('Listings');
         }

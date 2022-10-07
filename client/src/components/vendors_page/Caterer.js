@@ -10,7 +10,7 @@ export default function Caterer(props) {
   function onItemClick() {
     setDropdown(false);
   }
-  console.log(props.state)
+
   const caterer = props.caterer
 
   return(
