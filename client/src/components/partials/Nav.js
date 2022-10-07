@@ -64,7 +64,7 @@ export default function Nav(props) {
         {isLoggedIn && props.user.is_business &&
           <NavLink to="/listings">
             <Tab
-              name="Listings"
+              name="My Listings"
               onClick={props.setTab}
               selected={props.selected}
             />

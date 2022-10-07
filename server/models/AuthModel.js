@@ -1,3 +1,4 @@
+/* eslint-disable camelcase */
 const { db } = require('../db');
 
 const register = (first_name, last_name, country, province, city, address, postal_code, email, phone, password, is_business, website_url, business_name) => {
