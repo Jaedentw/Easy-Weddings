@@ -1,11 +1,18 @@
-import React from "react";
+import {useState} from "react";
 import "../../styles/VendorPageItems.css"
 import DropDown from "./DropDown";
 import DropDownMenu from "./DropDownMenu";
 
 export default function Caterer(props) {
 
+  const [dropdown, setDropdown] = useState(false);
+
   const caterer = props.caterer
+
+  function onItemClick() {
+    console.log("FIRED")
+    setDropdown(false);
+  }
 
   return(
     <section class="business-container">
@@ -35,10 +42,14 @@ export default function Caterer(props) {
         <p> <strong class="location">Located in:</strong>{caterer.city}</p>
         <div class="upper-business">
           {props.state.tab === "Your Listings"? <i class="fa-sharp fa-solid fa-pen-to-square fa-lg"></i> : ( props.state.user.id &&         
-          <DropDown>
+          <DropDown
+            isOpen={dropdown}
+            onChange={setDropdown}
+          >
             <DropDownMenu
               listing={caterer}
               state={props.state}
+              onItemClick={onItemClick}
             />
           </DropDown>
           )}

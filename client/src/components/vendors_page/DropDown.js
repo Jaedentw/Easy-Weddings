@@ -1,12 +1,11 @@
-import {useState} from "react";
+import React from "react";
 
 export default function DropDown(props) {
 
-  const [open, setOpen] = useState(false)
-
   function handleClick(event, open){
     event.stopPropagation();
-    setOpen(!open);
+    props.onChange(!open)
+
   }
 
 
@@ -14,10 +13,10 @@ export default function DropDown(props) {
     <div>
       <i 
         class="fa-sharp fa-solid fa-plus fa-lg"
-        onClick={(event) => {handleClick(event, open)}}
+        onClick={(event) => {handleClick(event, props.isOpen)}}
       ></i>
 
-      {open && props.children}
+      {props.isOpen && props.children}
     </div>
   )
 }

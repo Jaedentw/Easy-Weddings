@@ -13,6 +13,7 @@ export default function DropDownMenu(props) {
   function addToWedding(listing_id, wedding, type, event) {
 
     event.stopPropagation();
+    props.onItemClick();
 
     if(!wedding[type]) {
       wedding[type] = [];
@@ -35,7 +36,7 @@ export default function DropDownMenu(props) {
   function DropItem(props) {
     return(
       <div
-        onClick={(event) => {props.onClick(props.listing_id, props.wedding, props.listing_type, event)}}
+        onClick={(event) => {props.onClick(props.listing_id, props.wedding, props.listing_type, event); }}
         class="dropdown_item"
       >{props.name}</div>
     )

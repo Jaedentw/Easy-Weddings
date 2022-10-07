@@ -70,7 +70,7 @@ const update = (req, res) => {
   if (!name || !email || !phone || !country || !city || !province || !postal_code || !address || !website_url || !password) {
     return res
       .status(400)
-      .send({ message: 'Please provide requierd details for updating your business' });
+      .send({ message: 'Please provide required details for updating your business' });
   }
 
   const { id } = req.params;
