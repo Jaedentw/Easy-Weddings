@@ -11,6 +11,7 @@ import WeddingsPage from './weddings_page/WeddingsPage'
 import CreateWedding from './weddings_page/CreateWedding';
 import Regsiter from './partials/Register';
 import Listings from './listings_page/Listings';
+import CreateListing from './listings_page/CreateListing';
 
 //import {getUserWeddings} from "../helpers/selectors"
 
@@ -71,13 +72,16 @@ export default function Application(props) {
             setTab={setTab}
             getUserData={getUserData}
           />} />
+          <Route path="/create-listing" element={<CreateListing
+            state={state}
+            setTab={setTab}
+          />}/>
           <Route path="/listings" element={<Listings
             state={state}
             setTab={setTab}
             getUserData={getUserData}
             setFilter={setFilter}
           />}>
-
           </Route>
         </Routes>
       </>
