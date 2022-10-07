@@ -3,13 +3,16 @@ import "../../styles/Form.css";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
 
+
+
+
 export default function UserSignUp(props) {
 
   const [inputs, setInputs] = useState({});
 
   let [render, setRender] = useState(false);
 
-  console.log('Input test',inputs);
+  console.log('Input test', inputs);
 
   const navigate = useNavigate();
 
@@ -22,31 +25,37 @@ export default function UserSignUp(props) {
   function handleRegister(event) {
     event.preventDefault();
 
-    axios.post("/api/auth/register", inputs)
-      .then((response) => {
-        navigate('/login');
-      })
+    if (inputs.password !== inputs.password_confirmation) {
+      console.log('passwords do not match')
+      alert('password do not match!')
+    }
+    else {
+      axios.post("/api/auth/register", inputs)
+        .then((response) => {
+          navigate('/login');
+        })
 
-      .catch((res) =>
-        console.log('Error logging in!', res.data)
-      );
+        .catch((res) =>
+          console.log('Error logging in!', res.data)
+        );
+    }
   }
-
   function switchEvent() {
     if (render === false) {
       setRender(true);
-      inputs.is_business = true
+      inputs.is_business = true;
     }
     else {
       setRender(false);
-      delete inputs.business_name
-      delete inputs.website_url
-      delete inputs.is_business
+      delete inputs.business_name;
+      delete inputs.website_url;
+      delete inputs.is_business;
     }
   }
 
 
   return (
+    
     <div class="form-container">
       <form
         class="form"
@@ -162,7 +171,7 @@ export default function UserSignUp(props) {
               type="checkbox"
               name="is_business"
               onClick={switchEvent}
-              
+
             /></label>
         </div>
         {render === true &&

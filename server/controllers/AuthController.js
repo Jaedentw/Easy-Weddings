@@ -1,3 +1,4 @@
+/* eslint-disable camelcase */
 const bcrypt = require('bcryptjs');
 
 const { AuthModel, UsersModel } = require('../models');
