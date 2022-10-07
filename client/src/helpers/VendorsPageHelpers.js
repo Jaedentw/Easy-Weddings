@@ -113,7 +113,10 @@ function getWeddingListings(state, wedding) {
 
 export function mapFilters(filter, state, input, wedding, searchBy) {
 
-  let search = (searchBy.toLowerCase() || "name")
+  let search = 'name'
+  if (searchBy){
+    search = searchBy.toLowerCase()
+  }
 
   let data = state;
   if (wedding && state.tab === "Weddings") {

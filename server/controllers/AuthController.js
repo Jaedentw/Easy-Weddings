@@ -3,7 +3,7 @@ const bcrypt = require('bcryptjs');
 const { AuthModel, UsersModel } = require('../models');
 
 const register = (req, res) => {
-  const { first_name, last_name, country, province, city, address, postal_code, email, phone, password } = req.body;
+  const { first_name, last_name, country, province, city, address, postal_code, email, phone, password, is_business,website_url,business_name } = req.body;
   if (!email || !password || !first_name || !last_name, !country || !province || !city || !address || !postal_code || !phone) {
     return res
       .status(400)
@@ -12,7 +12,7 @@ const register = (req, res) => {
 
   const hashedPassword = bcrypt.hashSync(password, 10);
 
-  AuthModel.register(first_name, last_name, country, province, city, address, postal_code, email, phone, hashedPassword)
+  AuthModel.register(first_name, last_name, country, province, city, address, postal_code, email, phone, hashedPassword, is_business,website_url,business_name)
     .then(user => {
       res.status(201).send({ message: 'User registered successfully!', user });
     })
