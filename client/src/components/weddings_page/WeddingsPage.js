@@ -25,6 +25,7 @@ export default function WeddingPage(props) {
         image_url={w.image_url}
         wedding={w}
         setWedding={props.setWedding}
+        getUserData={props.getUserData}
       />
     )
   })

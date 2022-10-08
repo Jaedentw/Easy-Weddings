@@ -32,13 +32,43 @@
   text-align: center;
 }
 
-.wedding_edit {
+.wedding_edit_icon {
   position: relative;
   display: flex;
   color: black;
   left: 90%;
   top: 7%;
 }
-.wedding_edit:hover {
+.wedding_edit_icon:hover {
   color:  rgb(190, 188, 188);
+}
+
+.wedding_edit {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  bottom: 70%;
+  width: 100%;
+  padding: 5px;
+  background-color: rgb(255, 255, 255, 0.7);
+  align-items: center;
+}
+.wedding_edit label {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  justify-content: space-between;
+}
+.wedding_edit input {
+  width: 230px;
+}
+
+.edit_btn {
+  border: 3px black solid;
+  border-radius: 3px;
+  background-color: white;
+  width: 100px;
+}
+.edit_btn:hover {
+  background-color: rgb(165, 208, 216);
 }

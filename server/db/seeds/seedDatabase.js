@@ -206,7 +206,7 @@ module.exports = `
     'https://ascottparc.com/'
   );
 
-  INSERT INTO weddings (user_id, name, date, image_url, caterers, decorators, venues)
+  INSERT INTO weddings (user_id, name, date, image_url, caterers, decorators, venues, vendors)
   VALUES (
     1,
     'Kostas Wedding',
@@ -214,15 +214,17 @@ module.exports = `
     'https://www.brides.com/thmb/umh5TKE4fIOD5bbbmfTHzqqj2lM=/735x0/brides-cover-image-36476d79c52f4b6d8bc9894d859649a6.jpeg',
     ARRAY [3, 4],
     ARRAY [3, 4],
+    ARRAY [3, 4],
     ARRAY [3, 4]
   );
 
-  INSERT INTO weddings (user_id, name, date, image_url, caterers, decorators, venues)
+  INSERT INTO weddings (user_id, name, date, image_url, caterers, decorators, venues, vendors)
   VALUES (
     1,
     'Kostas Plan B',
     '09-20-2023',
     'https://www.brides.com/thmb/aCmNTcqQTvDVpHBJEXSiew8F9uU=/1064x1067/filters:fill(auto,1)/Indhira-Jason-Wedding-206-86bba0d2e23e42ecbe67f51bdc4cd17e.jpg',
+    ARRAY [1, 2],
     ARRAY [1, 2],
     ARRAY [1, 2],
     ARRAY [1, 2]

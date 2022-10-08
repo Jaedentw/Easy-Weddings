@@ -84,7 +84,7 @@ export default function Guest(props) {
           >Save</button>
         </div>
         : 
-        <div class="row">
+        <div class="row guest_margin">
           <p>{props.name} { props.plus_one? ` - ${props.plus_one}` : <i class="fa-sharp fa-solid fa-plus" onClick={() => setEdit(true)}></i>}</p> 
         </div>
         }
