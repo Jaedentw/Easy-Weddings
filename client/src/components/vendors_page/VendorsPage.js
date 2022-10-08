@@ -41,8 +41,7 @@ export default function VendorsPage(props) {
           />
         </div>
         <div>
-        <i class="fa-solid fa-magnifying-glass"></i> 
-        <input 
+        <i class="fa-solid fa-magnifying-glass"></i> <input 
           class="business-search"
           placeholder="Search"
           onInput={(event) => {setSearchInput(event.target.value);}}

@@ -53,14 +53,6 @@ export default function Nav(props) {
             />
           </NavLink>
         }
-        {!isLoggedIn &&
-          <NavLink to="/login">
-            <Tab
-              name="Login"
-              onClick={props.setTab}
-            />
-          </NavLink>
-        }
         {isLoggedIn && props.user.is_business &&
           <NavLink to="/listings">
             <Tab

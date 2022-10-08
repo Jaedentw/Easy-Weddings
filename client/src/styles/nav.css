@@ -12,6 +12,10 @@
   flex-direction: row;
   background-color: rgb(190, 188, 188);
 }
+.upper-nav a:hover {
+  text-decoration: none;
+  color: black;
+}
 
 .nav-bar-container {
   display: flex;
