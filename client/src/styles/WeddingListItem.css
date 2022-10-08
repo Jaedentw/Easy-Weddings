@@ -31,3 +31,14 @@
   width: 300px;
   text-align: center;
 }
+
+.wedding_edit {
+  position: relative;
+  display: flex;
+  color: black;
+  left: 90%;
+  top: 7%;
+}
+.wedding_edit:hover {
+  color:  rgb(190, 188, 188);
+}

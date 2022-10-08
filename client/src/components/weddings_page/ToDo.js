@@ -41,7 +41,7 @@ export default function ToDo(props) {
         {props.checked? <i class="fa-regular fa-square-check" onClick={() => {onSubmit("checked", false)}}></i> : <i class="fa-regular fa-square" onClick={() => {onSubmit("checked", true)}}></i>}
         </div>
         {edit === true? 
-        <div>
+        <div class="row">
           <input 
             name="to_do_title" 
             value={input.to_do_title || ""}

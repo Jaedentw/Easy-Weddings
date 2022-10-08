@@ -8,13 +8,13 @@
 .info_box {
   border-radius: 5px;
   border: 4px black solid;
-  height: 90px;
+  height: 120px;
   background-color: white;
   padding: 5px;
   display: flex;
   flex-direction: column;
-  width: 97%;
-  margin-top: 20px;
+  width: 100%;
+  margin-top: 10px;
 }
 
 .lower_wedding {
@@ -57,17 +57,22 @@
   padding: 0;
 }
 .to_do_container i{
-  margin: 3px;
+  margin: 3px
 }
 .to_do_container p {
   margin: 0;
 }
-.to_do_btn {
-  border: 2px black solid;
-  border-radius: 2px;
-  margin-left: 5px;
+.to_do_container input {
+  display: flex;
+  margin-left: 20px
 }
-.to_do_btn:hover {
+.to_do_btn {
+  display: flex;
+  border: 3px black solid;
+  border-radius: 3px;
+  margin-left: 5px;
+  height: 25px;
+  align-items: center;
   background-color: rgb(165, 208, 216);
 }
 
@@ -77,13 +82,13 @@
   margin-left: 20px;
   padding: 10px;
   width: 800px;
-  height: 400px;
+  height: 430px;
   background-color: white;
 }
 
 .info_container {
   width: 100%;
-  height: 100%;
+  height: 420px;
 }
 
 .info_body {
@@ -113,13 +118,17 @@
 }
 
 .info_btn {
-  align-items: center;
+  display: flex;
   border: 3px black solid;
   border-radius: 3px;
-  margin-right: 11px;
+  margin-right: 15px;
   margin-bottom: 5px;
+  margin-top: 5px;
   background-color: rgb(165, 208, 216);
   padding: 2px;
+  padding-top: 0px;
+  height: 25px;
+  align-items: center;
 }
 .info_btn:hover {
   background-color: rgb(255, 255, 255);
@@ -139,6 +148,7 @@
 .row {
   display: flex;
   flex-direction: row;
+  align-items: center;
 }
 
 .red {
@@ -151,4 +161,11 @@
 
 .green {
   color: green
+}
+
+.bottom-dots {
+  border-bottom: 4px grey dotted;
+  width: 100%;
+  padding-bottom: 20px;
+  margin-bottom: 20px;
 }

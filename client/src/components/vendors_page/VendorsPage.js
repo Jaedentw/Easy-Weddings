@@ -14,6 +14,7 @@ export default function VendorsPage(props) {
   return (
     <div class="business-list-container">
       <div class="business-nav-container">
+        {props.state.tab === "Vendors" && <div class="title-font bottom-dots">Our Vendors</div>}
         <div class="business-buttons">
           <Filter
             name="Caterers"

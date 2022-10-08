@@ -67,8 +67,7 @@ export default function Listings (props) {
           <input type="submit" value="Create new" onClick={()=>navigate('/createlisting')}></input>
         </div>
         <div>
-        <i class="fa-solid fa-magnifying-glass"></i> 
-        <input 
+        <i class="fa-solid fa-magnifying-glass"></i> <input 
           class="business-search"
           placeholder="Search"
           onInput={(event) => {setSearch(event.target.value);}}

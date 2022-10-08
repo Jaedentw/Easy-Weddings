@@ -3,7 +3,8 @@
   flex-direction: column;
   width: 75%;
   padding: 20px;
-  height: max-content;
+  padding-top: 0px;
+  height: 150vh;
   background-color: antiquewhite;
 }
 
@@ -20,9 +21,6 @@
   justify-items: space-evenly;
   width: 100%;
   justify-content: center;
-  border-bottom: 4px grey dotted;
-  padding-bottom: 20px;
-  margin-bottom: 20px;
 }
 
 .business-btn {
