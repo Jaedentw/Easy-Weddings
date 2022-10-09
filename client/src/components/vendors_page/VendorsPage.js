@@ -15,7 +15,7 @@ export default function VendorsPage(props) {
   return (
     <div class="business-list-container">
       <div class="business-nav-container">
-        <div class="title-font bottom-dots">{props.state.tab !== "Weddings" && "Our Vendors"}</div>
+        <div class={props.state.tab !== "Weddings" && "title-font bottom-dots"}>{props.state.tab !== "Weddings" && "Our Vendors"}</div>
         <div class="business-buttons">
           <Filter
             name="Caterers"

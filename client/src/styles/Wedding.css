@@ -175,3 +175,9 @@
 .guest_margin {
   margin-left: 5px;
 }
+
+.create_wedding_arrow {
+  position: relative;
+  top: 10%;
+  right: 38%;
+}

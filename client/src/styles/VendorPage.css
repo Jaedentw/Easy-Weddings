@@ -5,6 +5,8 @@
   padding: 20px;
   padding-top: 0px;
   background-color: antiquewhite;
+  height: 500vh;
+  height: max-content
 }
 
 .business-nav-container {
