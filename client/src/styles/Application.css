@@ -14,3 +14,13 @@
   object-position: top;
   border-bottom: 4px black solid;
 }
+
+.title-font {
+  display: flex;
+  font-size: 50px;
+  text-decoration: none;
+  color: black;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Raleway', sans-serif;
+}

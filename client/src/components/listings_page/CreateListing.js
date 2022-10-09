@@ -3,7 +3,7 @@ import CreateCaterer from "./CreateComponents/CreateCaterer";
 import CreateDecorator from "./CreateComponents/CreateDecorator";
 import CreateVendor from "./CreateComponents/CreateVendor";
 import CreateVenue from "./CreateComponents/CreateVenue";
-import "../../styles/createListings.css";
+import "../../styles/CreateListings.css";
 
 export default function CreateListing(props) {
 

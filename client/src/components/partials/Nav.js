@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import "../../styles/nav.css";
+import "../../styles/Nav.css";
 import Tab from './Tab';
 import { NavLink } from "react-router-dom";
 
@@ -21,7 +21,7 @@ export default function Nav(props) {
   return (
     <nav class="nav-container">
       <div class="upper-nav">
-        <a href="/" class="title-font">Easy Weddings</a>
+        <a href="/" class="nav-title">Easy Weddings</a>
 
         {(isLoggedIn &&
 

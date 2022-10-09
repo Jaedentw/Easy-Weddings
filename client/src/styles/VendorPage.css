@@ -44,6 +44,8 @@
   border: 3px black solid;
   border-radius: 10px;
   background-color: white;
+  margin-right: 10px;
+  margin-left: 3px;
 }
 
 .search_filters {
@@ -52,4 +54,11 @@
   align-items: center;
   margin-top: 5px;
   margin-bottom: 5px;
+}
+
+.search_div {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: right;
 }

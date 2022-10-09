@@ -9,12 +9,13 @@ export default function VendorsPage(props) {
 
   let [searchInput, setSearchInput] = useState()
   let [searchFilter, setSearchFilter] = useState('Name');
+  let [filters, setFilters] = useState(false)
   let mapped = mapFilters(filter, props.state, searchInput, props.state.wedding, searchFilter)
   
   return (
     <div class="business-list-container">
       <div class="business-nav-container">
-        {props.state.tab === "Vendors" && <div class="title-font bottom-dots">Our Vendors</div>}
+        <div class="title-font bottom-dots">{props.state.tab !== "Weddings" && "Our Vendors"}</div>
         <div class="business-buttons">
           <Filter
             name="Caterers"
@@ -41,13 +42,18 @@ export default function VendorsPage(props) {
             setSearchFilter={setSearchFilter}
           />
         </div>
-        <div>
-        <i class="fa-solid fa-magnifying-glass"></i> <input 
-          class="business-search"
-          placeholder="Search"
-          onInput={(event) => {setSearchInput(event.target.value);}}
-        ></input>
+        <div class="search_div">
+          <i class="fa-solid fa-magnifying-glass"></i> <input 
+            class="business-search"
+            placeholder="Search"
+            onInput={(event) => {setSearchInput(event.target.value);}}
+          ></input>
+          <div
+          class="filters_drop"
+            onClick={() => {setFilters(!filters)}}
+          ><strong>Filters</strong> <i class="fa-sharp fa-solid fa-angle-down"></i></div>
         </div>
+        { filters &&
         <div class="search_filters">
           <strong>Search By: </strong>
           <Filter
@@ -115,7 +121,7 @@ export default function VendorsPage(props) {
             />
           }
 
-        </div>
+        </div>}
       </div>
       <div>
         {mapped}

@@ -1,5 +1,5 @@
 import React from "react";
-import "../../styles/nav.css"
+import "../../styles/Nav.css"
 import classNames from "classnames";
 
 export default function Tab(props) {

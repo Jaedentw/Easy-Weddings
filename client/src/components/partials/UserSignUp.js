@@ -1,5 +1,5 @@
 import { useState } from "react";
-import "../../styles/Form.css";
+import "../../styles/CreateListings.css";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
 
