@@ -36,14 +36,6 @@ export default function Nav(props) {
         }
       </div>
       <div class="nav-bar-container">
-        <NavLink to="/" >
-          <Tab
-            name="About"
-            onClick={props.setTab}
-            selected={props.selected}
-          />
-        </NavLink>
-
         {isLoggedIn && !props.user.is_business &&
           <NavLink to="/weddings">
             <Tab
@@ -89,6 +81,14 @@ export default function Nav(props) {
             />
           </NavLink>
         }
+
+        <NavLink to="/about" >
+          <Tab
+            name="About"
+            onClick={props.setTab}
+            selected={props.selected}
+          />
+        </NavLink>
       </div>
     </nav>
   );
