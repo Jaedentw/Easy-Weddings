@@ -13,19 +13,19 @@ export default function Listings (props) {
   }, [props.state.tab])
 
   let newCaterers = props.state.caterers.filter(function(ele){
-    return ele.id === props.state.user.id;
+    return ele.user_id === props.state.user.id;
   })
 
   let newDecorators = props.state.decorators.filter(function(ele){
-    return ele.id === props.state.user.id;
+    return ele.user_id === props.state.user.id;
   })
 
   let newVenues = props.state.venues.filter(function(ele){
-    return ele.id === props.state.user.id;
+    return ele.user_id === props.state.user.id;
   })
 
   let newVendors = props.state.vendors.filter(function(ele){
-    return ele.id === props.state.user.id;
+    return ele.user_id === props.state.user.id;
   })
 
   const newData = {
