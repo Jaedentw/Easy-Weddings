@@ -27,7 +27,7 @@ export default function CreateVendor(props) {
         })
 
         .catch((res) =>
-          console.log('Error logging in!', res.data)
+        alert(res.response.data.message)
         );
     }
   

@@ -27,7 +27,7 @@ export default function UserSignUp(props) {
 
     if (inputs.password !== inputs.password_confirmation) {
       console.log('passwords do not match')
-      alert('password do not match!')
+      alert('passwords do not match!')
     }
     else {
       axios.post("/api/auth/register", inputs)
@@ -36,7 +36,7 @@ export default function UserSignUp(props) {
         })
 
         .catch((res) =>
-          console.log('Error logging in!', res.data)
+        alert(res.response.data.message)
         );
     }
   }
