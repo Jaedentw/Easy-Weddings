@@ -43,32 +43,40 @@ export default function Listings (props) {
   return (
     <div class="business-list-container">
       <div class="business-nav-container">
+        <div class="title-font bottom-dots">My Listings</div>
         <div class="business-buttons">
-          <Filter
-            name="Caterers"
-            selected={props.state.filter}
-            onClick={props.setFilter}
-          />
-          <Filter
-            name="Decorators"
-            selected={props.state.filter}
-            onClick={props.setFilter}
-          />
-          <Filter
-            name="Venues"
-            selected={props.state.filter}
-            onClick={props.setFilter}
-          />
-          <Filter
-            name="Vendors"
-            selected={props.state.filter}
-            onClick={props.setFilter}
-          />
-          <input type="submit" value="Create new" onClick={()=>navigate('/createlisting')}></input>
+          <div class="listing-buttons">
+            <Filter
+              name="Caterers"
+              selected={props.state.filter}
+              onClick={props.setFilter}
+            />
+            <Filter
+              name="Decorators"
+              selected={props.state.filter}
+              onClick={props.setFilter}
+            />
+            <Filter
+              name="Venues"
+              selected={props.state.filter}
+              onClick={props.setFilter}
+            />
+            <Filter
+              name="Vendors"
+              selected={props.state.filter}
+              onClick={props.setFilter}
+            />
+          </div>
+
+          <input 
+            type="submit" 
+            value="Create new" 
+            onClick={()=>navigate('/createlisting')}
+            class="listing-btn"
+          ></input>
         </div>
         <div>
-        <i class="fa-solid fa-magnifying-glass"></i> 
-        <input 
+        <i class="fa-solid fa-magnifying-glass"></i> <input 
           class="business-search"
           placeholder="Search"
           onInput={(event) => {setSearch(event.target.value);}}

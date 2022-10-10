@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react';
-import "../styles/nav.css";
+import "../styles/Nav.css";
 import "../styles/Application.css";
 import AboutPage from './AboutPage';
 import Nav from './partials/Nav';
@@ -33,7 +33,6 @@ export default function Application(props) {
     getProfile();
   }, []);
 
-  console.log('User at application', state.user)
   return (
 
     <main class="main">

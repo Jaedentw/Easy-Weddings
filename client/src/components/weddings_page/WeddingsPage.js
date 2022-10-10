@@ -25,6 +25,7 @@ export default function WeddingPage(props) {
         image_url={w.image_url}
         wedding={w}
         setWedding={props.setWedding}
+        getUserData={props.getUserData}
       />
     )
   })
@@ -56,7 +57,7 @@ export default function WeddingPage(props) {
     <div class="wedding_list_container">
       <div class="upper_wedding_list">
         <i class={state.wedding ? "fa-sharp fa-solid fa-arrow-left fa-lg" : ""} onClick={() => props.setWedding(null)} ></i>
-        <h1 class="wedding_header">{state.wedding ? state.wedding.name : "Your Weddings"}</h1>
+        <h1 class="title-font bottom-dots">{state.wedding ? state.wedding.name : "Your Weddings"}</h1>
         <i></i>
       </div>
       <div class="wedding_list_items">

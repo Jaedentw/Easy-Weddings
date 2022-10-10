@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
-import "../../../styles/Form.css";
+import "../../../styles/CreateListings.css";
 
 export default function CreateDecorator(props) {
 
@@ -35,49 +35,67 @@ export default function CreateDecorator(props) {
 
 
   return (
-    <div class="form-container">
+    <div class="listing-data">
       <form
         class="form"
         autoComplete="off"
         onSubmit={handleComplete}
       >
         <span>
-          <label>Name:</label>
-          <input
-            name="name"
-            type="text"
-            placeholder="Name"
-            value={inputs.name || ""}
-            onChange={handleChange}
-          />
-          <label>City:</label>
-          <input
-            name="city"
-            type="text"
-            placeholder="city"
-            value={inputs.city || ""}
-            onChange={handleChange}
-          />
+          <div class="listing-group">
+            <label>Name:</label>
+            <input
+              name="name"
+              type="text"
+              placeholder="Name"
+              value={inputs.name || ""}
+              onChange={handleChange}
+            />
+          </div>
+          <div class="listing-group">
+            <label>City:</label>
+            <input
+              name="city"
+              type="text"
+              placeholder="City"
+              value={inputs.city || ""}
+              onChange={handleChange}
+            />
+          </div>
         </span>
         <span>
-          <label>website URL</label>
+          <div class="listing-group">
+            <label>Specialty:</label>
+            <input
+              name="specialty"
+              type="text"
+              placeholder="i.e. Light Theatrics, Outdoor Events"
+              value={inputs.specialty || ""}
+              onChange={handleChange}
+            />
+          </div>
+          <div class="listing-group">
+            <label>Theme:</label>
+            <input
+              name="theme"
+              type="text"
+              placeholder="Theme or Style"
+              value={inputs.theme || ""}
+              onChange={handleChange}
+            />
+          </div>
+        </span>
+        <div class="long-listing-group">
+          <label>Website URL</label>
           <input
             name="website_url"
             type="text"
-            placeholder="www."
+            placeholder="http://"
             value={inputs.website_url || ""}
             onChange={handleChange}
           />
-        </span>
-        <span>
-          <label>Specialty:</label>
-          <input
-            name="specialty"
-            type="text"
-            placeholder=""
-            value={inputs.specialty || ""}
-            onChange={handleChange}
-          />
+        </div>
+        <div class="long-listing-group">
           <label>Image URL:</label>
           <input
             name="image_url"
@@ -86,28 +104,25 @@ export default function CreateDecorator(props) {
             value={inputs.image_url || ""}
             onChange={handleChange}
           />
-        </span>
-        <span>
-          <label>Description:</label>
+        </div>
+        <div class="long-listing-group">
+          <label>Description:</label> 
           <input
             name="description"
             type="text"
-            placeholder="About venue"
+            placeholder="About Your Services"
             value={inputs.description || ""}
             onChange={handleChange}
           />
-          <label>Theme:</label>
-          <input
-            name="theme"
-            type="text"
-            placeholder=""
-            value={inputs.theme || ""}
-            onChange={handleChange}
-          />
-        </span>
-        <input type="submit" value="Create"></input>
-        </form>
         </div>
+        <div class="listing-submit">
+          <input 
+            type="submit" 
+            value="Create"
+          ></input>
+        </div>
+      </form>
+    </div>
   );
 }
 

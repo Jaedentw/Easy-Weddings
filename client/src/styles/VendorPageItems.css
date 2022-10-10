@@ -3,7 +3,7 @@
   border: 4px black solid;
   flex-direction: column;
   background-color: rgb(190, 188, 188);
-  margin-bottom: 5px;
+  margin-bottom: 10px;
   border-radius: 10px;
 }
 
@@ -53,7 +53,7 @@
   padding: 5px;
   background-color: white;
   border: 4px black solid;
-  height: 175px;
+  height: 185px;
 }
 .text p {
   margin: 5px

@@ -63,13 +63,15 @@
   color: black;
 }
 
-.title-font {
+.nav-title {
   display: flex;
-  font-family: 'Kaushan Script', cursive;
-  font-size: 50px;
-  margin: 0px;
+  font-family: 'Waterfall', cursive;
+  font-size: 75px;
   text-decoration: none;
   color: black;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 15px;
 }
 
 .nav-log {

@@ -48,7 +48,7 @@ export default function CreateWedding(props) {
   return(
     <div class="login-container">
       <i 
-        class="fa-sharp fa-solid fa-arrow-left fa-lg"
+        class="fa-sharp fa-solid fa-arrow-left fa-lg create_wedding_arrow"
         onClick={() => {navigate("/weddings")}}
       />
       <form

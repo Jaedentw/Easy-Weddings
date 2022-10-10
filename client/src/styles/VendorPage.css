@@ -3,8 +3,10 @@
   flex-direction: column;
   width: 75%;
   padding: 20px;
-  height: max-content;
+  padding-top: 0px;
   background-color: antiquewhite;
+  height: 500vh;
+  height: max-content
 }
 
 .business-nav-container {
@@ -20,9 +22,6 @@
   justify-items: space-evenly;
   width: 100%;
   justify-content: center;
-  border-bottom: 4px grey dotted;
-  padding-bottom: 20px;
-  margin-bottom: 20px;
 }
 
 .business-btn {
@@ -47,6 +46,8 @@
   border: 3px black solid;
   border-radius: 10px;
   background-color: white;
+  margin-right: 10px;
+  margin-left: 3px;
 }
 
 .search_filters {
@@ -55,4 +56,11 @@
   align-items: center;
   margin-top: 5px;
   margin-bottom: 5px;
+}
+
+.search_div {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: right;
 }

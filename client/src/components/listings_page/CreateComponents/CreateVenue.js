@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
-import "../../../styles/Form.css";
+import "../../../styles/CreateListings.css";
 
 export default function CreateVenue(props) {
 
@@ -35,57 +35,77 @@ export default function CreateVenue(props) {
 
 
   return (
-    <div class="form-container">
+    <div class="listing-data">
       <form
         class="form"
         autoComplete="off"
         onSubmit={handleComplete}
       >
         <span>
-          <label>Name:</label>
-          <input
-            name="name"
-            type="text"
-            placeholder="Name"
-            value={inputs.name || ""}
-            onChange={handleChange}
-          />
-          <label>City:</label>
-          <input
-            name="city"
-            type="text"
-            placeholder="city"
-            value={inputs.city || ""}
-            onChange={handleChange}
-          />
+          <div class="listing-group">
+            <label>Name:</label>
+            <input
+              name="name"
+              type="text"
+              placeholder="Name"
+              value={inputs.name || ""}
+              onChange={handleChange}
+            />
+          </div>
+          <div class="listing-group">
+            <label>City:</label>
+            <input
+              name="city"
+              type="text"
+              placeholder="City"
+              value={inputs.city || ""}
+              onChange={handleChange}
+            />
+          </div>
         </span>
         <span>
+          <div class="listing-group">
+            <label>Capacity:</label>
+            <input
+              name="capacity"
+              type="number"
+              placeholder="Max Capacity"
+              value={inputs.capacity || ""}
+              onChange={handleChange}
+            />
+          </div>
+          <div class="listing-group">
+            <label>Theme:</label>
+            <input
+              name="theme"
+              type="text"
+              placeholder="Theme or Style"
+              value={inputs.theme || ""}
+              onChange={handleChange}
+            />
+          </div>
+        </span>
+        <div class="long-listing-group">
+          <label>Features:</label>
+          <input
+            name="features"
+            type="text"
+            placeholder="Unique Features"
+            value={inputs.features || ""}
+            onChange={handleChange}
+          />
+        </div>
+        <div class="long-listing-group">
           <label>Website URL</label>
           <input
             name="website_url"
             type="text"
-            placeholder="www."
+            placeholder="http://"
             value={inputs.website_url || ""}
             onChange={handleChange}
           />
-          <label>capacity:</label>
-          <input
-            name="capacity"
-            type="number"
-            placeholder="100"
-            value={inputs.capacity || ""}
-            onChange={handleChange}
-          />
-        </span>
-        <span>
-          <label>Theme:</label>
-          <input
-            name="theme"
-            type="text"
-            placeholder="theme"
-            value={inputs.theme || ""}
-            onChange={handleChange}
-          />
+        </div>
+        <div class="long-listing-group">
           <label>Image URL:</label>
           <input
             name="image_url"
@@ -94,27 +114,24 @@ export default function CreateVenue(props) {
             value={inputs.image_url || ""}
             onChange={handleChange}
           />
-        </span>
-        <span>
+        </div>
+        <div class="long-listing-group">
           <label>Description:</label>
-          <input
+          <textarea
             name="description"
             type="text"
-            placeholder="About venue"
+            placeholder="About Your Venue"
             value={inputs.description || ""}
             onChange={handleChange}
           />
-          <label>Features:</label>
-          <input
-            name="features"
-            type="text"
-            placeholder="features"
-            value={inputs.features || ""}
-            onChange={handleChange}
-          />
-        </span>
-        <input type="submit" value="Create"></input>
-        </form>
         </div>
+        <div class="listing-submit">
+          <input 
+            type="submit" 
+            value="Create"
+          ></input>
+        </div>
+      </form>
+    </div>
   );
 }

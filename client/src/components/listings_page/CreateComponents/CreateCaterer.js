@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
-import "../../../styles/Form.css";
+import "../../../styles/CreateListings.css";
 
 export default function CreateCaterer(props) {
 
@@ -35,57 +35,77 @@ export default function CreateCaterer(props) {
 
 
   return (
-    <div class="form-container">
+    <div class="listing-data">
       <form
         class="form"
         autoComplete="off"
         onSubmit={handleComplete}
       >
         <span>
-          <label>Name:</label>
-          <input
-            name="name"
-            type="text"
-            placeholder="Name"
-            value={inputs.name || ""}
-            onChange={handleChange}
-          />
-          <label>City:</label>
-          <input
-            name="city"
-            type="text"
-            placeholder="city"
-            value={inputs.city || ""}
-            onChange={handleChange}
-          />
+          <div class="listing-group">
+            <label>Name:</label>
+            <input
+              name="name"
+              type="text"
+              placeholder="Name"
+              value={inputs.name || ""}
+              onChange={handleChange}
+            />
+          </div>
+          <div class="listing-group">
+            <label>City:</label>
+            <input
+              name="city"
+              type="text"
+              placeholder="City"
+              value={inputs.city || ""}
+              onChange={handleChange}
+            />
+          </div>
         </span>
         <span>
+          <div class="listing-group">
+            <label>Capacity:</label>
+            <input
+              name="capacity"
+              type="number"
+              placeholder="Max Serving Capacity"
+              value={inputs.capacity || ""}
+              onChange={handleChange}
+            />
+          </div>
+          <div class="listing-group">
+            <label>Cuisine:</label>
+            <input
+              name="cuisine"
+              type="text"
+              placeholder="Cuisine or Specialty"
+              value={inputs.cuisine || ""}
+              onChange={handleChange}
+            />
+          </div>
+        </span>
+        <div class="long-listing-group">
+          <label>Alternatives:</label>
+          <input
+            name="alternatives"
+            type="text"
+            placeholder="Allergy and Dietary Options"
+            value={inputs.alternatives || ""}
+            onChange={handleChange}
+          />
+        </div>
+        <div class="long-listing-group">
           <label>Menu URL</label>
           <input
             name="menu_url"
             type="text"
-            placeholder="www."
+            placeholder="http://"
             value={inputs.menu_url || ""}
             onChange={handleChange}
           />
-          <label>capacity:</label>
-          <input
-            name="capacity"
-            type="number"
-            placeholder=""
-            value={inputs.capacity || ""}
-            onChange={handleChange}
-          />
-        </span>
-        <span>
-          <label>Cuisine:</label>
-          <input
-            name="cuisine"
-            type="text"
-            placeholder=""
-            value={inputs.cuisine || ""}
-            onChange={handleChange}
-          />
+        </div>
+        <div class="long-listing-group">
           <label>Image URL:</label>
           <input
             name="image_url"
@@ -94,26 +114,23 @@ export default function CreateCaterer(props) {
             value={inputs.image_url || ""}
             onChange={handleChange}
           />
-        </span>
-        <span>
+        </div>
+        <div class="long-listing-group">
           <label>Description:</label>
-          <input
+          <textarea
             name="description"
             type="text"
-            placeholder="About venue"
+            placeholder="About Your Food and Services"
             value={inputs.description || ""}
             onChange={handleChange}
           />
-          <label>Alternatives:</label>
-          <input
-            name="alternatives"
-            type="text"
-            placeholder=""
-            value={inputs.alternatives || ""}
-            onChange={handleChange}
-          />
-        </span>
-        <input type="submit" value="Create"></input>
+        </div>
+        <div class="listing-submit">
+          <input 
+            type="submit" 
+            value="Create"
+          ></input>
+        </div>
         </form>
         </div>
   );

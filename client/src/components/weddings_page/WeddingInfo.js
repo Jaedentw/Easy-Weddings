@@ -25,6 +25,7 @@ export default function WeddingInfo(props) {
 
     axios.post("/api/to_dos/", toDoData)
       .then((res) => {
+        console.log("GOOD", res)
         props.getUserData()
       })
       .catch((res) =>{

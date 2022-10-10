@@ -96,7 +96,7 @@ module.exports = `
   INSERT INTO decorators (user_id,image_url,specialty,description,theme,name,city,website_url) VALUES (
     1,
     'https://media.weddingz.in/images/89a9671bca73f2fcf2f5bcbbf8fe7ba1/top-5-wedding-decorators-in-chandigarh-who-can-create-that-magical-setting-for-you-2.jpg',
-    'pink',
+    'Fantasy',
     'Let us turn your event into a princess theme experience!',
     'princess',
     'A Bella Casa',
@@ -107,7 +107,7 @@ module.exports = `
   INSERT INTO decorators (user_id,image_url,specialty,description,theme,name,city,website_url) VALUES (
     2,
     'https://miro.medium.com/max/1400/0*NWYFtAjpEZwozsQc.jpg',
-    'classical',
+    'American Dream',
     'Our service will make your wedding very traditional and classical',
     'traditional',
     'Elegant Decor',
@@ -118,7 +118,7 @@ module.exports = `
   INSERT INTO decorators (user_id,image_url,specialty,description,theme,name,city,website_url) VALUES (
     3,
     'https://greenweddingshoes.com/wp-content/uploads/2019/12/lushindustrial-wedding-thumb.jpg',
-    'capacity',
+    'Large Weddings',
     'Want a modern look for your venue? choose us as your decorators, ANY size',
     'modern',
     'Adaptive Decor',
@@ -129,7 +129,7 @@ module.exports = `
   INSERT INTO decorators (user_id,image_url,specialty,description,theme,name,city,website_url) VALUES (
     4,
     'https://www.theknot.com/tk-media/images/a48b8802-d4ab-4d4b-b0ee-b4b5ce33df8b~rs_768.h',
-    'Environmental',
+    'Outdoor Weddings',
     'Any environment does not matter! we will make your event connect with nature!',
     'Nature',
     'Cottage Crafts',
@@ -140,7 +140,7 @@ module.exports = `
   INSERT INTO decorators (user_id,image_url,specialty,description,theme,name,city,website_url) VALUES (
     5,
     'https://www.theknot.com/tk-media/images/3ef84acc-823f-4431-8d2b-f95d9a862a50~rs_768.h',
-    'Dark',
+    'Castles',
     'We offer amazing Gothic style decorations for any event',
     'Gothic',
     'Dark Sense Decor',
@@ -206,7 +206,7 @@ module.exports = `
     'https://ascottparc.com/'
   );
 
-  INSERT INTO weddings (user_id, name, date, image_url, caterers, decorators, venues)
+  INSERT INTO weddings (user_id, name, date, image_url, caterers, decorators, venues, vendors)
   VALUES (
     1,
     'Kostas Wedding',
@@ -214,15 +214,17 @@ module.exports = `
     'https://www.brides.com/thmb/umh5TKE4fIOD5bbbmfTHzqqj2lM=/735x0/brides-cover-image-36476d79c52f4b6d8bc9894d859649a6.jpeg',
     ARRAY [3, 4],
     ARRAY [3, 4],
+    ARRAY [3, 4],
     ARRAY [3, 4]
   );
 
-  INSERT INTO weddings (user_id, name, date, image_url, caterers, decorators, venues)
+  INSERT INTO weddings (user_id, name, date, image_url, caterers, decorators, venues, vendors)
   VALUES (
     1,
     'Kostas Plan B',
     '09-20-2023',
     'https://www.brides.com/thmb/aCmNTcqQTvDVpHBJEXSiew8F9uU=/1064x1067/filters:fill(auto,1)/Indhira-Jason-Wedding-206-86bba0d2e23e42ecbe67f51bdc4cd17e.jpg',
+    ARRAY [1, 2],
     ARRAY [1, 2],
     ARRAY [1, 2],
     ARRAY [1, 2]
