@@ -9,8 +9,6 @@ export default function CreateCaterer(props) {
 
   const [inputs, setInputs] = useState({});
 
-  console.log('Input test', inputs);
-
   const navigate = useNavigate();
 
   const handleChange = (event) => {
@@ -24,6 +22,7 @@ export default function CreateCaterer(props) {
     inputs.user_id = user_id
       axios.post("/api/caterers/", inputs)
         .then((response) => {
+          props.getListingsData()
           navigate('/listings');
         })
 

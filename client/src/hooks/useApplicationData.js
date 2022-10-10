@@ -43,6 +43,26 @@ export default function useApplicationData() {
     });
   }, []);
 
+  function getListingsData() {
+    Promise.all([
+      axios.get("/api/businesses"),
+      axios.get("/api/caterers"),
+      axios.get("/api/venues"),
+      axios.get("/api/decorators"),
+      axios.get("/api/vendors")
+    ]).then((all) => {
+      setState(prev => (
+        {
+          ...prev,
+          businesses: all[0].data.businesses,
+          caterers: all[1].data.Caterers,
+          venues: all[2].data.venues,
+          decorators: all[3].data.Decorators,
+          vendors: all[4].data.vendors
+        }));
+    });
+  }
+
   // User Functions
   function getUserData() {
     Promise.all([
@@ -103,5 +123,5 @@ export default function useApplicationData() {
   }
 
 
-  return { state, setTab, setFilter, setUser, logout, setWedding, getProfile, getUserData };
+  return { state, setTab, setFilter, setUser, logout, setWedding, getProfile, getUserData, getListingsData };
 }

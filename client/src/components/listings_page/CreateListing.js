@@ -42,10 +42,10 @@ export default function CreateListing(props) {
         </div>
 
 
-        {active === "Venue" && <CreateVenue user={user} />}
-        {active === "Vendor" && <CreateVendor user={user} />}
-        {active === "Caterer" && <CreateCaterer user={user} />}
-        {active === "Decorator" && <CreateDecorator user={user} />}
+        {active === "Venue" && <CreateVenue user={user} getListingsData={props.getListingsData}/>}
+        {active === "Vendor" && <CreateVendor user={user} getListingsData={props.getListingsData}/>}
+        {active === "Caterer" && <CreateCaterer user={user} getListingsData={props.getListingsData}/>}
+        {active === "Decorator" && <CreateDecorator user={user} getListingsData={props.getListingsData}/>}
       </div>
     </div>
   );

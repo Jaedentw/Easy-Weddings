@@ -25,7 +25,8 @@ export default function Application(props) {
     setWedding,
     logout,
     getProfile,
-    getUserData
+    getUserData,
+    getListingsData
   } = useApplicationData();
 
 
@@ -73,6 +74,7 @@ export default function Application(props) {
             getUserData={getUserData}
           />} />
           <Route path="/createlisting" element={<CreateListing
+            getListingsData={getListingsData}
             state={state}
             setTab={setTab}
           />}/>
