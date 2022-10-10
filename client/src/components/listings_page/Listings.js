@@ -12,21 +12,27 @@ export default function Listings (props) {
     props.setTab("Listings");
   }, [props.state.tab])
 
+  // Maps caterers,decorators,venues, and vendors with specific userID matching the current signed in user's id
   let newCaterers = props.state.caterers.filter(function(ele){
-    return ele.id === props.state.user.id;
+    return ele.user_id === props.state.user.id;
   })
 
   let newDecorators = props.state.decorators.filter(function(ele){
-    return ele.id === props.state.user.id;
+    return ele.user_id === props.state.user.id;
   })
 
   let newVenues = props.state.venues.filter(function(ele){
-    return ele.id === props.state.user.id;
+    return ele.user_id === props.state.user.id;
   })
 
   let newVendors = props.state.vendors.filter(function(ele){
-    return ele.id === props.state.user.id;
+    return ele.user_id === props.state.user.id;
   })
+
+  console.log('New caterers',newCaterers)
+  console.log('New Decorators', newDecorators)
+  console.log('new venues',newVenues )
+  console.log('new Vendors', newVendors);
 
   const newData = {
     tab: props.state.tab,
