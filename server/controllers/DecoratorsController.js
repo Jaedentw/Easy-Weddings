@@ -11,7 +11,7 @@ const create = (req, res) => {
   if (!name || !city || !website_url || !image_url || !specialty || !description || !theme) {
     return res
       .status(400)
-      .send({ message: 'Please provide all details to create a Caterer service' });
+      .send({ message: 'Please provide all details to create a decorator service' });
   }
 
   DecoratorsModel.create(name, city, website_url, image_url, specialty, description, theme, userId)

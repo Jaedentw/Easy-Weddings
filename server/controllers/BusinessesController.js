@@ -1,3 +1,4 @@
+/* eslint-disable camelcase */
 const { BusinessesModel } = require('../models');
 const bcrypt = require('bcryptjs');
 
@@ -113,17 +114,16 @@ const remove = (req, res) => {
 
 
 const getProfile = (req, res) => {
-  console.log('get profile controller ID')
+  console.log('get profile controller ID');
   const { userId } = req.session;
   
   if (!userId) {
     return res.status(401).send({ message: 'User is not logged in' });
-  }
-  else {
+  } else {
     BusinessesModel.getById(userId)
       .then((user) => {
         user.isBusiness = true;
-        res.send({user})
+        res.send({user});
       });
   }
 };
