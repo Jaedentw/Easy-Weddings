@@ -3,7 +3,7 @@ import Vendor from '../components/vendors_page/Vendor';
 import Venue from '../components/vendors_page/Venue';
 import Decorator from '../components/vendors_page/Decorator';
 
-function mapCaterers(state, caterers) {
+function mapCaterers(state, caterers, getData) {
   return (
     caterers.map((c) => {
       return (
@@ -12,12 +12,13 @@ function mapCaterers(state, caterers) {
           id={c.id}
           caterer={c}
           state={state}
+          getListingsData={getData}
         />
       );
     })
   );
 }
-function mapDecorators(state, decorators) {
+function mapDecorators(state, decorators, getData) {
   return (
     decorators.map((c) => {
       return (
@@ -26,12 +27,13 @@ function mapDecorators(state, decorators) {
           id={c.id}
           decorator={c}
           state={state}
+          getListingsData={getData}
         />
       );
     })
   );
 }
-function mapVenues(state, venues) {
+function mapVenues(state, venues, getData) {
   return (
     venues.map((c) => {
       return (
@@ -40,12 +42,13 @@ function mapVenues(state, venues) {
           id={c.id}
           venue={c}
           state={state}
+          getListingsData={getData}
         />
       );
     })
   );
 }
-function mapVendors(state, vendors) {
+function mapVendors(state, vendors, getData) {
   return (
     vendors.map((c) => {
       return (
@@ -54,6 +57,7 @@ function mapVendors(state, vendors) {
           id={c.id}
           vendor={c}
           state={state}
+          getListingsData={getData}
         />
       );
     })
@@ -111,7 +115,12 @@ function getWeddingListings(state, wedding) {
 }
 
 
-export function mapFilters(filter, state, input, wedding, searchBy) {
+export function mapFilters(filter, state, input, wedding, searchBy, refreshData) {
+
+  let  getData = () => {}
+  if (refreshData) {
+    getData = refreshData
+  }
 
   let search = 'name'
   if (searchBy){
@@ -126,33 +135,33 @@ export function mapFilters(filter, state, input, wedding, searchBy) {
   if (filter === "Caterers") {
     if (input) {
       let filtered = data.caterers.filter(component => component[search].toLowerCase().includes(input.toLowerCase()));
-      return mapCaterers(state, filtered);
+      return mapCaterers(state, filtered, getData);
     } else {
-      return mapCaterers(state, data.caterers);
+      return mapCaterers(state, data.caterers, getData);
     }
   }
   if (filter === "Decorators") {
     if (input) {
       let filtered = data.decorators.filter(component => component[search].toLowerCase().includes(input.toLowerCase()));
-      return mapDecorators(state, filtered);
+      return mapDecorators(state, filtered, getData);
     } else {
-      return mapDecorators(state, data.decorators);
+      return mapDecorators(state, data.decorators, getData);
     }
   }
   if (filter === "Venues") {
     if (input) {
       let filtered = data.venues.filter(component => component[search].toLowerCase().includes(input.toLowerCase()));
-      return mapVenues(state, filtered);
+      return mapVenues(state, filtered, getData);
     } else {
-      return mapVenues(state, data.venues);
+      return mapVenues(state, data.venues, getData);
     }
   }
   if (filter === "Vendors") {
     if (input) {
       let filtered = data.vendors.filter(component => component[search].toLowerCase().includes(input.toLowerCase()));
-      return mapVendors(state, filtered);
+      return mapVendors(state, filtered, getData);
     } else {
-      return mapVendors(state, data.vendors);
+      return mapVendors(state, data.vendors, getData);
     }
   }
 }

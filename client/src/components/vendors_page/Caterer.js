@@ -2,6 +2,7 @@ import {useState} from "react";
 import "../../styles/VendorPageItems.css"
 import DropDown from "./DropDown";
 import DropDownMenu from "./DropDownMenu";
+import axios from "axios";
 
 export default function Caterer(props) {
 
@@ -12,6 +13,15 @@ export default function Caterer(props) {
   }
 
   const caterer = props.caterer
+
+  function onDelete() {
+    axios.delete(`/api/caterers/${caterer.id}`, caterer.id)
+    .then((response) => {
+      console.log("GOOD", response) 
+      props.getListingsData();
+    })
+    .catch((response) => {console.log("BAD", response)})
+  }
 
   return(
     <section class="business-container">
@@ -40,7 +50,7 @@ export default function Caterer(props) {
       <div class="lower-business">
         <p> <strong class="location">Located in:</strong>{caterer.city}</p>
         <div class="upper-business">
-          {props.state.tab === "Listings"? <i class="fa-sharp fa-solid fa-pen-to-square fa-lg"></i> : ( props.state.user.id &&         
+          {props.state.tab === "Listings"? <div><i class="fa-sharp fa-solid fa-pen-to-square fa-lg"></i><i onClick={() => {onDelete()}} class="fa-sharp fa-solid fa-trash-can fa-lg trash"></i></div> : ( props.state.user.id &&         
           <DropDown
             isOpen={dropdown}
             onChange={setDropdown}

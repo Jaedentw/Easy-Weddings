@@ -29,9 +29,7 @@ export default function CreateCaterer(props) {
         .catch((res) =>
           console.log('Error logging in!', res.data)
         );
-    }
-  
-
+  }
 
   return (
     <div class="listing-data">

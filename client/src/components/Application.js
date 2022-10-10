@@ -12,6 +12,7 @@ import CreateWedding from './weddings_page/CreateWedding';
 import Regsiter from './partials/Register';
 import Listings from './listings_page/Listings';
 import CreateListing from './listings_page/CreateListing';
+import EditListing from './listings_page/EditListing';
 
 //import {getUserWeddings} from "../helpers/selectors"
 
@@ -20,8 +21,8 @@ export default function Application(props) {
   const {
     state,
     setTab,
-    setFilter,
     setUser,
+    setListing,
     setWedding,
     logout,
     getProfile,
@@ -54,7 +55,6 @@ export default function Application(props) {
           <Route path="/register" element={<Regsiter />} />
           <Route path="/browse" element={<VendorsPage
             state={state}
-            setFilter={setFilter}
           />} />
           <Route path="/login" element={<Login
             state={state}
@@ -65,7 +65,6 @@ export default function Application(props) {
           <Route path="/weddings" element={<WeddingsPage
             state={state}
             setWedding={setWedding}
-            setFilter={setFilter}
             getUserData={getUserData}
           />}/>
           <Route path="/create-wedding" element={<CreateWedding
@@ -73,16 +72,19 @@ export default function Application(props) {
             setTab={setTab}
             getUserData={getUserData}
           />} />
-          <Route path="/createlisting" element={<CreateListing
+          <Route path="/create-listing" element={<CreateListing
             getListingsData={getListingsData}
             state={state}
             setTab={setTab}
+          />}/>
+          <Route path="/edit-listing" element={<EditListing
+            state={state}
           />}/>
           <Route path="/listings" element={<Listings
             state={state}
             setTab={setTab}
             getUserData={getUserData}
-            setFilter={setFilter}
+            getListingsData={getListingsData}
           />}>
           </Route>
         </Routes>

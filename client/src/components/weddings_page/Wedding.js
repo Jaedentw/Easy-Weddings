@@ -45,7 +45,6 @@ export default function Wedding(props) {
         <h2 class="wedding_header upper_wedding" >Your Saved Vendors</h2>
         <VendorsPage
           state={props.state}
-          setFilter={props.setFilter}
         />
       </div>
     </div>

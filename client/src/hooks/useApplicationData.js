@@ -10,10 +10,9 @@ export default function useApplicationData() {
   let [state, setState] = useState({
     tab: "",
     wedding: null,
-    loading: false,
-    filter: "Caterers",
+    listing: null,
     businesses: [],
-    caterers: [{ id: "" }],
+    caterers: [],
     venues: [],
     decorators: [],
     vendors: [],
@@ -113,15 +112,14 @@ export default function useApplicationData() {
     setState(prev => ({ ...prev, tab }));
   };
 
-  function setFilter(filter) {
-    setState(prev => ({ ...prev, filter }));
-  }
-
   function setWedding(wedding) {
     setTab("Weddings");
     setState(prev => ({ ...prev, wedding }));
   }
 
+  function setListing(listing) {
+    setState(prev => ({...prev, listing}))
+  }
 
-  return { state, setTab, setFilter, setUser, logout, setWedding, getProfile, getUserData, getListingsData };
+  return { state, setTab, setUser, logout, setWedding, getProfile, getUserData, getListingsData };
 }
