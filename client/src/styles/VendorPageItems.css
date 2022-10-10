@@ -109,7 +109,7 @@
 .dropdown div {
   display: flex;
   flex-direction: row;
-  height: 20px;
+  height: 30px;
   padding: 5px;
   border: 3px black solid;
   border-radius: 3px;
@@ -117,6 +117,7 @@
   width: 175px;
   justify-content: left;
   background-color: rgb(190, 188, 188);
+  align-items: center;
 }
 .dropdown div:hover {
   background-color: rgb(165, 208, 216);

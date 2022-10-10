@@ -43,7 +43,7 @@ export default function Listings (props) {
   return (
     <div class="business-list-container">
       <div class="business-nav-container">
-        <div class="title-font bottom-dots">My Listings</div>
+        <div class="title-font bottom-dots">Your Listings</div>
         <div class="business-buttons">
           <div class="listing-buttons">
             <Filter

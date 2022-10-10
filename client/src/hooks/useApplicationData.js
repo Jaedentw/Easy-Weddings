@@ -43,20 +43,7 @@ export default function useApplicationData() {
     });
   }, []);
 
-
-  function getProfile() {
-    console.log('user before getProfile',state.user)
-    axios.get("/api/users/profile").then(({ data }) => {
-      setUser(data.user);
-      console.log('getting user profile')
-    })
-      .catch((error)=>{
-        console.log('Error getting profile...',error)
-      });
-    
-  }
-
-
+  // User Functions
   function getUserData() {
     Promise.all([
       axios.get("/api/weddings"),
@@ -72,25 +59,23 @@ export default function useApplicationData() {
     });
   }
 
-  function setTab(tab) {
-    setState(prev => ({ ...prev, tab }));
-  };
-
-  function setFilter(filter) {
-    setState(prev => ({ ...prev, filter }));
-  }
-
   function setUser(user) {
     localStorage.setItem('user', JSON.stringify(user));
     setState(prev => ({ ...prev, user }));
     getUserData();
   }
 
-  function getCurrentUser() {
-    const currentUser = localStorage.getItem('user');
-    return JSON.parse(currentUser);
+  function getProfile() {
+    console.log('user before getProfile',state.user)
+    axios.get("/api/users/profile").then(({ data }) => {
+      setUser(data.user);
+      console.log('getting user profile')
+    })
+      .catch((error)=>{
+        console.log('Error getting profile...',error)
+      });
   }
-
+  
   function logout() {
     console.log('logout funtion user has logged out');
     localStorage.removeItem('user');
@@ -101,7 +86,15 @@ export default function useApplicationData() {
     }).finally(
       navigate('/')
     );
+  }
 
+  //Set Functions
+  function setTab(tab) {
+    setState(prev => ({ ...prev, tab }));
+  };
+
+  function setFilter(filter) {
+    setState(prev => ({ ...prev, filter }));
   }
 
   function setWedding(wedding) {
@@ -110,5 +103,5 @@ export default function useApplicationData() {
   }
 
 
-  return { state, setTab, setFilter, setUser, getCurrentUser, logout, setWedding, getProfile, getUserData };
+  return { state, setTab, setFilter, setUser, logout, setWedding, getProfile, getUserData };
 }
