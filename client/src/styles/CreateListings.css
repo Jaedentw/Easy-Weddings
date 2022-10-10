@@ -14,7 +14,7 @@
   border: 5px black solid;
   margin: 20px;
   background-color: rgb(240, 240, 240);
-  padding: 30px;
+  padding: 20px 30px;
 }
 .create-listing-container h2 {
   font-family: sans-serif;
@@ -25,7 +25,7 @@
 }
 
 .create-listing-buttons {
-  margin-bottom: 20px;
+  margin-bottom: 10px;
 }
 .create-listing-buttons input:hover{
   background-position: 100% 0%;
@@ -54,7 +54,7 @@
   margin: 0px 5px;
 }
 
-
+/*Individual Creates*/
 .listing-data {
   display: flex;
   flex-direction: column;
@@ -65,9 +65,6 @@
   width: 100%;
   justify-content: space-between;
 }
-/* .listing-data input:focus, textarea:focus {
-  box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.2);
-} */
 
 
 .listing-group {
@@ -115,7 +112,7 @@
   width: 100%;
   justify-content: center;
 }
-.listing-submit-btn {
+.listing-submit input{
   display: inline-block;
   padding: 10px 15px;
   border-radius: 8px;
@@ -127,7 +124,7 @@
   font-weight: 700;
   cursor: pointer;
 }
-.listing-submit-btn:hover {
+.listing-submit input:hover {
   background-position: 100% 0%;
 }
 

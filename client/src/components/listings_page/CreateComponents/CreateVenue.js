@@ -65,16 +65,6 @@ export default function CreateVenue(props) {
         </span>
         <span>
           <div class="listing-group">
-            <label>Website URL</label>
-            <input
-              name="website_url"
-              type="text"
-              placeholder="www."
-              value={inputs.website_url || ""}
-              onChange={handleChange}
-            />
-          </div>
-          <div class="listing-group">
             <label>Capacity:</label>
             <input
               name="capacity"
@@ -84,29 +74,37 @@ export default function CreateVenue(props) {
               onChange={handleChange}
             />
           </div>
-        </span>
-        <span>
           <div class="listing-group">
             <label>Theme:</label>
             <input
               name="theme"
               type="text"
-              placeholder="Theme"
+              placeholder="Theme or Style"
               value={inputs.theme || ""}
               onChange={handleChange}
             />
           </div>
-          <div class="listing-group">
-            <label>Features:</label>
-            <input
-              name="features"
-              type="text"
-              placeholder="Features"
-              value={inputs.features || ""}
-              onChange={handleChange}
-            />
-          </div>
         </span>
+        <div class="long-listing-group">
+          <label>Features:</label>
+          <input
+            name="features"
+            type="text"
+            placeholder="Unique Features"
+            value={inputs.features || ""}
+            onChange={handleChange}
+          />
+        </div>
+        <div class="long-listing-group">
+          <label>Website URL</label>
+          <input
+            name="website_url"
+            type="text"
+            placeholder="http://"
+            value={inputs.website_url || ""}
+            onChange={handleChange}
+          />
+        </div>
         <div class="long-listing-group">
           <label>Image URL:</label>
           <input
@@ -131,7 +129,6 @@ export default function CreateVenue(props) {
           <input 
             type="submit" 
             value="Create"
-            class="listing-submit-btn"
           ></input>
         </div>
       </form>
