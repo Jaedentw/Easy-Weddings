@@ -29,9 +29,7 @@ export default function CreateDecorator(props) {
         .catch((res) =>
         alert(res.response.data.message)
         );
-    }
-  
-
+  }
 
   return (
     <div class="listing-data">
