@@ -157,7 +157,7 @@ export default function UserSignUp(props) {
                 <label>Phone:</label>
                 <input
                   name="phone"
-                  type="number"
+                  type="text"
                   placeholder="Phone"
                   value={inputs.phone || ""}
                   onChange={handleChange}
