@@ -29,9 +29,7 @@ export default function CreateVenue(props) {
         .catch((res) =>
         alert(res.response.data.message)
         );
-    }
-  
-
+  }
 
   return (
     <div class="listing-data">

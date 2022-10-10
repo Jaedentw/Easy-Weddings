@@ -29,11 +29,6 @@ export default function Listings (props) {
     return ele.user_id === props.state.user.id;
   })
 
-  console.log('New caterers',newCaterers)
-  console.log('New Decorators', newDecorators)
-  console.log('new venues',newVenues )
-  console.log('new Vendors', newVendors);
-
   const newData = {
     tab: props.state.tab,
     caterers: newCaterers,
@@ -44,7 +39,8 @@ export default function Listings (props) {
   }
 
   let [search, setSearch] = useState()
-  let mapped = mapFilters(props.state.filter, newData, search, props.state.wedding)
+
+  let mapped = mapFilters(props.state.filter, newData, search, props.state.wedding, "name", props.getListingsData);
   
   return (
     <div class="business-list-container">
@@ -77,7 +73,7 @@ export default function Listings (props) {
           <input 
             type="submit" 
             value="Create new" 
-            onClick={()=>navigate('/createlisting')}
+            onClick={()=>navigate('/create-listing')}
             class="listing-btn"
           ></input>
         </div>

@@ -5,12 +5,12 @@ import {mapFilters} from '../../helpers/VendorsPageHelpers'
 
 export default function VendorsPage(props) {
 
-  let filter = props.state.filter
-
+ 
   let [searchInput, setSearchInput] = useState()
   let [searchFilter, setSearchFilter] = useState('Name');
-  let [filters, setFilters] = useState(false)
-  let mapped = mapFilters(filter, props.state, searchInput, props.state.wedding, searchFilter)
+  let [searchFilters, setSearchFilters] = useState(false)
+  let [filter, setFilter] = useState("Caterers")
+  let mapped = mapFilters(filter, props.state, searchInput, props.state.wedding, searchFilter);
   
   return (
     <div class="business-list-container">
@@ -20,25 +20,25 @@ export default function VendorsPage(props) {
           <Filter
             name="Caterers"
             selected={filter}
-            onClick={props.setFilter}
+            onClick={setFilter}
             setSearchFilter={setSearchFilter}
           />
           <Filter
             name="Decorators"
             selected={filter}
-            onClick={props.setFilter}
+            onClick={setFilter}
             setSearchFilter={setSearchFilter}
           />
           <Filter
             name="Venues"
             selected={filter}
-            onClick={props.setFilter}
+            onClick={setFilter}
             setSearchFilter={setSearchFilter}
           />
           <Filter
             name="Vendors"
             selected={filter}
-            onClick={props.setFilter}
+            onClick={setFilter}
             setSearchFilter={setSearchFilter}
           />
         </div>
@@ -50,10 +50,10 @@ export default function VendorsPage(props) {
           ></input>
           <div
           class="filters_drop"
-            onClick={() => {setFilters(!filters)}}
+            onClick={() => {setSearchFilters(!searchFilters)}}
           ><strong>Filters</strong> <i class="fa-sharp fa-solid fa-angle-down"></i></div>
         </div>
-        { filters &&
+        { searchFilters &&
         <div class="search_filters">
           <strong>Search By: </strong>
           <Filter
