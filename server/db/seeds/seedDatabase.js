@@ -230,26 +230,26 @@ module.exports = `
     ARRAY [1, 2]
   );
 
-  INSERT INTO to_dos (id, wedding_id, title, checked)
-  VALUES (1, 1, 'Decide on flowers', false);
+  INSERT INTO to_dos ( wedding_id, title, checked)
+  VALUES (1, 'Decide on flowers', false);
 
-  INSERT INTO to_dos (id, wedding_id, title, checked)
-  VALUES (2, 1, 'Contact caterer', false);
+  INSERT INTO to_dos (wedding_id, title, checked)
+  VALUES (1, 'Contact caterer', false);
 
-  INSERT INTO to_dos (id, wedding_id, title, checked)
-  VALUES (3, 1, 'Pick best man', false);
+  INSERT INTO to_dos (wedding_id, title, checked)
+  VALUES (1, 'Pick best man', false);
 
-  INSERT INTO to_dos (id, wedding_id, title, checked)
-  VALUES (4, 1, 'Pick a Wife', true);
+  INSERT INTO to_dos (wedding_id, title, checked)
+  VALUES (1, 'Pick a Wife', true);
 
-  INSERT INTO guests (id, wedding_id, name, plus_one)
-  VALUES (1, 1, 'Jaeden West', 'Ryan West');
+  INSERT INTO guests (wedding_id, name, plus_one)
+  VALUES (1, 'Jaeden West', 'Ryan West');
 
-  INSERT INTO guests (id, wedding_id, name, confirmed)
-  VALUES (2, 1, 'Mother', true);
+  INSERT INTO guests (wedding_id, name, confirmed)
+  VALUES (1, 'Mother', true);
 
-  INSERT INTO guests (id, wedding_id, name, confirmed)
-  VALUES (3, 1, 'Tiger', false);
+  INSERT INTO guests (wedding_id, name, confirmed)
+  VALUES (1, 'Tiger', false);
 
 
 
