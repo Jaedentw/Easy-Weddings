@@ -11,7 +11,7 @@ const create = (req, res) => {
   if (!name || !city || !website_url || !image_url || !specialty || !description || !theme) {
     return res
       .status(400)
-      .send({ message: 'Please provide all details to create a Caterer service' });
+      .send({ message: 'Please provide all details to create a decorator service' });
   }
 
   DecoratorsModel.create(name, city, website_url, image_url, specialty, description, theme, userId)
@@ -58,7 +58,7 @@ const getById = (req, res) => {
       console.log(error.message);
       res
         .status(500)
-        .send({ message: 'Error reading caterer', error: error.message });
+        .send({ message: 'Error reading decorator', error: error.message });
     });
 };
 
@@ -68,28 +68,28 @@ const update = (req, res) => {
     return res.status(401).send({ message: 'User is not logged in' });
   }
 
-  const { name, color, emoji } = req.body;
-  if (!name || !color || !emoji) {
+  const {name, city, website_url, image_url, specialty, description, theme} = req.body;
+  if (!name || !city || !website_url || !image_url || !specialty || !description || !theme) {
     return res
       .status(400)
-      .send({ message: 'Provide name, color and emoji to update a caterer' });
+      .send({ message: 'Provide name, color and emoji to update a decorator' });
   }
 
   const { id } = req.params;
 
-  DecoratorsModel.update(name, color, emoji, id)
-    .then(caterer => {
-      if (!caterer) {
-        return res.status(404).send({ message: 'caterer not found!' });
+  DecoratorsModel.update(name, city, website_url, image_url, specialty, description, theme, userId, id)
+    .then(decorator => {
+      if (!decorator) {
+        return res.status(404).send({ message: 'decorator not found!' });
       }
 
-      res.status(201).send({ message: 'Updated!', caterer });
+      res.status(201).send({ message: 'Updated!', decorator });
     })
     .catch(error => {
       console.log(error.message);
       res
         .status(500)
-        .send({ message: 'Error updating caterer', error: error.message });
+        .send({ message: 'Error updating decorator', error: error.message });
     });
 };
 
@@ -109,7 +109,7 @@ const remove = (req, res) => {
       console.log(error.message);
       res
         .status(500)
-        .send({ message: 'Error deleting caterer', error: error.message });
+        .send({ message: 'Error deleting decorator', error: error.message });
     });
 };
 

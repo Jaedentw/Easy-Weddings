@@ -26,7 +26,7 @@ export default function Decorator(props) {
   }
 
   function onEdit() {
-    props.setListing(decorator);
+    props.setListing({'decorator': decorator});
     navigate("/edit-listing")
   }
 

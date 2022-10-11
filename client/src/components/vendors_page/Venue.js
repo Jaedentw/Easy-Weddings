@@ -27,7 +27,7 @@ export default function Venue(props) {
   }
 
   function onEdit() {
-    props.setListing(venue);
+    props.setListing({"venue":venue});
     navigate("/edit-listing")
   }
 

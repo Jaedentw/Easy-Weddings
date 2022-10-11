@@ -31,7 +31,7 @@ export default function EditListing(props) {
       }
       {listing.decorator &&
         <div class="create-listing-container">
-        <h2>Edit: {listing.caterer.name}</h2>
+        <h2>Edit: {listing.decorator.name}</h2>
         <CreateDecorator user={user} getListingsData={props.getListingsData} listing={listing}/>
       </div>
       }

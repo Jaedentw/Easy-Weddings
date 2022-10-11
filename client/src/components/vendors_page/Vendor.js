@@ -27,7 +27,7 @@ export default function Vendor(props) {
   }
 
   function onEdit() {
-    props.setListing(vendor);
+    props.setListing({'vendor': vendor});
     navigate("/edit-listing")
   }
 

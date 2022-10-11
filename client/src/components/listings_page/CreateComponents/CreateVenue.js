@@ -136,7 +136,7 @@ export default function CreateVenue(props) {
         <div class="listing-submit">
           <input 
             type="submit" 
-            value="Create"
+            value={props.listing? "Update" : "Create"}
           ></input>
         </div>
       </form>
