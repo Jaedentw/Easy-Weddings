@@ -12,8 +12,6 @@ export default function UserSignUp(props) {
 
   let [render, setRender] = useState(false);
 
-  console.log('Input test', inputs);
-
   const navigate = useNavigate();
 
   const handleChange = (event) => {
@@ -40,6 +38,7 @@ export default function UserSignUp(props) {
         );
     }
   }
+
   function switchEvent() {
     if (render === false) {
       setRender(true);
@@ -52,7 +51,6 @@ export default function UserSignUp(props) {
       delete inputs.is_business;
     }
   }
-
 
   return (
     

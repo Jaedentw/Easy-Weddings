@@ -4,7 +4,7 @@ import classNames from "classnames";
 export default function Filter(props) {
 
 
-  let tabClasses = classNames("business-btn", {"business-btn-selected": (props.selected === props.name)})
+  let tabClasses = classNames("create-listing-btn", {"create-listing-btn-active": (props.selected === props.name)})
 
   return (
     <p 

@@ -17,9 +17,6 @@ import AboutPage from './AboutPage';
 
 import EditListing from './listings_page/EditListing';
 
-
-//import {getUserWeddings} from "../helpers/selectors"
-
 export default function Application(props) {
 
   const location = useLocation();
@@ -89,6 +86,8 @@ export default function Application(props) {
           />}/>
           <Route path="/edit-listing" element={<EditListing
             state={state}
+            setTab={setTab}
+            getListingsData={getListingsData}
           />}/>
 
           <Route path="/listings" element={<Listings
@@ -96,6 +95,7 @@ export default function Application(props) {
             setTab={setTab}
             getUserData={getUserData}
             getListingsData={getListingsData}
+            setListing={setListing}
           />}>
           </Route>
           <Route path="/" element={<HomePage />} />

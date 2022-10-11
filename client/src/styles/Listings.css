@@ -1,18 +1,16 @@
+/*Listing Sections*/
 .business-container {
   display: flex;
-  border: 4px black solid;
+  border: 3px black solid;
   flex-direction: column;
   background-color: rgb(190, 188, 188);
   margin-bottom: 10px;
-  border-radius: 10px;
 }
-
 .upper-business {
   display: flex;
   flex-direction: row;
   width: 100%;
 }
-
 .lower-business {
   display: flex;
   flex-direction: row;
@@ -34,17 +32,17 @@
   margin-left: 10px;
   width: 100%;
 }
-
 .business-image {
   display: flex;
   width: 185px;
   height: 185px;
-  border: 4px black solid;
+  border: 2px black solid;
   margin: 10px;
   object-fit: cover;
   margin-right: 0px;
 }
 
+/*Text*/
 .text {
   display: flex;
   flex-direction: column;
@@ -52,13 +50,12 @@
   margin: 10px;
   padding: 5px;
   background-color: white;
-  border: 4px black solid;
+  border: 2px black solid;
   height: 185px;
 }
 .text p {
   margin: 5px
 }
-
 .upper-text {
   display: flex;
   flex-direction: column;
@@ -76,23 +73,25 @@
   margin-left: 5px;
 }
 
+/*General*/
 .fa-heart:hover {
   color: rgb(232, 15, 15);
 }
-
 .fa-plus:hover {
   color: green;
 }
-
 .location {
   margin-right: 5px;
 }
-
 .scroller {
   overflow-y: scroll;
   scrollbar-width: thin;
 }
+.fa-pen-to-square:hover {
+  color: green
+}
 
+/*Dropdowns*/
 .dropdown {
   display: flex;
   position: absolute;

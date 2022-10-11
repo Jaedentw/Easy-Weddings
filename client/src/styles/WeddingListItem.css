@@ -9,8 +9,7 @@
   height: 300px;
   width: 300px;
   object-fit: cover;
-  border-radius: 5px;
-  border: 4px black solid;
+  border: 3px black solid;
 }
 
 .wedding_image:hover {

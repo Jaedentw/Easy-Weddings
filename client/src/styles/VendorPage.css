@@ -43,11 +43,12 @@
 }
 
 .business-search {
-  border: 3px black solid;
-  border-radius: 10px;
+  border: 2px black solid;
+  border-radius: 8px;
   background-color: white;
   margin-right: 10px;
   margin-left: 3px;
+  margin-bottom: 5px;
 }
 
 .search_filters {

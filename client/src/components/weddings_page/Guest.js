@@ -24,6 +24,7 @@ export default function Guest(props) {
     if(update2) {
       props.guest[update2.type] = update2.value;
     }
+    
     axios.put(`/api/guests/${props.guest.id}`, props.guest)
     .then((response) => {console.log("GOOD", response)})
     .catch((response) => {console.log("BAD", response)})
@@ -65,7 +66,7 @@ export default function Guest(props) {
           ></i>
         </div>
       {edit === true? 
-        <div>
+        <div class="row">
           <input 
             name="guest_name" 
             value={input.guest_name || ""}
@@ -80,12 +81,12 @@ export default function Guest(props) {
           ></input>
           <button 
             class="to_do_btn"
-            onClick={() => {onSubmit({type: "name", value: input.guest_name}, {type: "plus_one", value: input.plus_one});}}
+            onClick={() => {onSubmit({type: "name", value: input.guest_name}, {type: "plus_one", value: input.plus_one})}}
           >Save</button>
         </div>
         : 
         <div class="row guest_margin">
-          <p>{props.name} { props.plus_one? ` - ${props.plus_one}` : <i class="fa-sharp fa-solid fa-plus" onClick={() => setEdit(true)}></i>}</p> 
+          <p>{props.name} { props.plus_one && ` - ${props.plus_one}`} { props.name && <i class="fa-sharp fa-solid fa-plus" onClick={() => setEdit(true)}></i>}</p> 
         </div>
         }
         

@@ -1,3 +1,4 @@
+/*Wedding Sections*/
 .upper_wedding {
   display: flex;
   flex-direction: row;
@@ -5,19 +6,6 @@
   width: 100%;
   margin-bottom: 20px;
 }
-
-.info_box {
-  border-radius: 5px;
-  border: 4px black solid;
-  height: 120px;
-  background-color: white;
-  padding: 5px;
-  display: flex;
-  flex-direction: column;
-  width: 100%;
-  margin-top: 10px;
-}
-
 .lower_wedding {
   display: flex;
   flex-direction: column;
@@ -32,25 +20,33 @@
   margin: 20px;
   width: 128%;
 }
-
 .page_image {
   display: flex;
   height: 200px;
   width: 200px;
   object-fit: cover;
 }
-
 .vendor_set {
   display: flex;
   justify-content: center;
   width: 100%;
 }
+.stats_box {
+  border: 3px black solid;
+  height: 120px;
+  background-color: white;
+  padding: 5px;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  margin-top: 10px;
+}
 
+/*To do list and list Items*/
 .to_do_container {
   display: flex;
   border: 2px black solid;
   margin-bottom: 5px;
-  border-radius: 2px;
   background-color: white;
   align-items: center;
   width: 98%;
@@ -65,77 +61,26 @@
 }
 .to_do_container input {
   display: flex;
-  margin-left: 20px
+  margin-left: 20px;
+  border: 2px black solid;
+  border-radius: 8px;
 }
-
 .to_do_btn {
   display: flex;
-  border: 3px black solid;
-  border-radius: 3px;
+  border: 2px black solid;
+  border-radius: 8px;
   margin-left: 5px;
-  height: 25px;
-  align-items: center;
-  background-color: rgb(165, 208, 216);
+  padding: 1px;
+  display: inline-block;
+  border-radius: 8px;
+  background-image: linear-gradient(to right, rgb(165, 208, 216) 50%, rgb(255, 255, 255) 50%);
+  background-size: 200%;
+  background-position: 0%;
+  transition: 0.4s;
+  color:white;
+  font-weight: 700;
+  cursor: pointer;
 }
-
-.weddingInfo {
-  border-radius: 5px;
-  border: 4px black solid;
-  margin-left: 20px;
-  padding: 10px;
-  width: 800px;
-  height: 430px;
-  background-color: white;
-}
-
-.info_container {
-  width: 100%;
-  height: 420px;
-}
-
-.info_body {
-  border-radius: 5px;
-  border: 4px black solid;
-  height: 85%;
-  padding: 5px;
-  background-color: rgb(190, 188, 188);
-  overflow-y: scroll;
-  scrollbar-width: thin;
-}
-
-.info_label{
-  margin: 0px;
-  margin-bottom: 5px;
-}
-
-.info_buttons {
-  display: flex;
-  flex-direction: row;
-}
-
-.info_upper {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-}
-
-.info_btn {
-  display: flex;
-  border: 3px black solid;
-  border-radius: 3px;
-  margin-right: 15px;
-  margin-bottom: 5px;
-  margin-top: 5px;
-  background-color: rgb(165, 208, 216);
-  padding: 2px;
-  padding-top: 0px;
-  height: 25px;
-  align-items: center;
-}
-.info_btn:hover {
-  background-color: rgb(255, 255, 255);
-}
-
 .to_do {
   display: flex;
   flex-direction: row;
@@ -143,41 +88,96 @@
   padding:  2px;
 }
 
+/*Information Box With Guest List and To Dos*/
+.wedding_info {
+  border-radius: 5px;
+  border: 3px black solid;
+  margin-left: 20px;
+  padding: 10px;
+  width: 800px;
+  height: 430px;
+  background-color: white;
+}
+.info_container {
+  width: 100%;
+  height: 420px;
+}
+.info_body {
+  border-radius: 5px;
+  border: 2px black solid;
+  height: 84%;
+  padding: 5px;
+  background-color: rgb(190, 188, 188);
+  overflow-y: scroll;
+  scrollbar-width: thin;
+}
+.info_label{
+  margin: 0px;
+  margin-bottom: 5px;
+  align-items: center;
+}
+.info_buttons {
+  display: flex;
+  flex-direction: row;
+}
+.info_upper {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+.info_btn {
+  display: flex;
+  border: 2px black solid;
+  margin-right: 15px;
+  margin-bottom: 5px;
+  margin-top: 5px;
+  display: inline-block;
+  padding: 2px 5px;
+  border-radius: 8px;
+  background-image: linear-gradient(to right, rgb(165, 208, 216) 50%, rgb(255, 255, 255) 50%);
+  background-size: 200%;
+  background-position: 0%;
+  transition: 0.4s;
+  color:white;
+  font-weight: 700;
+  cursor: pointer;
+}
+.info_btn:hover {
+  background-position: 100% 0%;
+  color: rgb(190, 188, 188)
+}
 .fa-trash-can:hover{
   color: red;
 }
 
-.row {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-}
-
+/*Guest list and guest items*/
 .red {
   color: red
 }
-
 .yellow {
   color: yellow
 }
-
 .green {
   color: green
 }
+.guest_margin {
+  margin-left: 5px;
+}
 
+/*General*/
 .bottom-dots {
   border-bottom: 4px grey dotted;
   width: 100%;
   padding-bottom: 20px;
   margin-bottom: 20px;
 }
-
-.guest_margin {
-  margin-left: 5px;
-}
-
 .create_wedding_arrow {
   position: relative;
   top: 10%;
   right: 38%;
+}
+.row {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
 }

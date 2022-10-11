@@ -5,9 +5,9 @@ import "../../../styles/CreateListings.css";
 
 export default function CreateCaterer(props) {
 
-  const user_id = props.user.id
+  const user_id = props.user.id;
 
-  const [inputs, setInputs] = useState({});
+  const [inputs, setInputs] = useState(props.listing.caterer);
 
   const navigate = useNavigate();
 
@@ -18,18 +18,30 @@ export default function CreateCaterer(props) {
   };
 
   function handleComplete(event) {
+    console.log("inputs", inputs)
     event.preventDefault();
-    inputs.user_id = user_id
+    inputs.user_id = user_id;
+    
+    if(props.listing) {
+      axios.put(`/api/caterers/${inputs.id}`, inputs)
+      .then((response) => {
+        props.getListingsData();
+        navigate('/listings');
+      })
+      .catch((res) =>
+        console.log('Error Updating Caterer!', res)
+      );
+    } else {
       axios.post("/api/caterers/", inputs)
         .then((response) => {
-          props.getListingsData()
+          props.getListingsData();
           navigate('/listings');
         })
-
         .catch((res) =>
           alert(res.response.data.message)
         );
-  }
+    };
+  };
 
   return (
     <div class="listing-data">
@@ -125,11 +137,11 @@ export default function CreateCaterer(props) {
         <div class="listing-submit">
           <input 
             type="submit" 
-            value="Create"
+            value={props.listing? "Update" : "Create"}
           ></input>
         </div>
-        </form>
-        </div>
+      </form>
+    </div>
   );
 }
 

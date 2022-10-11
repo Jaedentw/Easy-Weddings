@@ -41,6 +41,11 @@
   color:white;
   font-weight: 700;
   margin: 0px 5px;
+  border-style: outset;
+  border: 2px black solid;
+}
+.create-listing-btn:hover {
+  background-position: 100% 0%;
 }
 .create-listing-btn-active {
   padding: 5px 10px;
@@ -52,6 +57,8 @@
   color:white;
   font-weight: 700;
   margin: 0px 5px;
+  border-style: outset;
+  border:  2px solid black;
 }
 
 /*Individual Creates*/
@@ -137,16 +144,17 @@
 }
 
 .listing-btn {
-  border: 3px black solid;
-  border-radius: 10px;
-  background-color: rgb(190, 188, 188);
-  margin: 5px;
-  margin-top: 0px;
-  padding: 2px;
-  padding-top: 0px;
-  align-items: center;
-  text-align: center;
-  height: 30px;
+  padding: 5px 10px;
+  border-radius: 8px;
+  background-image: linear-gradient(to right, rgb(190, 188, 188) 50%, rgb(165, 208, 216) 50%);
+  background-size: 200%;
+  background-position: 0%;
+  transition: 0.4s;
+  color:white;
+  font-weight: 700;
+  margin: 0px 5px;
+  border-style: outset;
+  border: 2px black solid;
   position: relative;
   display: flex;
   left: 45%

@@ -37,7 +37,8 @@ export default function WeddingInfo(props) {
     wedding_id: props.state.wedding.id,
     name: "",
     value: 1,
-    plus_one: ""
+    plus_one: "",
+    confirmed: null
   }
 
   function newGuest() {
@@ -54,7 +55,7 @@ export default function WeddingInfo(props) {
 
   return (
     <div class="info_container">
-      <div class="info_buttons">
+      <div class="info_buttons create-listing-buttons">
         <Filter
           name="To Do"
           selected={filter}

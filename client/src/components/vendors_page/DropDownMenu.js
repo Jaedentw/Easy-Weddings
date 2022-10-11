@@ -1,5 +1,5 @@
 import React from "react";
-import "../../styles/VendorPageItems.css"
+import "../../styles/Listings.css"
 import { getUserWeddings } from "../../helpers/WeddingsPageHelpers";
 import axios from "axios";
 
@@ -10,11 +10,13 @@ export default function DropDownMenu(props) {
     userWeddings = getUserWeddings(props.state, props.state.user.id);
   }
 
+  console.log("Dropdown state", props.state)
+
   function addToWedding(listing_id, wedding, type, event) {
 
     event.stopPropagation();
     props.onItemClick();
-
+    console.log("wedding", wedding)
     if(!wedding[type]) {
       wedding[type] = [];
     }
@@ -34,6 +36,7 @@ export default function DropDownMenu(props) {
   }
 
   function DropItem(props) {
+
     return(
       <div
         onClick={(event) => {props.onClick(props.listing_id, props.wedding, props.listing_type, event); }}
@@ -48,7 +51,7 @@ export default function DropDownMenu(props) {
       key={n.id}
       name={n.name}
       wedding={n}
-      listing_type={props.state.filter.toLowerCase()}
+      listing_type={props.listing_type}
       listing_id={props.listing.id}
       onClick={addToWedding}
     />

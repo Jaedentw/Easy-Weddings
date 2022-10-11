@@ -6,14 +6,14 @@ const create = (req, res) => {
     return res.status(401).send({ message: 'User is not logged in' });
   }
 
-  const { wedding_id, name, value} = req.body;
+  const { wedding_id, name, value, plus_one, confirmed } = req.body;
   if (!wedding_id || name === null || !value ) {
     return res
       .status(400)
       .send({ message: 'Please provide all details to create a guest service' });
   }
 
-  GuestsModel.create(wedding_id, name, confirmed, value, plus_one )
+  GuestsModel.create(wedding_id, name, value, plus_one, confirmed )
     .then(guest => {
       res.status(201).send({ message: 'Created!', guest });
     })

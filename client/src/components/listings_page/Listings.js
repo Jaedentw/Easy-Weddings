@@ -6,7 +6,9 @@ import { useNavigate } from 'react-router-dom'
 
 export default function Listings (props) {
 
-  const navigate = useNavigate()
+  let [filter, setFilter] = useState("Caterers");
+  let [search, setSearch] = useState();
+  const navigate = useNavigate();
 
   useEffect(() => {
     props.setTab("Listings");
@@ -16,15 +18,12 @@ export default function Listings (props) {
   let newCaterers = props.state.caterers.filter(function(ele){
     return ele.user_id === props.state.user.id;
   })
-
   let newDecorators = props.state.decorators.filter(function(ele){
     return ele.user_id === props.state.user.id;
   })
-
   let newVenues = props.state.venues.filter(function(ele){
     return ele.user_id === props.state.user.id;
   })
-
   let newVendors = props.state.vendors.filter(function(ele){
     return ele.user_id === props.state.user.id;
   })
@@ -37,36 +36,33 @@ export default function Listings (props) {
     vendors: newVendors,
     user: props.state.user
   }
+  let mapped = mapFilters(filter, newData, search, props.state.wedding, "name", props.getListingsData, props.setListing);
 
-  let [search, setSearch] = useState()
-
-  let mapped = mapFilters(props.state.filter, newData, search, props.state.wedding, "name", props.getListingsData);
-  
   return (
     <div class="business-list-container">
       <div class="business-nav-container">
         <div class="title-font bottom-dots">Your Listings</div>
-        <div class="business-buttons">
+        <div class="business-buttons create-listing-buttons">
           <div class="listing-buttons">
             <Filter
               name="Caterers"
-              selected={props.state.filter}
-              onClick={props.setFilter}
+              selected={filter}
+              onClick={setFilter}
             />
             <Filter
               name="Decorators"
-              selected={props.state.filter}
-              onClick={props.setFilter}
+              selected={filter}
+              onClick={setFilter}
             />
             <Filter
               name="Venues"
-              selected={props.state.filter}
-              onClick={props.setFilter}
+              selected={filter}
+              onClick={setFilter}
             />
             <Filter
               name="Vendors"
-              selected={props.state.filter}
-              onClick={props.setFilter}
+              selected={filter}
+              onClick={setFilter}
             />
           </div>
 

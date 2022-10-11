@@ -6,7 +6,7 @@ import { useNavigate } from "react-router-dom";
 export default function useApplicationData() {
 
   const navigate = useNavigate();
-
+  //uppermost state
   let [state, setState] = useState({
     tab: "",
     wedding: null,
@@ -42,6 +42,7 @@ export default function useApplicationData() {
     });
   }, []);
 
+  //used to refresh data
   function getListingsData() {
     Promise.all([
       axios.get("/api/businesses"),
@@ -121,5 +122,5 @@ export default function useApplicationData() {
     setState(prev => ({...prev, listing}))
   }
 
-  return { state, setTab, setUser, logout, setWedding, getProfile, getUserData, getListingsData };
+  return { state, setTab, setUser, logout, setWedding, getProfile, getUserData, getListingsData, setListing };
 }
