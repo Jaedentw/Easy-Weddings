@@ -14,7 +14,7 @@ export default function Login(props) {
   
   function handleLogin(event) {
     event.preventDefault();
-
+    
     axios.post("/api/auth/login", data)
       .then((response) => {
         props.setUser(response.data.user);
@@ -27,7 +27,6 @@ export default function Login(props) {
           props.setTab('Weddings');
         }
       })
-
       .catch((res) =>
         alert('Incorrect username or password!')
       );

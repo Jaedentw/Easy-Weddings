@@ -11,7 +11,6 @@
   object-fit: cover;
   border: 3px black solid;
 }
-
 .wedding_image:hover {
   box-shadow: 4px 4px grey;
 }
@@ -23,7 +22,6 @@
   background: rgb(255, 255, 255, 0.7);
   flex-direction: column;
 }
-
 .wedding_text p{
   font-weight: bold;
   margin: 0px;
@@ -31,6 +29,7 @@
   text-align: center;
 }
 
+/*edit wedding data*/
 .wedding_edit_icon {
   position: relative;
   display: flex;
@@ -41,7 +40,6 @@
 .wedding_edit_icon:hover {
   color:  rgb(190, 188, 188);
 }
-
 .wedding_edit {
   display: flex;
   flex-direction: column;
@@ -61,7 +59,6 @@
 .wedding_edit input {
   width: 230px;
 }
-
 .edit_btn {
   border: 3px black solid;
   border-radius: 3px;

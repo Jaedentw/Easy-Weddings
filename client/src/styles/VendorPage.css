@@ -8,14 +8,12 @@
   height: 500vh;
   height: max-content
 }
-
 .business-nav-container {
   display: flex;
   flex-direction: column;
   align-items: center;
   padding: 5px;
 }
-
 .business-buttons {
   display: flex;
   flex-direction: row;
@@ -24,6 +22,7 @@
   justify-content: center;
 }
 
+/*create new button*/
 .business-btn {
   border: 3px black solid;
   border-radius: 10px;
@@ -34,7 +33,6 @@
   padding-top: 0px;
   text-align: center;
 }
-
 .business-btn:hover {
   background-color: rgb(165, 208, 216);
 }
@@ -42,6 +40,7 @@
   background-color: rgb(165, 208, 216);
 }
 
+/*Search Bar and Filter container*/
 .business-search {
   border: 2px black solid;
   border-radius: 8px;
@@ -50,7 +49,6 @@
   margin-left: 3px;
   margin-bottom: 5px;
 }
-
 .search_filters {
   display: flex;
   flex-direction: row;
@@ -58,7 +56,6 @@
   margin-top: 5px;
   margin-bottom: 5px;
 }
-
 .search_div {
   display: flex;
   flex-direction: row;
