@@ -37,7 +37,8 @@ export default function WeddingInfo(props) {
     wedding_id: props.state.wedding.id,
     name: "",
     value: 1,
-    plus_one: ""
+    plus_one: "",
+    confirmed: null
   }
 
   function newGuest() {

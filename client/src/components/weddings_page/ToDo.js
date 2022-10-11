@@ -22,7 +22,7 @@ export default function ToDo(props) {
     props.toDo[type] = value;
     axios.put(`/api/to_dos/${props.toDo.id}`, props.toDo)
     .then((response) => {console.log("GOOD", response)})
-    .catch((response) => {console.log("BAD", response)})
+    .catch((response) => {console.log("BAD", response, props.toDo)})
     props.getUserData();
     setEdit(null);
   }
