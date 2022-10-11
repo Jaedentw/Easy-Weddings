@@ -37,7 +37,7 @@ export default function CreateVenue(props) {
           navigate('/listings');
         })
         .catch((res) =>
-          console.log('Error Creating Venue!', res.data)
+        alert(res.response.data.message)
         );
     };
   };

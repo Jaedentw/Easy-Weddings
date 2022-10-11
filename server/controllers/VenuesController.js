@@ -11,7 +11,7 @@ const create = (req, res) => {
   if (!name || !city || !website_url || !capacity || !image_url || !description) {
     return res
       .status(400)
-      .send({ message: 'Provide name, color and emoji to create a venue' });
+      .send({ message: 'Please provde all details to make a Venue service' });
   }
 
   VenuesModel.create(name, city, website_url, capacity, theme, image_url, description, features, userId)

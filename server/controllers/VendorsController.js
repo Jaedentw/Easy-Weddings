@@ -11,7 +11,7 @@ const create = (req, res) => {
   if (!name || !city || !website_url || !specialty || !image_url || !description) {
     return res
       .status(400)
-      .send({ message: 'Please provide all details required' });
+      .send({ message: 'Please provide all details to create a Vendor service' });
   }
 
   VendorsModel.create(name, city, website_url, specialty, image_url, rate_per_hour, description, rates_info, userId)

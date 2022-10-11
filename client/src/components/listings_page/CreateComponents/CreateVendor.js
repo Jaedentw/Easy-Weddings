@@ -37,7 +37,7 @@ export default function CreateVendor(props) {
           navigate('/listings');
         })
         .catch((res) =>
-          console.log('Error Creating Vendor!', res.data)
+        alert(res.response.data.message)
         );
     };
   };

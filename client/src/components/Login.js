@@ -29,7 +29,7 @@ export default function Login(props) {
       })
 
       .catch((res) =>
-        console.log('Not actually an error', res.data)
+        alert('Incorrect username or password!')
       );
   }
 

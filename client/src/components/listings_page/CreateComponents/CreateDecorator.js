@@ -37,7 +37,7 @@ export default function CreateDecorator(props) {
           navigate('/listings');
         })
         .catch((res) =>
-          console.log('Error Creating Decorator!', res.data)
+        alert(res.response.data.message)
         );
     };
   };

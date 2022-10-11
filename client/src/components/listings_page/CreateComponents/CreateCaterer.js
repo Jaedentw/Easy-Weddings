@@ -38,7 +38,7 @@ export default function CreateCaterer(props) {
           navigate('/listings');
         })
         .catch((res) =>
-          console.log('Error Creating Caterer!', res)
+          alert(res.response.data.message)
         );
     };
   };
