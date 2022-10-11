@@ -7,7 +7,11 @@ export default function CreateVenue(props) {
 
   const user_id = props.user.id
 
-  const [inputs, setInputs] = useState(props.listing.venue);
+  let listing = {}
+  if(props.listing) {
+    listing = props.listing.venue
+  }
+  const [inputs, setInputs] = useState(listing);
 
   const navigate = useNavigate();
 

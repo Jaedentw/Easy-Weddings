@@ -55,7 +55,6 @@ export default function VendorsPage(props) {
         </div>
         { searchFilters &&
         <div class="search_filters">
-          <strong>Search By: </strong>
           <Filter
             name="Name"
             selected={searchFilter}

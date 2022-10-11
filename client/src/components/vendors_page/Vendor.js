@@ -68,7 +68,7 @@ export default function Vendor(props) {
           ></i>
         </div>
          : 
-         ( props.state.user.id &&         
+         ( props.state.user.id && !props.state.user.is_business &&  
           <DropDown
             isOpen={dropdown}
             onChange={setDropdown}

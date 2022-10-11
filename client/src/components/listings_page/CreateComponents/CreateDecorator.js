@@ -6,8 +6,12 @@ import "../../../styles/CreateListings.css";
 export default function CreateDecorator(props) {
 
   const user_id = props.user.id
-
-  const [inputs, setInputs] = useState(props.listing.decorator);
+  
+  let listing = {}
+  if(props.listing) {
+    listing = props.listing.decorator
+  }
+  const [inputs, setInputs] = useState(listing);
 
   const navigate = useNavigate();
 

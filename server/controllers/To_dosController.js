@@ -66,7 +66,6 @@ const update = (req, res) => {
   if (!userId) {
     return res.status(401).send({ message: 'User is not logged in' });
   }
-  console.log("update", req.body)
   const {wedding_id, title, checked} = req.body;
   if (!wedding_id || !title || checked === null) {
     return res

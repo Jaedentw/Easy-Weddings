@@ -6,8 +6,12 @@ import "../../../styles/CreateListings.css";
 export default function CreateVendor(props) {
 
   const user_id = props.user.id
-
-  const [inputs, setInputs] = useState(props.listing.vendor);
+  
+  let listing = {}
+  if(props.listing) {
+    listing = props.listing.vendor
+  }
+  const [inputs, setInputs] = useState(listing);
 
   const navigate = useNavigate();
 
