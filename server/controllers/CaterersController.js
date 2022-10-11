@@ -67,29 +67,25 @@ const update = (req, res) => {
   if (!userId) {
     return res.status(401).send({ message: 'User is not logged in' });
   }
-
-  const { name, color, emoji } = req.body;
-  if (!name || !color || !emoji) {
+  console.log(req.body)
+  const { name, city, image_url, capacity, cuisine, menu_url, description, alternatives } = req.body;
+  if (!name || !city || !image_url || !capacity || !cuisine || !menu_url || !description) {
     return res
       .status(400)
-      .send({ message: 'Provide name, color and emoji to update a caterer' });
+      .send({ message: 'Please provide all details to update a Caterer service' });
   }
 
   const { id } = req.params;
 
-  CaterersModel.update(name, color, emoji, id)
+  CaterersModel.update(name, city, image_url, capacity, cuisine, menu_url, description, alternatives, userId, id)
     .then(caterer => {
-      if (!caterer) {
-        return res.status(404).send({ message: 'caterer not found!' });
-      }
-
       res.status(201).send({ message: 'Updated!', caterer });
     })
     .catch(error => {
       console.log(error.message);
       res
         .status(500)
-        .send({ message: 'Error updating caterer', error: error.message });
+        .send({ message: `Error Updating Caterer ${name, city, image_url, capacity, cuisine, menu_url, description, alternatives, userId, id}`, error: error.message });
     });
 };
 

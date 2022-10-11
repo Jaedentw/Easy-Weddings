@@ -20,7 +20,7 @@ export default function CreateVenue(props) {
   function handleComplete(event) {
     event.preventDefault();
     inputs.user_id = user_id;
-    
+    console.log("inputs", inputs.name)
     if(props.listing) {
       axios.put(`/api/venues/${inputs.id}`, inputs)
       .then((response) => {

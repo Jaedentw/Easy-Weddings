@@ -18,26 +18,27 @@ export default function CreateCaterer(props) {
   };
 
   function handleComplete(event) {
+    console.log("inputs", inputs)
     event.preventDefault();
     inputs.user_id = user_id;
     
     if(props.listing) {
       axios.put(`/api/caterers/${inputs.id}`, inputs)
       .then((response) => {
-        props.getListingsData()
+        props.getListingsData();
         navigate('/listings');
       })
       .catch((res) =>
-        console.log('Error Updating Caterer!', res.response.data)
+        console.log('Error Updating Caterer!', res)
       );
     } else {
       axios.post("/api/caterers/", inputs)
         .then((response) => {
-          props.getListingsData()
+          props.getListingsData();
           navigate('/listings');
         })
         .catch((res) =>
-          console.log('Error Creating Caterer!', res.response.data)
+          console.log('Error Creating Caterer!', res)
         );
     };
   };
