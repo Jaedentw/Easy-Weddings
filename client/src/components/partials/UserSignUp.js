@@ -24,7 +24,6 @@ export default function UserSignUp(props) {
     event.preventDefault();
 
     if (inputs.password !== inputs.password_confirmation) {
-      console.log('passwords do not match')
       alert('passwords do not match!')
     }
     else {

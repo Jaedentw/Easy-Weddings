@@ -2,6 +2,9 @@
 const { db } = require('../db');
 
 const register = (first_name, last_name, country, province, city, address, postal_code, email, phone, password, is_business, website_url, business_name) => {
+  if (!is_business) {
+    is_business = false;
+  }
   return db
     .query('INSERT INTO users (email, password,first_name,last_name,country,province,city,address,postal_code,phone,is_business,website_url, business_name) VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13) RETURNING *', [
       email,
