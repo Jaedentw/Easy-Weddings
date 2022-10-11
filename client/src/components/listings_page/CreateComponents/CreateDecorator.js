@@ -7,7 +7,7 @@ export default function CreateDecorator(props) {
 
   const user_id = props.user.id
 
-  const [inputs, setInputs] = useState({});
+  const [inputs, setInputs] = useState(props.listing.decorator);
 
   const navigate = useNavigate();
 
@@ -19,17 +19,28 @@ export default function CreateDecorator(props) {
 
   function handleComplete(event) {
     event.preventDefault();
-    inputs.user_id = user_id
+    inputs.user_id = user_id;
+    
+    if(props.listing) {
+      axios.put(`/api/decorators/${inputs.id}`, inputs)
+      .then((response) => {
+        props.getListingsData()
+        navigate('/listings');
+      })
+      .catch((res) =>
+        console.log('Error Updating Decorator!', res.data)
+      );
+    } else {
       axios.post("/api/decorators/", inputs)
         .then((response) => {
           props.getListingsData()
           navigate('/listings');
         })
-
         .catch((res) =>
-          console.log('Error logging in!', res.data)
+          console.log('Error Creating Decorator!', res.data)
         );
-  }
+    };
+  };
 
   return (
     <div class="listing-data">

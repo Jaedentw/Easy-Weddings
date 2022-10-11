@@ -14,8 +14,6 @@ import Listings from './listings_page/Listings';
 import CreateListing from './listings_page/CreateListing';
 import EditListing from './listings_page/EditListing';
 
-//import {getUserWeddings} from "../helpers/selectors"
-
 export default function Application(props) {
 
   const {
@@ -79,12 +77,15 @@ export default function Application(props) {
           />}/>
           <Route path="/edit-listing" element={<EditListing
             state={state}
+            setTab={setTab}
+            getListingsData={getListingsData}
           />}/>
           <Route path="/listings" element={<Listings
             state={state}
             setTab={setTab}
             getUserData={getUserData}
             getListingsData={getListingsData}
+            setListing={setListing}
           />}>
           </Route>
         </Routes>

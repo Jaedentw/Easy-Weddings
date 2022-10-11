@@ -1,12 +1,14 @@
 import {useState} from "react";
-import "../../styles/VendorPageItems.css"
+import "../../styles/Listings.css"
 import DropDown from "./DropDown";
 import DropDownMenu from "./DropDownMenu";
 import axios from "axios";
+import {useNavigate} from "react-router-dom"
 
 
 export default function Venue(props) {
 
+  const navigate = useNavigate()
   const [dropdown, setDropdown] = useState(false);
 
   function onItemClick() {
@@ -22,6 +24,11 @@ export default function Venue(props) {
       props.getListingsData();
     })
     .catch((response) => {console.log("BAD", response)})
+  }
+
+  function onEdit() {
+    props.setListing(venue);
+    navigate("/edit-listing")
   }
 
   return(
@@ -47,12 +54,25 @@ export default function Venue(props) {
       <div class="lower-business">
         <p> <strong class="location">Located in:</strong>{venue.city}</p>
         <div class="upper-business">
-        {props.state.tab === "Listings"? <div><i class="fa-sharp fa-solid fa-pen-to-square fa-lg"></i><i onClick={() => {onDelete()}} class="fa-sharp fa-solid fa-trash-can fa-lg trash"></i></div> : ( props.state.user.id &&         
+        {props.state.tab === "Listings"? 
+          <div>
+          <i 
+            class="fa-sharp fa-solid fa-pen-to-square fa-lg"
+            onClick={() => {onEdit()}}
+          ></i>
+          <i 
+            onClick={() => {onDelete()}} 
+            class="fa-sharp fa-solid fa-trash-can fa-lg trash"
+          ></i>
+        </div>
+       :  
+        ( props.state.user.id &&         
           <DropDown
             isOpen={dropdown}
             onChange={setDropdown}
           >
             <DropDownMenu
+              listing_type="venues"
               listing={venue}
               state={props.state}
               onItemClick={onItemClick}

@@ -27,14 +27,14 @@ export default function Wedding(props) {
             setWedding={props.setWedding}
             state={props.state}
           />
-          <div class="info_box">
+          <div class="stats_box">
             <span><strong>Total Guests Invited: </strong> {all}</span>
             <span><strong>Pending: </strong> {pending}</span>
             <span><strong>Confirmed: </strong> {confirmed}</span>
             <span><strong>Declined: </strong> {declined}</span>
           </div>
         </div>
-        <div class="weddingInfo">
+        <div class="wedding_info">
           <WeddingInfo
             state={props.state}
             getUserData={props.getUserData}

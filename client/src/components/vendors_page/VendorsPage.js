@@ -16,7 +16,7 @@ export default function VendorsPage(props) {
     <div class="business-list-container">
       <div class="business-nav-container">
         <div class={props.state.tab !== "Weddings" && "title-font bottom-dots"}>{props.state.tab !== "Weddings" && "Our Vendors"}</div>
-        <div class="business-buttons">
+        <div class="business-buttons create-listing-buttons">
           <Filter
             name="Caterers"
             selected={filter}
@@ -51,7 +51,7 @@ export default function VendorsPage(props) {
           <div
           class="filters_drop"
             onClick={() => {setSearchFilters(!searchFilters)}}
-          ><strong>Filters</strong> <i class="fa-sharp fa-solid fa-angle-down"></i></div>
+          >Filters <i class="fa-sharp fa-solid fa-angle-down"></i></div>
         </div>
         { searchFilters &&
         <div class="search_filters">
