@@ -1,11 +1,10 @@
 /*Listing Sections*/
 .business-container {
   display: flex;
-  border: 4px black solid;
+  border: 3px black solid;
   flex-direction: column;
   background-color: rgb(190, 188, 188);
   margin-bottom: 10px;
-  border-radius: 10px;
 }
 .upper-business {
   display: flex;
@@ -37,7 +36,7 @@
   display: flex;
   width: 185px;
   height: 185px;
-  border: 4px black solid;
+  border: 2px black solid;
   margin: 10px;
   object-fit: cover;
   margin-right: 0px;
@@ -51,7 +50,7 @@
   margin: 10px;
   padding: 5px;
   background-color: white;
-  border: 4px black solid;
+  border: 2px black solid;
   height: 185px;
 }
 .text p {

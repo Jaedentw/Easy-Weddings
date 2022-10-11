@@ -21,8 +21,7 @@
   display: flex;
   flex-direction: row;
   align-items: center;
-  border-top: 4px black solid;
-  margin-bottom: 5px;
+  border-top: 3px black solid;
 }
 
 .nav-bar-container a {

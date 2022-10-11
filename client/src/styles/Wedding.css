@@ -32,8 +32,7 @@
   width: 100%;
 }
 .stats_box {
-  border-radius: 5px;
-  border: 4px black solid;
+  border: 3px black solid;
   height: 120px;
   background-color: white;
   padding: 5px;
@@ -48,7 +47,6 @@
   display: flex;
   border: 2px black solid;
   margin-bottom: 5px;
-  border-radius: 2px;
   background-color: white;
   align-items: center;
   width: 98%;
@@ -63,16 +61,25 @@
 }
 .to_do_container input {
   display: flex;
-  margin-left: 20px
+  margin-left: 20px;
+  border: 2px black solid;
+  border-radius: 8px;
 }
 .to_do_btn {
   display: flex;
-  border: 3px black solid;
-  border-radius: 3px;
+  border: 2px black solid;
+  border-radius: 8px;
   margin-left: 5px;
-  height: 25px;
-  align-items: center;
-  background-color: rgb(165, 208, 216);
+  padding: 1px;
+  display: inline-block;
+  border-radius: 8px;
+  background-image: linear-gradient(to right, rgb(165, 208, 216) 50%, rgb(255, 255, 255) 50%);
+  background-size: 200%;
+  background-position: 0%;
+  transition: 0.4s;
+  color:white;
+  font-weight: 700;
+  cursor: pointer;
 }
 .to_do {
   display: flex;
@@ -84,7 +91,7 @@
 /*Information Box With Guest List and To Dos*/
 .wedding_info {
   border-radius: 5px;
-  border: 4px black solid;
+  border: 3px black solid;
   margin-left: 20px;
   padding: 10px;
   width: 800px;
@@ -97,8 +104,8 @@
 }
 .info_body {
   border-radius: 5px;
-  border: 4px black solid;
-  height: 85%;
+  border: 2px black solid;
+  height: 84%;
   padding: 5px;
   background-color: rgb(190, 188, 188);
   overflow-y: scroll;
@@ -107,6 +114,7 @@
 .info_label{
   margin: 0px;
   margin-bottom: 5px;
+  align-items: center;
 }
 .info_buttons {
   display: flex;
@@ -119,19 +127,24 @@
 }
 .info_btn {
   display: flex;
-  border: 3px black solid;
-  border-radius: 3px;
+  border: 2px black solid;
   margin-right: 15px;
   margin-bottom: 5px;
   margin-top: 5px;
-  background-color: rgb(165, 208, 216);
-  padding: 2px;
-  padding-top: 0px;
-  height: 25px;
-  align-items: center;
+  display: inline-block;
+  padding: 2px 5px;
+  border-radius: 8px;
+  background-image: linear-gradient(to right, rgb(165, 208, 216) 50%, rgb(255, 255, 255) 50%);
+  background-size: 200%;
+  background-position: 0%;
+  transition: 0.4s;
+  color:white;
+  font-weight: 700;
+  cursor: pointer;
 }
 .info_btn:hover {
-  background-color: rgb(255, 255, 255);
+  background-position: 100% 0%;
+  color: rgb(190, 188, 188)
 }
 .fa-trash-can:hover{
   color: red;
