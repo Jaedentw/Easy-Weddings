@@ -11,7 +11,7 @@ const create = (req, res) => {
   if (!name || !city || !website_url || !specialty || !image_url || !description) {
     return res
       .status(400)
-      .send({ message: 'Please provide all details requierd' });
+      .send({ message: 'Please provide all details required' });
   }
 
   VendorsModel.create(name, city, website_url, specialty, image_url, rate_per_hour, description, rates_info, userId)
@@ -68,16 +68,16 @@ const update = (req, res) => {
     return res.status(401).send({ message: 'User is not logged in' });
   }
 
-  const { name, color, emoji } = req.body;
-  if (!name || !color || !emoji) {
+  const { name, city, website_url, specialty, image_url, rate_per_hour, description, rates_info } = req.body;
+  if (!name || !city || !website_url || !specialty || !image_url || !description) {
     return res
       .status(400)
-      .send({ message: 'Provide name, color and emoji to update a vendor' });
+      .send({ message: 'Please provide all details required to update this vendor' });
   }
 
   const { id } = req.params;
 
-  VendorsModel.update(name, color, emoji, id)
+  VendorsModel.update(name, city, website_url, specialty, image_url, rate_per_hour, description, rates_info, userId, id)
     .then(vendor => {
       if (!vendor) {
         return res.status(404).send({ message: 'vendor not found!' });

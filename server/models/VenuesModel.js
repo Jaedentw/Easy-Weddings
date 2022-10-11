@@ -25,11 +25,11 @@ const getById = id => {
     .catch(err => console.error(err.stack));
 };
 
-const update = (name, color, emoji, id) => {
+const update = (name, city, website_url, capacity, theme, image_url, description, features, userId, id) => {
   return db
     .query(
-      'UPDATE venues SET name = $1, color = $2, emoji = $3 WHERE id = $4 RETURNING *',
-      [name, color, emoji, id]
+      'UPDATE venues SET name = $1, city = $2, website_url = $3, capacity = $4, theme = $5, image_url = $6, description = $7, features = $8, user_id = $9 WHERE id = $10 RETURNING *',
+      [name, city, website_url, capacity, theme, image_url, description, features, userId, id]
     )
     .then(data => data.rows[0])
     .catch(err => console.error(err.stack));
