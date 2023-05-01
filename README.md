@@ -13,9 +13,9 @@ Easy weddings is a website that allows users to design and create wedding models
 
  
 
-![Alt text](Screenshots/homepage.png?raw=true "Home page")
-![Alt text](Screenshots/registerpage.png?raw=true "Register page")
-![Alt text](Screenshots/vendorspage.png?raw=true "Vendor Page")
+![Home Page](Screenshots/homepage.png?raw=true "Home page")
+![Register Page](Screenshots/registerpage.png?raw=true "Register page")
+![Vendor Page](Screenshots/vendorspage.png?raw=true "Vendor Page")
 
 
 ## <center> Server set up
